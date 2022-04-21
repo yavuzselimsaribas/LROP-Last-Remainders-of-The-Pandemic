@@ -9,6 +9,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -28,6 +29,11 @@ public class LastRemaindersOfThePandemic extends Game {
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
 
+	public static final short BIT_CIRCLE = 1 << 0;
+	public static final short BIT_BOX = 1 << 1;
+	public static final short BIT_GROUND = 1 << 2;
+	private Box2DDebugRenderer b2dDebugRenderer;
+
 	private World world;
 
 	//Yavuz add AssetManager
@@ -38,19 +44,24 @@ public class LastRemaindersOfThePandemic extends Game {
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		viewport = new ExtendViewport(1280, 720, gameCamera);
 		setScreen(ScreenType.MENU);
-
+		b2dDebugRenderer = new Box2DDebugRenderer();
 
 		Box2D.init();
-		world = new World(new Vector2(0, 9.01f), true);
 
+		world = new World(new Vector2(0, -50.0f), true);
 
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
+
 	}
 
 	public World getWorld() {
 		return this.world;
+	}
+
+	public Box2DDebugRenderer getB2dDebugRenderer() {
+		return b2dDebugRenderer;
 	}
 
 	public Viewport getViewport() {
@@ -80,12 +91,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		}
 	}
 
-	//dispose method
-	public void dispose () {
+  
+	@Override
+	public void dispose() {
 		super.dispose();
+		b2dDebugRenderer.dispose();
 		world.dispose();
-		assetManager.dispose();
-	}
 
 	//AssetManager getter
 	public AssetManager getAssetManager() {
@@ -94,6 +105,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	//get camera
 	public OrthographicCamera getGameCamera() {
 		return this.gameCamera;
+
 	}
 
 }
