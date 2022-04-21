@@ -13,7 +13,6 @@ public class SettingsScreen extends AbstractScreen {
 
     @Override
     public void show() {
-        System.out.println("Settings Screen");
     }
 
     @Override
@@ -23,7 +22,7 @@ public class SettingsScreen extends AbstractScreen {
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width, height);
     }
 
     @Override
