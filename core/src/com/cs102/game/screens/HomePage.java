@@ -43,7 +43,7 @@ public class HomePage extends AbstractScreen {
         addButton("Play").addListener(new ChangeListener() {
                                           @Override
                                           public void changed(ChangeEvent event, Actor actor) {
-                                              mainGame.setScreen(ScreenType.GAME);
+                                              mainGame.setScreen(ScreenType.LOADING);
                                               dispose();
                                           }
                                       }
