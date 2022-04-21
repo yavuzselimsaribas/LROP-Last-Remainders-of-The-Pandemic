@@ -30,43 +30,6 @@ public class SettingsScreen extends AbstractScreen {
 
     @Override
     public void show() {
-        stage.addActor(init());
-        Gdx.input.setInputProcessor(stage);
-    }
-
-    @Override
-    public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        stage.act(Gdx.graphics.getDeltaTime());
-        stage.draw();
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        viewport.update(width, height);
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void dispose() {
-        stage.dispose();
-    }
-    public Table init(){
         //volume
         volumeMusicSlider = new Slider( 0f, 1f, 0.1f,false, skin );
         volumeMusicSlider.setValue( mainGame.getPreferences().getMusicVolume() );
@@ -80,12 +43,12 @@ public class SettingsScreen extends AbstractScreen {
         soundMusicSlider = new Slider( 0f, 1f, 0.1f,false, skin );
         soundMusicSlider.setValue( mainGame.getPreferences().getSoundVolume() );
         soundMusicSlider.addListener( new EventListener() {
-            @Override
-            public boolean handle(Event event) {
-                mainGame.getPreferences().setSoundVolume( soundMusicSlider.getValue() );
-                return false;
-            }
-        }
+                                          @Override
+                                          public boolean handle(Event event) {
+                                              mainGame.getPreferences().setSoundVolume( soundMusicSlider.getValue() );
+                                              return false;
+                                          }
+                                      }
         );
         //music
         musicCheckbox = new CheckBox(null, skin);
@@ -123,12 +86,13 @@ public class SettingsScreen extends AbstractScreen {
         table.setFillParent(true);
         table.setDebug(true);
         stage.addActor(table);
+        Gdx.input.setInputProcessor(stage);
 
         titleLabel = new Label( "Preferences", skin );
         volumeMusicLabel = new Label( "Music Volume", skin );
         volumeSoundLabel = new Label( "Sound Volume", skin );
         musicOnOffLabel = new Label( "Music", skin );
-            soundOnOffLabel = new Label( "Sound", skin );
+        soundOnOffLabel = new Label( "Sound", skin );
 
         table.add(titleLabel).width(200).height(50).pad(10);
         table.row();
@@ -145,7 +109,41 @@ public class SettingsScreen extends AbstractScreen {
         table.add(soundEffectsCheckbox).width(200).height(50).pad(10);
         table.row();
         table.add(backButton).width(200).height(50).pad(10);
-        return table;
 
     }
+
+    @Override
+    public void render(float delta) {
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        stage.act(Gdx.graphics.getDeltaTime());
+        stage.draw();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        viewport.update(width, height);
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
+    }
+
+    @Override
+    public void dispose() {
+        stage.dispose();
+        skin.dispose();
+    }
+
 }
