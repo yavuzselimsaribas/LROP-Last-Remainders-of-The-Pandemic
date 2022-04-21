@@ -70,7 +70,7 @@ public class HomePage implements Screen {
 
     private TextButton addButton(String text) {
         TextButton button = new TextButton(text, skin);
-        homeScreenTable.add(button).pad(10);
+        homeScreenTable.add(button).width(200).height(50).pad(10);
         homeScreenTable.row();
         return button;
     }
