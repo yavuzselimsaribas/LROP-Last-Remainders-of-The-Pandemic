@@ -1,8 +1,6 @@
 package com.cs102.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -20,6 +18,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 
 	public void create () {
+		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 
@@ -33,7 +32,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		final Screen screen = screenCache.get(screenType);
 		if (screen == null) {
 			try {
-				final Screen screenInstance = (Screen)ClassReflection.getConstructor(LastRemaindersOfThePandemic.class).newInstance(this);
+				final Screen screenInstance = (Screen)ClassReflection.getConstructor(screenType.getScreenClass(),LastRemaindersOfThePandemic.class).newInstance(this);
 				screenCache.put(screenType, screenInstance);
 				super.setScreen(screenInstance);
 			}

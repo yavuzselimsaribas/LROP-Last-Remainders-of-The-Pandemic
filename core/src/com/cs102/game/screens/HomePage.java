@@ -44,7 +44,7 @@ public class HomePage implements Screen {
         addButton("Play").addListener(new ChangeListener() {
                                           @Override
                                           public void changed(ChangeEvent event, Actor actor) {
-                                              ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen(mainGame));
+                                              mainGame.setScreen(ScreenType.GAME);
                                               dispose();
                                           }
                                       }
@@ -52,7 +52,7 @@ public class HomePage implements Screen {
         addButton("Options").addListener(new ChangeListener() {
                                              @Override
                                              public void changed(ChangeEvent event, Actor actor) {
-                                                 ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen(mainGame));
+                                                 mainGame.setScreen(ScreenType.OPTIONS);
                                                  dispose();
                                              }
                                          }
