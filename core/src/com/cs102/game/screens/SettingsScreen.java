@@ -3,11 +3,11 @@ package com.cs102.game.screens;
 import com.badlogic.gdx.Screen;
 import com.cs102.game.LastRemaindersOfThePandemic;
 
-public class SettingsScreen implements Screen {
+public class SettingsScreen extends AbstractScreen {
     LastRemaindersOfThePandemic game;
 
     public SettingsScreen(LastRemaindersOfThePandemic game) {
-        this.game = game;
+        super(game);
     }
 
 
