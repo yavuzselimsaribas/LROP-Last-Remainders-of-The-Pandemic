@@ -38,11 +38,19 @@ public class LastRemaindersOfThePandemic extends Game {
 	public static final short BIT_GROUND = 1 << 2;
 	private Box2DDebugRenderer b2dDebugRenderer;
 
+	private static final float FIXED_TIME_STEP = 1 / 60f;
+	private float accumulator;
+
 	private World world;
 
+	
+	
+
+  private WorldContactListener worldContactListener;
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
 	public void create () {
+    accumulator = 0;
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		gameCamera = new OrthographicCamera();
 		preferences = new AppPreferences();
@@ -55,10 +63,11 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		world = new World(new Vector2(0, -50.0f), true);
 
+    worldContactListener = new WorldContactListener();
+		world.setContactListener(worldContactListener);
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
-
 	}
 
 	public World getWorld() {
@@ -72,8 +81,18 @@ public class LastRemaindersOfThePandemic extends Game {
 	public Viewport getViewport() {
 		return this.viewport;
 	}
+	@Override
 	public void render () {
 		super.render();
+
+		accumulator += Math.min(0.25f, Gdx.graphics.getDeltaTime());
+		while (accumulator >= FIXED_TIME_STEP) {
+			world.step(FIXED_TIME_STEP, 6,2);
+			accumulator -= FIXED_TIME_STEP;
+		}
+
+		//final float alpha = accumulator / FIXED_TIME_STEP;
+
 	}
 
 	//Yavuz Set screen method

@@ -20,30 +20,46 @@ public class GameScreen extends AbstractScreen{
         bodyDef = new BodyDef();
         fixtureDef = new FixtureDef();
 
-        bodyDef.position.set(645, 450);
+        bodyDef.position.set(690, 600);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         Body body = world.createBody(bodyDef);
+        body.setUserData("CIRCLE");
 
         fixtureDef.isSensor = false;
         fixtureDef.restitution = 1f;
         fixtureDef.friction = 0.2f;
         fixtureDef.filter.categoryBits = BIT_CIRCLE;
-        fixtureDef.filter.maskBits = BIT_GROUND | BIT_BOX;
+        fixtureDef.filter.maskBits = BIT_GROUND;
         CircleShape cShape = new CircleShape();
         cShape.setRadius(30f);
         fixtureDef.shape = cShape;
         body.createFixture(fixtureDef);
         cShape.dispose();
 
+
+        fixtureDef.isSensor = true;
+        fixtureDef.restitution = 0;
+        fixtureDef.friction = 0.2f;
+        fixtureDef.filter.categoryBits = BIT_CIRCLE;
+        fixtureDef.filter.maskBits = BIT_BOX;
+        PolygonShape polygonShape = new PolygonShape();
+        polygonShape.setAsBox(30f, 30f);
+        fixtureDef.shape = polygonShape;
+        body.createFixture(fixtureDef);
+        polygonShape.dispose();
+
+
+
         //create a box
-        bodyDef.position.set(690f, 360f);
+        bodyDef.position.set(690f, 600f);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         body = world.createBody(bodyDef);
+        body.setUserData("BOX");
 
         fixtureDef.isSensor = false;
-        fixtureDef.restitution = 0.5f;
+        fixtureDef.restitution = 0.1f;
         fixtureDef.friction = 0.2f;
         fixtureDef.filter.categoryBits = BIT_BOX;
         fixtureDef.filter.maskBits = BIT_GROUND | BIT_CIRCLE;
@@ -58,6 +74,7 @@ public class GameScreen extends AbstractScreen{
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.StaticBody;
         body = world.createBody(bodyDef);
+        body.setUserData("PLATFORM");
 
         fixtureDef.isSensor = false;
         fixtureDef.restitution = 0.5f;
@@ -87,7 +104,7 @@ public class GameScreen extends AbstractScreen{
         }
 
         viewport.apply(true);
-        world.step(delta, 6, 2);
+        //world.step(delta, 6, 2);
         b2DDebugRenderer.render(world, viewport.getCamera().combined);
     }
 
