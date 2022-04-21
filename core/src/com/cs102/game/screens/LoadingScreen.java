@@ -28,6 +28,7 @@ public class LoadingScreen extends AbstractScreen {
         System.out.println("LoadingScreen: " + assetManager.getProgress());
         if (assetManager.update()) {
             mainGame.setScreen(ScreenType.GAME);
+            dispose();
         }
     }
 

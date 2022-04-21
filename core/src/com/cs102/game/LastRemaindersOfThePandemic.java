@@ -29,6 +29,10 @@ public class LastRemaindersOfThePandemic extends Game {
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
 
+	// Yavuz add AppPreferences
+	private AppPreferences preferences;
+
+
 	public static final short BIT_CIRCLE = 1 << 0;
 	public static final short BIT_BOX = 1 << 1;
 	public static final short BIT_GROUND = 1 << 2;
@@ -41,6 +45,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		gameCamera = new OrthographicCamera();
+		preferences = new AppPreferences();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		viewport = new ExtendViewport(1280, 720, gameCamera);
 		setScreen(ScreenType.MENU);
@@ -97,6 +102,9 @@ public class LastRemaindersOfThePandemic extends Game {
 		super.dispose();
 		b2dDebugRenderer.dispose();
 		world.dispose();
+		assetManager.dispose();
+	}
+
 
 	//AssetManager getter
 	public AssetManager getAssetManager() {
@@ -106,6 +114,11 @@ public class LastRemaindersOfThePandemic extends Game {
 	public OrthographicCamera getGameCamera() {
 		return this.gameCamera;
 
+	}
+
+	//get preferences
+	public AppPreferences getPreferences() {
+		return this.preferences;
 	}
 
 }
