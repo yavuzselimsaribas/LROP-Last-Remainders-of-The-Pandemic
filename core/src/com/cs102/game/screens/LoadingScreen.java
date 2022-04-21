@@ -1,23 +1,34 @@
 package com.cs102.game.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.cs102.game.LastRemaindersOfThePandemic;
 
-public class LoadingScreen implements Screen {
-    private LastRemaindersOfThePandemic game;
+import java.awt.*;
+
+public class LoadingScreen extends AbstractScreen {
+    private AssetManager assetManager;
 
     public LoadingScreen(LastRemaindersOfThePandemic game) {
-        this.game = game;
+        super(game);
+        assetManager = game.getAssetManager();
+        assetManager.load("default.fnt", BitmapFont.class);
     }
 
     @Override
     public void show() {
-
     }
 
     @Override
     public void render(float delta) {
-
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(16384);
+        System.out.println("LoadingScreen: " + assetManager.getProgress());
+        if (assetManager.update()) {
+            mainGame.setScreen(ScreenType.GAME);
+        }
     }
 
     @Override

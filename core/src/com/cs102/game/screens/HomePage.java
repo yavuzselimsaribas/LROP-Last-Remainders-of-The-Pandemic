@@ -20,22 +20,21 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
 
-public class HomePage implements Screen {
+public class HomePage extends AbstractScreen {
     private Stage stage;
-    private Viewport viewport;
     final private Skin skin;
     private Table homeScreenTable;
-    final private LastRemaindersOfThePandemic mainGame;
 
-    public HomePage(LastRemaindersOfThePandemic game) {
-        mainGame = game;
+
+    public HomePage(LastRemaindersOfThePandemic mainGame) {
+        super(mainGame);
         skin = new Skin(Gdx.files.internal("assets/uiskin.json"));
     }
 
 
     @Override
     public void show() {
-        viewport = new ExtendViewport(1280, 720);
+        //viewport = new ExtendViewport(1280, 720);
         stage = new Stage(viewport);
         homeScreenTable = new Table();
         homeScreenTable.setFillParent(true);
@@ -44,7 +43,7 @@ public class HomePage implements Screen {
         addButton("Play").addListener(new ChangeListener() {
                                           @Override
                                           public void changed(ChangeEvent event, Actor actor) {
-                                              mainGame.setScreen(ScreenType.GAME);
+                                              mainGame.setScreen(ScreenType.LOADING);
                                               dispose();
                                           }
                                       }
