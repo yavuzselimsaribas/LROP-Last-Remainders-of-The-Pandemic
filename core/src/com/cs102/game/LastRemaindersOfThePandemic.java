@@ -3,6 +3,9 @@ package com.cs102.game;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2D;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
@@ -15,13 +18,18 @@ import java.util.EnumMap;
 public class LastRemaindersOfThePandemic extends Game {
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
 	private EnumMap<ScreenType, Screen> screenCache;
-
-
+	private World world;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 
+		Box2D.init();
+		world = new World(new Vector2(0, 9.01f), true);
+	}
+
+	public World getWorld() {
+		return this.world;
 	}
 	public void render () {
 		super.render();
