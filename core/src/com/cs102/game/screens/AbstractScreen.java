@@ -1,23 +1,21 @@
 package com.cs102.game.screens;
 
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
 
-public class GameScreen implements Screen {
-    private LastRemaindersOfThePandemic mainGame;
-    //Deniz
-    private final BodyDef bodyDef;
-    private final FixtureDef fixtureDef;
-    public GameScreen(LastRemaindersOfThePandemic mainGame) {
+public class AbstractScreen implements Screen {
+    //protected final FitViewport viewport;
+    protected final LastRemaindersOfThePandemic context;
+    protected final World world;
 
-        this.mainGame = mainGame;
-
-
-        bodyDef = new BodyDef();
-        fixtureDef = new FixtureDef();
+    public AbstractScreen( final LastRemaindersOfThePandemic context) {
+        this.context = context;
+        //viewport = context.getScreen()
+        this.world = context.getWorld();
     }
+
 
     @Override
     public void show() {
@@ -54,4 +52,3 @@ public class GameScreen implements Screen {
 
     }
 }
-
