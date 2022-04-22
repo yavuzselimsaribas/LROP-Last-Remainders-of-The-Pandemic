@@ -15,7 +15,8 @@ public class LoadingScreen extends AbstractScreen {
     public LoadingScreen(LastRemaindersOfThePandemic game) {
         super(game);
         assetManager = game.getAssetManager();
-        assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
+        //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
+        assetManager.load("map/map.tmx", TiledMap.class);
     }
 
     @Override

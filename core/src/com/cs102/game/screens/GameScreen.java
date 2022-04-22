@@ -3,7 +3,11 @@ package com.cs102.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
 import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
@@ -16,12 +20,18 @@ public class GameScreen extends AbstractScreen{
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
     private final Body player;
-
     private Body ground;
     private Body Item;
     Control control;
+    private final AssetManager assetManager;
+    private final OrthogonalTiledMapRenderer mapRenderer;
+    private final OrthographicCamera gameCamera;
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
+
+        assetManager = mainGame.getAssetManager();
+        mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
+        this.gameCamera = mainGame.getGameCamera();
 
         control = new Control(1280, 720, mainGame.getGameCamera());
         Gdx.input.setInputProcessor(control);
@@ -160,7 +170,7 @@ public class GameScreen extends AbstractScreen{
 
     @Override
     public void show() {
-
+        mapRenderer.setMap(assetManager.get("map/map.tmx", TiledMap.class));
     }
 
     @Override
@@ -202,6 +212,8 @@ public class GameScreen extends AbstractScreen{
         );
 
         viewport.apply(true);
+        mapRenderer.setView(gameCamera);
+        mapRenderer.render();
         b2DDebugRenderer.render(world, viewport.getCamera().combined);
     }
 
@@ -227,7 +239,7 @@ public class GameScreen extends AbstractScreen{
 
     @Override
     public void dispose() {
-
+        mapRenderer.dispose();
     }
 }
 
