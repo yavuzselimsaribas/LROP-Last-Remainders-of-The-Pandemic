@@ -35,9 +35,12 @@ public class LastRemaindersOfThePandemic extends Game {
 
 	// Yavuz add AppPreferences
 	private AppPreferences preferences;
-	public static final short BIT_CIRCLE = 1 << 0;
-	public static final short BIT_BOX = 1 << 1;
-	public static final short BIT_GROUND = 1 << 2;
+
+	//public static final short BIT_CIRCLE = 1 << 0;
+	//public static final short BIT_BOX = 1 << 1;
+	public static final short BIT_PLAYER = 1 << 0;
+	public static final short BIT_GROUND = 1 << 1;
+	public static final short BIT_ITEM = 1 << 2;
 	private Box2DDebugRenderer b2dDebugRenderer;
 	private static final float FIXED_TIME_STEP = 1 / 60f;
 	private float accumulator;
@@ -45,6 +48,9 @@ public class LastRemaindersOfThePandemic extends Game {
 	private WorldContactListener worldContactListener;
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
+
+	private  Control control;
+
 	public void create () {
     accumulator = 0;
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
@@ -57,10 +63,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		b2dDebugRenderer = new Box2DDebugRenderer();
 
 		Box2D.init();
-		world = new World(new Vector2(0, -50.0f), true);
+		world = new World(new Vector2(0, 0.0f), true);
 
     	worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
+
+		//Gdx.input.setInputProcessor();
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
@@ -141,10 +149,15 @@ public class LastRemaindersOfThePandemic extends Game {
 		return this.preferences;
 	}
 
+  //Deniz added additionally
+	public WorldContactListener getWorldContactListener() {
+		return this.worldContactListener;
+	}
+  
+	//Deniz added additionally
 	//getter of skin and stage
 	public Stage getStage() {
 		return this.stage;
 	}
-
 
 }

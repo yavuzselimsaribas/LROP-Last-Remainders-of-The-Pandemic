@@ -15,6 +15,9 @@ public class Control extends InputAdapter implements InputProcessor{
     public boolean down;
     public boolean left;
     public boolean right;
+    //Deniz added additionally
+    public boolean collect;
+    //Deniz added additionally
 
     public boolean LMB;
     public boolean RMB;
@@ -45,7 +48,15 @@ public class Control extends InputAdapter implements InputProcessor{
     }
     @Override
     public boolean keyDown(int keycode) {
+        //Deniz added additionally
+        if (keycode == Keys.E) {
+            collect = true;
+        }
+        //Deniz added additionally
         switch (keycode) {
+            case Keys.E:
+                collect = true;
+                break;
             case Keys.DOWN:
             case Keys.S:
                 down = true;
@@ -68,7 +79,12 @@ public class Control extends InputAdapter implements InputProcessor{
 
     @Override
     public boolean keyUp(int keycode) {
+        //Deniz added additionally
+        //Deniz added additionally
         switch (keycode) {
+            case Keys.E:
+                collect = false;
+                break;
             case Keys.DOWN:
             case Keys.S:
                 down = false;
