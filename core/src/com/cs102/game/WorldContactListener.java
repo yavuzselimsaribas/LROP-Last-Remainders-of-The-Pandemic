@@ -14,7 +14,9 @@ public class WorldContactListener implements ContactListener{
         if (fixtureA.getBody().getUserData().equals("ITEM")) isItemCollectable = true;
         else if (fixtureB.getBody().getUserData().equals("ITEM")) isItemCollectable = true;
         else isItemCollectable = false;
-         */
+        */
+
+
 
         Gdx.app.debug("CONTACT", "BEGIN: " + fixtureA.getBody().getUserData() + " " + fixtureA.isSensor());
         Gdx.app.debug("CONTACT", "BEGIN: " + fixtureB.getBody().getUserData() + " " + fixtureB.isSensor());
