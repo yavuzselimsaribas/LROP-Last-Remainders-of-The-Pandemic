@@ -59,7 +59,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		accumulator = 0;
 		Box2D.init();
-		world = new World(new Vector2(0, 0.0f), true);
+		world = new World(new Vector2(0, 0.f), true);
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
 		b2dDebugRenderer = new Box2DDebugRenderer();
