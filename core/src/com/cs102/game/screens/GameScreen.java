@@ -29,6 +29,9 @@ public class GameScreen extends AbstractScreen{
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
 
+        viewport.setWorldHeight(9);
+        viewport.setWorldWidth(16);
+
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
         this.gameCamera = mainGame.getGameCamera();
@@ -40,7 +43,7 @@ public class GameScreen extends AbstractScreen{
         fixtureDef = new FixtureDef();
 
         //create player
-        bodyDef.position.set(640f, 150f);
+        bodyDef.position.set(8f, 3);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         player = world.createBody(bodyDef);
@@ -53,7 +56,7 @@ public class GameScreen extends AbstractScreen{
         fixtureDef.filter.categoryBits = BIT_PLAYER;
         fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
         PolygonShape pShape = new PolygonShape();
-        pShape.setAsBox(30f, 30f);
+        pShape.setAsBox(0.5f, 0.5f);
         fixtureDef.shape = pShape;
         player.createFixture(fixtureDef);
         pShape.dispose();
@@ -71,13 +74,13 @@ public class GameScreen extends AbstractScreen{
         fixtureDef.filter.categoryBits = BIT_GROUND;
         fixtureDef.filter.maskBits = -1;
         final ChainShape chainShape = new ChainShape();
-        chainShape.createLoop( new float[] {30,30,30,690,1250,690,1250,30});
+        chainShape.createLoop( new float[] {1,1,1,8,15,8,15,1});
         fixtureDef.shape = chainShape;
         ground.createFixture(fixtureDef);
         chainShape.dispose();
 
         //create item
-        bodyDef.position.set(800f, 500f);
+        bodyDef.position.set(13, 6);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         Item = world.createBody(bodyDef);
@@ -89,7 +92,7 @@ public class GameScreen extends AbstractScreen{
         fixtureDef.filter.categoryBits = BIT_ITEM;
         fixtureDef.filter.maskBits = BIT_PLAYER;
         CircleShape cShape = new CircleShape();
-        cShape.setRadius(20f);
+        cShape.setRadius(0.5f);
         fixtureDef.shape = cShape;
         Item.createFixture(fixtureDef);
         cShape.dispose();
@@ -170,15 +173,15 @@ public class GameScreen extends AbstractScreen{
 
     @Override
     public void show() {
-        mapRenderer.setMap(assetManager.get("map/map.tmx", TiledMap.class));
+        mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
     }
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0,0,0,1);
+        //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        final float speed = 75;
+        final float speed = 5;
         final float speedX;
         final float speedY;
 

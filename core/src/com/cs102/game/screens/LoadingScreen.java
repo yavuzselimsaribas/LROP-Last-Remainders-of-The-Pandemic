@@ -17,7 +17,7 @@ public class LoadingScreen extends AbstractScreen {
         assetManager = game.getAssetManager();
 
         //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
-        assetManager.load("map/map.tmx", TiledMap.class);
+        assetManager.load("map3/mock-up.tmx", TiledMap.class);
         //assetManager.load("default.fnt", BitmapFont.class);
     }
 

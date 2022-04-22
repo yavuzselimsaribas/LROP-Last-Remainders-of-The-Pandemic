@@ -18,6 +18,7 @@ public class Control extends InputAdapter implements InputProcessor{
     //Deniz added additionally
     public boolean collect;
     //Deniz added additionally
+    public boolean esc;
 
     public boolean LMB;
     public boolean RMB;
@@ -102,7 +103,8 @@ public class Control extends InputAdapter implements InputProcessor{
                 right = false;
                 break;
             case Keys.ESCAPE:
-                Gdx.app.exit();
+                //Gdx.app.exit();
+                esc = true;
                 break;
             case Keys.BACKSPACE:
                 debug = !debug;
