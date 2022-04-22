@@ -29,17 +29,19 @@ public class LastRemaindersOfThePandemic extends Game {
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
 
-	public static final short BIT_CIRCLE = 1 << 0;
-	public static final short BIT_BOX = 1 << 1;
-	public static final short BIT_GROUND = 1 << 2;
+	public static final short BIT_PLAYER = 1 << 0;
+	public static final short BIT_ROOM = 1 << 1;
+
 	private Box2DDebugRenderer b2dDebugRenderer;
-
+	private static final float FIXED_TIME_STEP = 1 / 60f;
+	private float accumulator;
 	private World world;
-
+	private WorldContactListener worldContactListener;
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		accumulator = 0;
 		gameCamera = new OrthographicCamera();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		viewport = new ExtendViewport(1280, 720, gameCamera);
@@ -48,8 +50,9 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		Box2D.init();
 
-		world = new World(new Vector2(0, -50.0f), true);
-
+		world = new World(new Vector2(0, 0), true);
+		worldContactListener = new WorldContactListener();
+		world.setContactListener(worldContactListener);
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
@@ -69,6 +72,13 @@ public class LastRemaindersOfThePandemic extends Game {
 	}
 	public void render () {
 		super.render();
+		accumulator += Math.min(0.25f, Gdx.graphics.getRawDeltaTime());
+		while(accumulator >= FIXED_TIME_STEP) {
+			world.step(FIXED_TIME_STEP, 6, 2);
+			accumulator -= FIXED_TIME_STEP;
+		}
+
+		//final float ALPHA = accumulator / FIXED_TIME_STEP;
 	}
 
 	//Yavuz Set screen method
@@ -97,7 +107,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		super.dispose();
 		b2dDebugRenderer.dispose();
 		world.dispose();
-
+	}
 	//AssetManager getter
 	public AssetManager getAssetManager() {
 		return this.assetManager;
