@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.cs102.game.LastRemaindersOfThePandemic;
 
 import java.awt.*;
@@ -14,11 +15,12 @@ public class LoadingScreen extends AbstractScreen {
     public LoadingScreen(LastRemaindersOfThePandemic game) {
         super(game);
         assetManager = game.getAssetManager();
-        assetManager.load("default.fnt", BitmapFont.class);
+        assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
     }
 
     @Override
     public void show() {
+
     }
 
     @Override
