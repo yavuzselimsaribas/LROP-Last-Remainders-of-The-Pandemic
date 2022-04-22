@@ -38,6 +38,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 	//public static final short BIT_CIRCLE = 1 << 0;
 	//public static final short BIT_BOX = 1 << 1;
+	public static final float UNIT_SCALE = 1 / 16f;
 	public static final short BIT_PLAYER = 1 << 0;
 	public static final short BIT_GROUND = 1 << 1;
 	public static final short BIT_ITEM = 1 << 2;
@@ -52,31 +53,32 @@ public class LastRemaindersOfThePandemic extends Game {
 	private  Control control;
 
 	public void create () {
-    accumulator = 0;
-		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		gameCamera = new OrthographicCamera();
-		preferences = new AppPreferences();
-		batch = new SpriteBatch();
-		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
-		viewport = new ExtendViewport(1280, 720, gameCamera);
-		setScreen(ScreenType.MENU);
-		b2dDebugRenderer = new Box2DDebugRenderer();
 
+		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		batch = new SpriteBatch();
+
+		accumulator = 0;
 		Box2D.init();
 		world = new World(new Vector2(0, 0.0f), true);
-
-    	worldContactListener = new WorldContactListener();
+		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
+		b2dDebugRenderer = new Box2DDebugRenderer();
 
-		//Gdx.input.setInputProcessor();
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
 
+		gameCamera = new OrthographicCamera();
+		viewport = new ExtendViewport(1280, 720, gameCamera);
+		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
+		setScreen(ScreenType.MENU);
+		preferences = new AppPreferences();
+
+
+
 
 		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280,720), batch);
-
 	}
 
 	public World getWorld() {
@@ -134,6 +136,9 @@ public class LastRemaindersOfThePandemic extends Game {
 	}
 
 
+	public SpriteBatch getSpriteBatch() {
+		return this.batch;
+	}
 	//AssetManager getter
 	public AssetManager getAssetManager() {
 		return this.assetManager;
