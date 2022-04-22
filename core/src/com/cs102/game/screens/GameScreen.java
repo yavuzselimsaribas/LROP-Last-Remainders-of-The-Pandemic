@@ -17,7 +17,8 @@ public class GameScreen extends AbstractScreen{
     private final FixtureDef fixtureDef;
     private final Body player;
 
-    private Body body;
+    private Body ground;
+    private Body Item;
     Control control;
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
@@ -51,8 +52,8 @@ public class GameScreen extends AbstractScreen{
         bodyDef.position.set(0,0);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.StaticBody;
-        body = world.createBody(bodyDef);
-        body.setUserData("GROUND");
+        ground = world.createBody(bodyDef);
+        ground.setUserData("GROUND");
 
         fixtureDef.isSensor = false;
         fixtureDef.restitution = 0;
@@ -62,15 +63,15 @@ public class GameScreen extends AbstractScreen{
         final ChainShape chainShape = new ChainShape();
         chainShape.createLoop( new float[] {30,30,30,690,1250,690,1250,30});
         fixtureDef.shape = chainShape;
-        body.createFixture(fixtureDef);
+        ground.createFixture(fixtureDef);
         chainShape.dispose();
 
         //create item
         bodyDef.position.set(800f, 500f);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        body = world.createBody(bodyDef);
-        body.setUserData("ITEM");
+        Item = world.createBody(bodyDef);
+        Item.setUserData("ITEM");
 
         fixtureDef.isSensor = true;
         fixtureDef.restitution = 0;
@@ -80,7 +81,7 @@ public class GameScreen extends AbstractScreen{
         CircleShape cShape = new CircleShape();
         cShape.setRadius(20f);
         fixtureDef.shape = cShape;
-        body.createFixture(fixtureDef);
+        Item.createFixture(fixtureDef);
         cShape.dispose();
         /*
         //create a circle
