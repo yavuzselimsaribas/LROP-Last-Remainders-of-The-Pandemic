@@ -57,8 +57,7 @@ public class HomePage extends AbstractScreen {
                                          }
         );
         addButton("About");
-        addButton("Quit").addListener(new ClickListener()
-                                      {
+        addButton("Quit").addListener(new ClickListener() {
                                           @Override
                                           public void clicked(InputEvent event, float x, float y) {
                                               Gdx.app.exit();
@@ -101,10 +100,12 @@ public class HomePage extends AbstractScreen {
     @Override
     public void hide() {
 
-    }
+}
 
     @Override
     public void dispose() {
+        stage.dispose();
+    }
 
     }
-}
+

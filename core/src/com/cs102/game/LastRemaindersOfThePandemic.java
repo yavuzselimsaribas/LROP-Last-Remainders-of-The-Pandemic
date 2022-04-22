@@ -11,6 +11,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
@@ -28,10 +30,18 @@ public class LastRemaindersOfThePandemic extends Game {
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
+	private Stage stage;
+	private SpriteBatch batch;
 
+	// Yavuz add AppPreferences
+	private AppPreferences preferences;
+
+	//public static final short BIT_CIRCLE = 1 << 0;
+	//public static final short BIT_BOX = 1 << 1;
+	public static final float UNIT_SCALE = 1 / 16f;
 	public static final short BIT_PLAYER = 1 << 0;
-	public static final short BIT_ROOM = 1 << 1;
-
+	public static final short BIT_GROUND = 1 << 1;
+	public static final short BIT_ITEM = 1 << 2;
 	private Box2DDebugRenderer b2dDebugRenderer;
 	private static final float FIXED_TIME_STEP = 1 / 60f;
 	private float accumulator;
@@ -39,24 +49,36 @@ public class LastRemaindersOfThePandemic extends Game {
 	private WorldContactListener worldContactListener;
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
+
+	private  Control control;
+
 	public void create () {
+
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		batch = new SpriteBatch();
+
 		accumulator = 0;
-		gameCamera = new OrthographicCamera();
-		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
-		viewport = new ExtendViewport(1280, 720, gameCamera);
-		setScreen(ScreenType.MENU);
-		b2dDebugRenderer = new Box2DDebugRenderer();
-
 		Box2D.init();
-
-		world = new World(new Vector2(0, 0), true);
+		world = new World(new Vector2(0, 0.f), true);
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
+		b2dDebugRenderer = new Box2DDebugRenderer();
+
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
 
+		gameCamera = new OrthographicCamera();
+		viewport = new ExtendViewport(1280, 720, gameCamera);
+		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
+		setScreen(ScreenType.MENU);
+		preferences = new AppPreferences();
+
+
+
+
+		//Yavuz initialize the stage
+		stage = new Stage(new FitViewport(1280,720), batch);
 	}
 
 	public World getWorld() {
@@ -70,15 +92,18 @@ public class LastRemaindersOfThePandemic extends Game {
 	public Viewport getViewport() {
 		return this.viewport;
 	}
+	@Override
 	public void render () {
 		super.render();
-		accumulator += Math.min(0.25f, Gdx.graphics.getRawDeltaTime());
-		while(accumulator >= FIXED_TIME_STEP) {
-			world.step(FIXED_TIME_STEP, 6, 2);
+
+		accumulator += Math.min(0.25f, Gdx.graphics.getDeltaTime());
+		while (accumulator >= FIXED_TIME_STEP) {
+			world.step(FIXED_TIME_STEP, 6,2);
 			accumulator -= FIXED_TIME_STEP;
 		}
 
-		//final float ALPHA = accumulator / FIXED_TIME_STEP;
+		//final float alpha = accumulator / FIXED_TIME_STEP;
+
 	}
 
 	//Yavuz Set screen method
@@ -107,6 +132,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		super.dispose();
 		b2dDebugRenderer.dispose();
 		world.dispose();
+		assetManager.dispose();
+	}
+
+
+	public SpriteBatch getSpriteBatch() {
+		return this.batch;
 	}
 	//AssetManager getter
 	public AssetManager getAssetManager() {
@@ -116,6 +147,22 @@ public class LastRemaindersOfThePandemic extends Game {
 	public OrthographicCamera getGameCamera() {
 		return this.gameCamera;
 
+	}
+
+	//get preferences
+	public AppPreferences getPreferences() {
+		return this.preferences;
+	}
+
+  //Deniz added additionally
+	public WorldContactListener getWorldContactListener() {
+		return this.worldContactListener;
+	}
+  
+	//Deniz added additionally
+	//getter of skin and stage
+	public Stage getStage() {
+		return this.stage;
 	}
 
 }
