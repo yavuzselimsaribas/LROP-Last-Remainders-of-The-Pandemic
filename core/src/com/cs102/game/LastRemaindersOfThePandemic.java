@@ -11,6 +11,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
@@ -28,6 +30,8 @@ public class LastRemaindersOfThePandemic extends Game {
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
+	private Stage stage;
+	private SpriteBatch batch;
 
 	// Yavuz add AppPreferences
 	private AppPreferences preferences;
@@ -52,6 +56,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		gameCamera = new OrthographicCamera();
 		preferences = new AppPreferences();
+		batch = new SpriteBatch();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		viewport = new ExtendViewport(1280, 720, gameCamera);
 		setScreen(ScreenType.MENU);
@@ -67,6 +72,11 @@ public class LastRemaindersOfThePandemic extends Game {
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
+
+
+		//Yavuz initialize the stage
+		stage = new Stage(new FitViewport(1280,720), batch);
+
 	}
 
 	public World getWorld() {
@@ -139,10 +149,15 @@ public class LastRemaindersOfThePandemic extends Game {
 		return this.preferences;
 	}
 
-	//Deniz added additionally
+  //Deniz added additionally
 	public WorldContactListener getWorldContactListener() {
 		return this.worldContactListener;
 	}
+  
 	//Deniz added additionally
+	//getter of skin and stage
+	public Stage getStage() {
+		return this.stage;
+	}
 
 }
