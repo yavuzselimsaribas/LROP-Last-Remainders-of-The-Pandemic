@@ -105,6 +105,8 @@ public class HomePage extends AbstractScreen {
 
     @Override
     public void dispose() {
+        stage.dispose();
+    }
 
     }
-}
+
