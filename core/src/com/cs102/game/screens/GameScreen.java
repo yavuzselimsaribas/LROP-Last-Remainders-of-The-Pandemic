@@ -22,7 +22,7 @@ public class GameScreen extends AbstractScreen{
     //Deniz
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
-    private final Body player;
+    private Body player;
     //private Body ground;
     //private Body Item;
     Control control;
@@ -47,27 +47,17 @@ public class GameScreen extends AbstractScreen{
         control = new Control(1280, 720, mainGame.getGameCamera());
         Gdx.input.setInputProcessor(control);
 
+        final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
+        mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
+        map = new Map(tiledMap);
+
+
         bodyDef = new BodyDef();
         fixtureDef = new FixtureDef();
 
         //create player
-        bodyDef.position.set(8f, 3);
-        bodyDef.gravityScale = 1;
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        player = world.createBody(bodyDef);
-        player.setUserData("PLAYER");
 
-        fixtureDef.isSensor = false;
-        fixtureDef.density = 0;
-        fixtureDef.restitution = 0;
-        fixtureDef.friction = 0.2f;
-        fixtureDef.filter.categoryBits = BIT_PLAYER;
-        fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
-        PolygonShape pShape = new PolygonShape();
-        pShape.setAsBox(0.5f, 0.5f);
-        fixtureDef.shape = pShape;
-        player.createFixture(fixtureDef);
-        pShape.dispose();
+
 
 
 
@@ -164,11 +154,26 @@ public class GameScreen extends AbstractScreen{
         pShape.dispose();
          */
 
-        final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
-        mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
-        map = new Map(tiledMap);
 
         spawnCollisionAreas();
+        spawnPlayer();
+    }
+
+    private void spawnPlayer() {
+        resetBodiesAndFixtureDefinition();
+
+        bodyDef.position.set(map.getPlayerStartLocation());
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        player = world.createBody(bodyDef);
+        player.setUserData("PLAYER");
+
+        fixtureDef.filter.categoryBits = BIT_PLAYER;
+        fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
+        PolygonShape pShape = new PolygonShape();
+        pShape.setAsBox(0.5f, 0.5f);
+        fixtureDef.shape = pShape;
+        player.createFixture(fixtureDef);
+        pShape.dispose();
     }
 
     private void resetBodiesAndFixtureDefinition() {

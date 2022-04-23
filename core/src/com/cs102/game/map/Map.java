@@ -10,23 +10,50 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Polyline;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+
+import static com.cs102.game.LastRemaindersOfThePandemic.UNIT_SCALE;
 
 public class Map {
     public static  final  String TAG = Map.class.getSimpleName();
     private final TiledMap tiledMap;
     private final Array<CollisionArea> collisionAreas;
+    private final Vector2 playerStartLocation;
 
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
         collisionAreas = new Array<>();
+
         parseCollisionLayer();
+        playerStartLocation = new Vector2();
+        parsePlayerStartLocation();
+    }
+
+    private void parsePlayerStartLocation() {
+        final MapLayer startLocationLayer = tiledMap.getLayers().get("playerStartLocation");
+        if (startLocationLayer == null) {
+            Gdx.app.debug(TAG, "There is no start location layer");
+            return;
+        }
+
+        final MapObjects objects =  startLocationLayer.getObjects();
+        for (final MapObject mapObj : objects) {
+            if (mapObj instanceof RectangleMapObject) {
+                final RectangleMapObject rectangleMapObject = (RectangleMapObject) mapObj;
+                playerStartLocation.set(rectangleMapObject.getRectangle().x * UNIT_SCALE, rectangleMapObject.getRectangle().y * UNIT_SCALE);
+            }
+        }
     }
 
     public Array<CollisionArea> getCollisionAreas() {
         return collisionAreas;
     }
 
+    //Deniz added
+    public Vector2 getPlayerStartLocation() {
+        return playerStartLocation;
+    }
     private void parseCollisionLayer() {
         final MapLayer collisionLayer = tiledMap.getLayers().get("collision");
         if (collisionLayer == null) {
