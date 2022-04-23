@@ -165,4 +165,25 @@ public class LastRemaindersOfThePandemic extends Game {
 		return this.stage;
 	}
 
+
+
+
+	// game include basement map and three other neigbouring maps
+	// Maps have isUnlocked boolean value
+	// Basement map is unlocked by default
+	// other maps are locked by default
+	// when player reach the map, map is unlocked
+	//  if map is unlocked, player can go to that map
+	// check map is unlocked or not
+	// if map is unlocked, setScreen(map)
+	// if map is locked, pop up a dialog box
+
+	// update setScreen method
+	// if map is unlocked, setScreen(map)
+	// if map is locked, pop up a dialog box
+
+
+
+
+
 }

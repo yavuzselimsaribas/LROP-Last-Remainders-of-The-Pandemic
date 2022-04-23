@@ -2,7 +2,7 @@ package com.cs102.game.screens;
 
 import com.badlogic.gdx.Screen;
 
-public enum ScreenType {
+public enum ScreenType{
     GAME(GameScreen.class),
     MENU(HomePage.class),
     LOADING(LoadingScreen.class),
