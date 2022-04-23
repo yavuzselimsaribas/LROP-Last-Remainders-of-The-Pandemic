@@ -23,6 +23,7 @@ import com.cs102.game.screens.HomePage;
 import com.cs102.game.screens.ScreenType;
 
 import java.util.EnumMap;
+import java.util.HashMap;
 
 public class LastRemaindersOfThePandemic extends Game {
 	//initialize the ortographic camera
@@ -133,6 +134,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		b2dDebugRenderer.dispose();
 		world.dispose();
 		assetManager.dispose();
+		batch.dispose();
 	}
 
 
@@ -162,7 +164,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	//Deniz added additionally
 	//getter of skin and stage
 	public Stage getStage() {
+
 		return this.stage;
 	}
-
 }
