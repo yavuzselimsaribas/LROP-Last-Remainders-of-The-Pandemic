@@ -33,9 +33,9 @@ public class GameScreen extends AbstractScreen{
     private final Map map;
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-
         viewport.setWorldHeight(9);
         viewport.setWorldWidth(16);
+
 
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
