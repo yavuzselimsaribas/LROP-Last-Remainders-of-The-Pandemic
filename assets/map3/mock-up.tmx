@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="40">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="42">
  <tileset firstgid="1" source="lab3.tsx"/>
  <tileset firstgid="3601" source="lab.tsx"/>
  <layer id="1" name="background" width="64" height="64">
@@ -211,9 +211,10 @@
    <polyline points="0,0 -63.0932,-0.668639 -64.0947,111.328 160.571,112.331 161.572,-0.668639 33.3826,-0.668639"/>
   </object>
   <object id="35" x="16.3333" y="959.667" width="31" height="48"/>
+  <object id="40" x="160.333" y="912.333" width="63" height="30.3333"/>
  </objectgroup>
  <objectgroup id="11" name="playerStartLocation">
-  <object id="39" x="223" y="932">
+  <object id="41" x="96" y="901.333">
    <point/>
   </object>
  </objectgroup>

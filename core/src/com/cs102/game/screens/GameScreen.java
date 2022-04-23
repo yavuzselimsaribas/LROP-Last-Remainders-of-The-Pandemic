@@ -23,7 +23,7 @@ public class GameScreen extends AbstractScreen{
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
     private Body player;
-    //private Body ground;
+    private Body ground;
     //private Body Item;
     Control control;
     private final AssetManager assetManager;
@@ -158,16 +158,6 @@ public class GameScreen extends AbstractScreen{
         spawnCollisionAreas();
         spawnPlayer();
     }
-    private void spawnCollisionAreas() {
-        for(final CollisionArea collisionArea : map.getCollisionAreas()) {
-            resetBodyAndFixtureDef();
-            //create room
-            bodyDef.position.set(collisionArea.getX(), collisionArea.getY());
-            bodyDef.fixedRotation =  true;
-            bodyDef.type = BodyDef.BodyType.StaticBody;
-            ground = world.createBody(bodyDef);
-            ground.setUserData("GROUND");
-
     private void spawnPlayer() {
         resetBodiesAndFixtureDefinition();
 
