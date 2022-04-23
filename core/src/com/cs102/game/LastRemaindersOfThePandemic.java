@@ -24,7 +24,7 @@ import com.cs102.game.screens.ScreenType;
 
 import java.util.EnumMap;
 
-public class LastRemaindersOfThePandemic extends Game {
+public class 	LastRemaindersOfThePandemic extends Game {
 	//initialize the ortographic camera
 	public OrthographicCamera gameCamera;
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
@@ -59,7 +59,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		accumulator = 0;
 		Box2D.init();
-		world = new World(new Vector2(0, 0.f), true);
+		world = new World(new Vector2(0, 0), true);
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
 		b2dDebugRenderer = new Box2DDebugRenderer();
@@ -125,8 +125,6 @@ public class LastRemaindersOfThePandemic extends Game {
 			super.setScreen(screen);
 		}
 	}
-
-  
 	@Override
 	public void dispose() {
 		super.dispose();
@@ -134,8 +132,6 @@ public class LastRemaindersOfThePandemic extends Game {
 		world.dispose();
 		assetManager.dispose();
 	}
-
-
 	public SpriteBatch getSpriteBatch() {
 		return this.batch;
 	}
@@ -148,7 +144,6 @@ public class LastRemaindersOfThePandemic extends Game {
 		return this.gameCamera;
 
 	}
-
 	//get preferences
 	public AppPreferences getPreferences() {
 		return this.preferences;
@@ -164,5 +159,4 @@ public class LastRemaindersOfThePandemic extends Game {
 	public Stage getStage() {
 		return this.stage;
 	}
-
 }
