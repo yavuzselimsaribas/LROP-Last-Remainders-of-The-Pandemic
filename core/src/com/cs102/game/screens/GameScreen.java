@@ -12,8 +12,8 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
 import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
-import com.cs102.game.maps.CollisionArea;
-import com.cs102.game.maps.Map;
+import com.cs102.game.map.CollisionArea;
+import com.cs102.game.map.Map;
 //import com.sun.tools.javac.jvm.Code;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
@@ -22,20 +22,20 @@ public class GameScreen extends AbstractScreen{
     //Deniz
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
-    private final Body player;
-    private Body ground;
-    private Body Item;
+    private Body player;
+    //private Body ground;
+    //private Body Item;
     Control control;
     private final AssetManager assetManager;
     private final OrthogonalTiledMapRenderer mapRenderer;
     private final OrthographicCamera gameCamera;
     private final GLProfiler profiler;
-    private Map map;
+    private final Map map;
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-
         viewport.setWorldHeight(9);
         viewport.setWorldWidth(16);
+
 
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
@@ -47,35 +47,116 @@ public class GameScreen extends AbstractScreen{
         control = new Control(1280, 720, mainGame.getGameCamera());
         Gdx.input.setInputProcessor(control);
 
+        final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
+        mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
+        map = new Map(tiledMap);
+
+
         bodyDef = new BodyDef();
         fixtureDef = new FixtureDef();
 
         //create player
-        bodyDef.position.set(8f, 3);
+
+
+
+
+
+        /*
+        //create item
+        bodyDef.position.set(13, 6);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        player = world.createBody(bodyDef);
-        player.setUserData("PLAYER");
+        Item = world.createBody(bodyDef);
+        Item.setUserData("ITEM");
+
+        fixtureDef.isSensor = true;
+        fixtureDef.restitution = 0;
+        fixtureDef.friction  =0.2f;
+        fixtureDef.filter.categoryBits = BIT_ITEM;
+        fixtureDef.filter.maskBits = BIT_PLAYER;
+        CircleShape cShape = new CircleShape();
+        cShape.setRadius(0.5f);
+        fixtureDef.shape = cShape;
+        Item.createFixture(fixtureDef);
+        cShape.dispose();
+
+         */
+        /*
+        //create a circle
+        bodyDef = new BodyDef();
+        fixtureDef = new FixtureDef();
+
+        bodyDef.position.set(690, 600);
+        bodyDef.gravityScale = 1;
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        Body body = world.createBody(bodyDef);
+        body.setUserData("CIRCLE");
 
         fixtureDef.isSensor = false;
-        fixtureDef.density = 1;
+        fixtureDef.restitution = 1f;
+        fixtureDef.friction = 0.2f;
+        fixtureDef.filter.categoryBits = BIT_CIRCLE;
+        fixtureDef.filter.maskBits = BIT_GROUND;
+        CircleShape cShape = new CircleShape();
+        cShape.setRadius(30f);
+        fixtureDef.shape = cShape;
+        body.createFixture(fixtureDef);
+        cShape.dispose();
+
+
+        fixtureDef.isSensor = true;
         fixtureDef.restitution = 0;
         fixtureDef.friction = 0.2f;
-        fixtureDef.filter.categoryBits = BIT_PLAYER;
-        fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
+        fixtureDef.filter.categoryBits = BIT_CIRCLE;
+        fixtureDef.filter.maskBits = BIT_BOX;
+        PolygonShape polygonShape = new PolygonShape();
+        polygonShape.setAsBox(30f, 30f);
+        fixtureDef.shape = polygonShape;
+        body.createFixture(fixtureDef);
+        polygonShape.dispose();
+
+
+
+        //create a box
+        bodyDef.position.set(690f, 600f);
+        bodyDef.gravityScale = 1;
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        body = world.createBody(bodyDef);
+        body.setUserData("BOX");
+
+        fixtureDef.isSensor = false;
+        fixtureDef.restitution = 0.1f;
+        fixtureDef.friction = 0.2f;
+        fixtureDef.filter.categoryBits = BIT_BOX;
+        fixtureDef.filter.maskBits = BIT_GROUND | BIT_CIRCLE;
         PolygonShape pShape = new PolygonShape();
-        pShape.setAsBox(0.5f, 0.5f);
+        pShape.setAsBox(30f, 30f);
         fixtureDef.shape = pShape;
-        player.createFixture(fixtureDef);
+        body.createFixture(fixtureDef);
         pShape.dispose();
 
-        final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
-        mapRenderer.setMap(tiledMap);
-        map = new Map(tiledMap);
-        spawnCollisionAreas();
-    }
-    private void resetBodyAndFixtureDef() {
+        //create a platform
+        bodyDef.position.set(690f, 20f);
+        bodyDef.gravityScale = 1;
+        bodyDef.type = BodyDef.BodyType.StaticBody;
+        body = world.createBody(bodyDef);
+        body.setUserData("PLATFORM");
 
+        fixtureDef.isSensor = false;
+        fixtureDef.restitution = 0.5f;
+        fixtureDef.friction = 0.2f;
+        fixtureDef.filter.categoryBits = BIT_GROUND;
+        fixtureDef.filter.maskBits = -1;
+        pShape = new PolygonShape();
+        pShape.setAsBox(200f, 20f);
+        fixtureDef.shape = pShape;
+        body.createFixture(fixtureDef);
+        pShape.dispose();
+         */
+
+
+        spawnCollisionAreas();
+        spawnPlayer();
     }
     private void spawnCollisionAreas() {
         for(final CollisionArea collisionArea : map.getCollisionAreas()) {
@@ -87,15 +168,58 @@ public class GameScreen extends AbstractScreen{
             ground = world.createBody(bodyDef);
             ground.setUserData("GROUND");
 
+    private void spawnPlayer() {
+        resetBodiesAndFixtureDefinition();
+
+        bodyDef.position.set(map.getPlayerStartLocation());
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        player = world.createBody(bodyDef);
+        player.setUserData("PLAYER");
+
+        fixtureDef.filter.categoryBits = BIT_PLAYER;
+        fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
+        PolygonShape pShape = new PolygonShape();
+        pShape.setAsBox(0.5f, 0.5f);
+        fixtureDef.shape = pShape;
+        player.createFixture(fixtureDef);
+        pShape.dispose();
+    }
+
+    private void resetBodiesAndFixtureDefinition() {
+        bodyDef.position.set(0,0);
+        bodyDef.gravityScale = 1;
+        bodyDef.type = BodyDef.BodyType.StaticBody;
+        bodyDef.fixedRotation = false;
+
+        fixtureDef.density = 0;
+        fixtureDef.isSensor = false;
+        fixtureDef.restitution = 0;
+        fixtureDef.friction = 0.2f;
+        fixtureDef.filter.categoryBits = 0x0001;
+        fixtureDef.filter.maskBits = -1;
+        fixtureDef.shape = null;
+    }
+
+    private void spawnCollisionAreas() {
+        for (final CollisionArea collisionArea : map.getCollisionAreas()) {
+            resetBodiesAndFixtureDefinition();
+
+            //create room
+            bodyDef.position.set(collisionArea.getX(), collisionArea.getY());
+            bodyDef.fixedRotation = true;
+            final Body body = world.createBody(bodyDef);
+            body.setUserData("GROUND");
+
             fixtureDef.filter.categoryBits = BIT_GROUND;
             fixtureDef.filter.maskBits = -1;
             final ChainShape chainShape = new ChainShape();
             chainShape.createChain(collisionArea.getVertices());
             fixtureDef.shape = chainShape;
-            ground.createFixture(fixtureDef);
+            body.createFixture(fixtureDef);
             chainShape.dispose();
         }
     }
+
     @Override
     public void show() {
 
@@ -143,9 +267,7 @@ public class GameScreen extends AbstractScreen{
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
         b2DDebugRenderer.render(world, viewport.getCamera().combined);
-        Gdx.app.debug("RenderInfo", "Bindings: " + profiler.getTextureBindings());
-        Gdx.app.debug("RenderInfo", "Drawcalls: " + profiler.getDrawCalls());
-        profiler.reset();
+
     }
 
     @Override

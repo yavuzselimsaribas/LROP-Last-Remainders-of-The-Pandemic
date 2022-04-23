@@ -21,7 +21,7 @@ public class AbstractScreen implements Screen {
         viewport = mainGame.getViewport();
         this.world = mainGame.getWorld();
         this.b2DDebugRenderer = mainGame.getB2dDebugRenderer();
-        stage = new Stage(new ExtendViewport(1280, 720));
+        stage = new Stage(new FitViewport(1280, 720));
     }
 
 
