@@ -57,10 +57,6 @@ public class GameScreen extends AbstractScreen{
 
         //create player
 
-
-
-
-
         /*
         //create item
         bodyDef.position.set(13, 6);
