@@ -82,7 +82,6 @@ public class LastRemaindersOfThePandemic extends Game {
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
-
 	}
 
 	public World getWorld() {

@@ -51,7 +51,7 @@ public class GameScreen extends AbstractScreen {
         Gdx.input.setInputProcessor(control);
 
         final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
-        mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
+        mapRenderer.setMap(tiledMap);
         map = new Map(tiledMap);
 
 
