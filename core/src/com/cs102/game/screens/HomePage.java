@@ -19,72 +19,18 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.ui.HomePageUI;
 
-public class HomePage extends AbstractScreen {
-    private Stage stage;
-    final private Skin skin;
-    private Table homeScreenTable;
-
-
+public class HomePage extends AbstractScreen<HomePageUI> {
     public HomePage(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-        skin = new Skin(Gdx.files.internal("assets/uiskin.json"));
-    }
-
-
-    @Override
-    public void show() {
-        //viewport = new ExtendViewport(1280, 720);
-        stage = new Stage(viewport);
-        homeScreenTable = new Table();
-        homeScreenTable.setFillParent(true);
-        stage.addActor(homeScreenTable);
-        Gdx.input.setInputProcessor(stage);
-        addButton("Play").addListener(new ChangeListener() {
-                                          @Override
-                                          public void changed(ChangeEvent event, Actor actor) {
-                                              mainGame.setScreen(ScreenType.LOADING);
-                                              dispose();
-                                          }
-                                      }
-        );
-        addButton("Options").addListener(new ChangeListener() {
-                                             @Override
-                                             public void changed(ChangeEvent event, Actor actor) {
-                                                 mainGame.setScreen(ScreenType.OPTIONS);
-                                                 dispose();
-                                             }
-                                         }
-        );
-        addButton("About");
-        addButton("Quit").addListener(new ClickListener() {
-                                          @Override
-                                          public void clicked(InputEvent event, float x, float y) {
-                                              Gdx.app.exit();
-                                          }
-                                      }
-        );
-    }
-
-    private TextButton addButton(String text) {
-        TextButton button = new TextButton(text, skin);
-        homeScreenTable.add(button).width(200).height(50).pad(10);
-        homeScreenTable.row();
-        return button;
     }
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
-        stage.act(Gdx.graphics.getDeltaTime());
-        stage.draw();
-
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        viewport.update(width, height);
+        super.render(delta);
+        Gdx.gl.glClearColor(1, 0, 0, 0);
+        Gdx.gl.glClear(16384);
     }
 
     @Override
@@ -98,13 +44,8 @@ public class HomePage extends AbstractScreen {
     }
 
     @Override
-    public void hide() {
-
-}
-
-    @Override
-    public void dispose() {
-        stage.dispose();
+    protected HomePageUI getScreenUI(LastRemaindersOfThePandemic mainGame) {
+        return new HomePageUI(mainGame);
     }
 
     }

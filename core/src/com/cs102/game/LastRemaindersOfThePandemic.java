@@ -2,9 +2,13 @@ package com.cs102.game;
 
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.SkinLoader;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
@@ -14,6 +18,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxRuntimeException;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -26,6 +31,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 
 public class LastRemaindersOfThePandemic extends Game {
+	private Skin skin;
 	//initialize the ortographic camera
 	public OrthographicCamera gameCamera;
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
@@ -54,7 +60,6 @@ public class LastRemaindersOfThePandemic extends Game {
 	private  Control control;
 
 	public void create () {
-
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
 
@@ -68,9 +73,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
+		skinInitializer();
+		//Yavuz initialize the stage
+		stage = new Stage(new FitViewport(1280,720), batch);
 
 		gameCamera = new OrthographicCamera();
-		viewport = new ExtendViewport(1280, 720, gameCamera);
+		viewport = new FitViewport(1280, 720, gameCamera);
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
@@ -78,8 +86,8 @@ public class LastRemaindersOfThePandemic extends Game {
 
 
 
-		//Yavuz initialize the stage
-		stage = new Stage(new FitViewport(1280,720), batch);
+
+
 	}
 
 	public World getWorld() {
@@ -104,6 +112,10 @@ public class LastRemaindersOfThePandemic extends Game {
 		}
 
 		//final float alpha = accumulator / FIXED_TIME_STEP;
+		stage.getViewport().apply();
+		stage.act();
+		stage.draw();
+
 
 	}
 
@@ -135,6 +147,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		world.dispose();
 		assetManager.dispose();
 		batch.dispose();
+		stage.dispose();
 	}
 
 
@@ -164,8 +177,32 @@ public class LastRemaindersOfThePandemic extends Game {
 	//Deniz added additionally
 	//getter of skin and stage
 	public Stage getStage() {
-
 		return this.stage;
+	}
+	public Skin getSkin() {
+		return this.skin;
+	}
+
+	public void skinInitializer(){
+		final ObjectMap<String, Object> resources = new ObjectMap<String, Object>();
+		// generate tff bitmap font
+		final FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("assets/ui/SaucerBB.ttf"));
+		final FreeTypeFontGenerator.FreeTypeFontParameter fontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+		fontParameter.minFilter = Texture.TextureFilter.Linear;
+		fontParameter.magFilter = Texture.TextureFilter.Linear;
+		final int[] sizes = {16,20,26,32};
+		for(int size : sizes){
+			fontParameter.size = size;
+			fontGenerator.generateFont(fontParameter);
+			resources.put("font_"+size, fontGenerator.generateFont(fontParameter));
+		}
+		fontGenerator.dispose();
+		// LOAD SKIN
+		final SkinLoader.SkinParameter skinParameter = new SkinLoader.SkinParameter("assets/uiskin.atlas",resources);
+		assetManager.load("assets/uiskin.json", Skin.class, skinParameter);
+		assetManager.finishLoading();
+		skin = assetManager.get("assets/uiskin.json");
+
 	}
 
 	// game include basement map and three other neigbouring maps
