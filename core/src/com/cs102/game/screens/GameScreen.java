@@ -30,10 +30,6 @@ public class GameScreen extends AbstractScreen {
     private final GLProfiler profiler;
     private final Map map;
 
-    private boolean directionChanged;
-    private int xFactor;
-    private int yFactor;
-
 
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
@@ -158,9 +154,6 @@ public class GameScreen extends AbstractScreen {
     }
 
 
-
-
-
     private void spawnCollisionAreas() {
         final BodyDef bodyDef = new BodyDef();
         final FixtureDef fixtureDef = new FixtureDef();
@@ -190,7 +183,7 @@ public class GameScreen extends AbstractScreen {
 
         //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
+
         viewport.apply(true);
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
@@ -237,54 +230,18 @@ public class GameScreen extends AbstractScreen {
 
     @Override
     public void keyPressed(InputManager manager, GameKeys keys) {
-        switch (keys) {
-            case LEFT:
-                directionChanged = true;
-                xFactor = -1;
-                break;
-            case RIGHT:
-                directionChanged = true;
-                xFactor = 1;
-                break;
-            case UP:
-                directionChanged = true;
-                yFactor = 1;
-                break;
-            case DOWN:
-                directionChanged = true;
-                yFactor = -1;
-                break;
-            default:
-                return;
-
+        if (keys == GameKeys.BACK) {
+            mainGame.setScreen(ScreenType.MENU);
         }
-
     }
+
 
     @Override
     public void keyUp(InputManager manager, GameKeys keys) {
-        switch (keys) {
-            case LEFT:
-                directionChanged = true;
-                xFactor = manager.isPressed(GameKeys.RIGHT) ? 1 : 0;
-                break;
-            case RIGHT:
-                directionChanged = true;
-                xFactor = manager.isPressed(GameKeys.LEFT) ? -1 : 0;
-                break;
-            case UP:
-                directionChanged = true;
-                yFactor = manager.isPressed(GameKeys.DOWN) ? -1 : 0;
-                break;
-            case DOWN:
-                directionChanged = true;
-                yFactor = manager.isPressed(GameKeys.UP) ? 1 : 0;
-                break;
-            default:
-                break;
+        //input handling is done with ECS engine
+    }
+}
 
-        }
-    }
-    }
+
 
 
