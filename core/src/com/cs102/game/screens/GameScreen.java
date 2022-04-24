@@ -8,12 +8,10 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.input.GameKeys;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.map.CollisionArea;
 import com.cs102.game.map.Map;
 import com.cs102.game.ui.GameUI;
@@ -26,12 +24,15 @@ public class GameScreen extends AbstractScreen {
     //Deniz
     //private Body ground;
     //private Body Item;
-    Control control;
     private final AssetManager assetManager;
     private final OrthogonalTiledMapRenderer mapRenderer;
     private final OrthographicCamera gameCamera;
     private final GLProfiler profiler;
     private final Map map;
+
+    private boolean directionChanged;
+    private int xFactor;
+    private int yFactor;
 
 
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
@@ -186,6 +187,7 @@ public class GameScreen extends AbstractScreen {
 
     @Override
     public void render(float delta) {
+
         //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
@@ -225,7 +227,7 @@ public class GameScreen extends AbstractScreen {
 
     //@Override
     protected GameUI getScreenUI(final LastRemaindersOfThePandemic mainGame) {
-        return new GameUI(mainGame.getSkin());
+        return new GameUI(mainGame);
     }
 
     @Override
@@ -233,5 +235,56 @@ public class GameScreen extends AbstractScreen {
         mapRenderer.dispose();
     }
 
-}
+    @Override
+    public void keyPressed(InputManager manager, GameKeys keys) {
+        switch (keys) {
+            case LEFT:
+                directionChanged = true;
+                xFactor = -1;
+                break;
+            case RIGHT:
+                directionChanged = true;
+                xFactor = 1;
+                break;
+            case UP:
+                directionChanged = true;
+                yFactor = 1;
+                break;
+            case DOWN:
+                directionChanged = true;
+                yFactor = -1;
+                break;
+            default:
+                return;
+
+        }
+
+    }
+
+    @Override
+    public void keyUp(InputManager manager, GameKeys keys) {
+        switch (keys) {
+            case LEFT:
+                directionChanged = true;
+                xFactor = manager.isPressed(GameKeys.RIGHT) ? 1 : 0;
+                break;
+            case RIGHT:
+                directionChanged = true;
+                xFactor = manager.isPressed(GameKeys.LEFT) ? -1 : 0;
+                break;
+            case UP:
+                directionChanged = true;
+                yFactor = manager.isPressed(GameKeys.DOWN) ? -1 : 0;
+                break;
+            case DOWN:
+                directionChanged = true;
+                yFactor = manager.isPressed(GameKeys.UP) ? 1 : 0;
+                break;
+            default:
+                break;
+
+        }
+    }
+    }
+
 

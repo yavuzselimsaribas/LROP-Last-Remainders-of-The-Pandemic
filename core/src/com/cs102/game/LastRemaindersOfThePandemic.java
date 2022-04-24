@@ -26,6 +26,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.screens.HomePage;
 import com.cs102.game.screens.ScreenType;
 
@@ -60,9 +61,12 @@ public class LastRemaindersOfThePandemic extends Game {
 	private AssetManager assetManager;
 
 	private ECSEngine ecsEngine;
+
+	private InputManager inputManager;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
+
 
 		accumulator = 0;
 		Box2D.init();
@@ -77,6 +81,10 @@ public class LastRemaindersOfThePandemic extends Game {
 		skinInitializer();
 		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280,720), batch);
+		//input manager
+		inputManager = new InputManager();
+		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager,stage));
+
 
 		ecsEngine = new ECSEngine(this);
 
@@ -209,6 +217,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		skin = assetManager.get("assets/uiskin.json");
 
 	}
+
+	//input manager getter
+	public InputManager getInputManager() {
+		return this.inputManager;
+	}
+
 
 	// game include basement map and three other neigbouring maps
 	// Maps have isUnlocked boolean value
