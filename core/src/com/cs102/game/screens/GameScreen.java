@@ -1,5 +1,6 @@
 package com.cs102.game.screens;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -10,10 +11,15 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.map.CollisionArea;
 import com.cs102.game.map.Map;
+import com.cs102.game.ui.GameUI;
+import com.cs102.game.ui.LoadingUI;
 //import com.sun.tools.javac.jvm.Code;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
@@ -56,10 +62,6 @@ public class GameScreen extends AbstractScreen{
         fixtureDef = new FixtureDef();
 
         //create player
-
-
-
-
 
         /*
         //create item
@@ -209,12 +211,6 @@ public class GameScreen extends AbstractScreen{
             chainShape.dispose();
         }
     }
-
-    @Override
-    public void show() {
-
-    }
-
     @Override
     public void render(float delta) {
         //Gdx.gl.glClearColor(0,0,0,1);
@@ -261,11 +257,6 @@ public class GameScreen extends AbstractScreen{
     }
 
     @Override
-    public void resize(int width, int height) {
-
-    }
-
-    @Override
     public void pause() {
 
     }
@@ -275,9 +266,9 @@ public class GameScreen extends AbstractScreen{
 
     }
 
-    @Override
-    public void hide() {
-
+    //@Override
+    protected GameUI getScreenUI(final LastRemaindersOfThePandemic mainGame) {
+       return new GameUI(mainGame.getSkin());
     }
 
     @Override
