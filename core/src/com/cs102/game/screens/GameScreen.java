@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.map.CollisionArea;
 import com.cs102.game.map.Map;
 import com.cs102.game.ui.GameUI;
@@ -23,9 +24,6 @@ import static com.cs102.game.LastRemaindersOfThePandemic.*;
 
 public class GameScreen extends AbstractScreen {
     //Deniz
-    private final BodyDef bodyDef;
-    private final FixtureDef fixtureDef;
-    private Body player;
     //private Body ground;
     //private Body Item;
     Control control;
@@ -35,10 +33,11 @@ public class GameScreen extends AbstractScreen {
     private final GLProfiler profiler;
     private final Map map;
 
+
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-        viewport.setWorldHeight(9);
-        viewport.setWorldWidth(16);
+        viewport.setWorldHeight(18);
+        viewport.setWorldWidth(32);
 
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
@@ -47,16 +46,15 @@ public class GameScreen extends AbstractScreen {
         profiler = new GLProfiler(Gdx.graphics);
         profiler.enable();
 
+        /*
         control = new Control(1280, 720, mainGame.getGameCamera());
         Gdx.input.setInputProcessor(control);
+         */
 
         final TiledMap tiledMap = assetManager.get("map3/mock-up.tmx", TiledMap.class);
         mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
         map = new Map(tiledMap);
 
-
-        bodyDef = new BodyDef();
-        fixtureDef = new FixtureDef();
 
         //create player
 
@@ -155,44 +153,19 @@ public class GameScreen extends AbstractScreen {
 
 
         spawnCollisionAreas();
-        spawnPlayer();
+        mainGame.getEcsEngine().createPlayer(map.getPlayerStartLocation(), 1, 2);
     }
 
-    private void spawnPlayer() {
-        resetBodiesAndFixtureDefinition();
 
-        bodyDef.position.set(map.getPlayerStartLocation());
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        player = world.createBody(bodyDef);
-        player.setUserData("PLAYER");
 
-        fixtureDef.filter.categoryBits = BIT_PLAYER;
-        fixtureDef.filter.maskBits = BIT_GROUND | BIT_ITEM;
-        PolygonShape pShape = new PolygonShape();
-        pShape.setAsBox(0.5f, 0.5f);
-        fixtureDef.shape = pShape;
-        player.createFixture(fixtureDef);
-        pShape.dispose();
-    }
 
-    private void resetBodiesAndFixtureDefinition() {
-        bodyDef.position.set(0, 0);
-        bodyDef.gravityScale = 1;
-        bodyDef.type = BodyDef.BodyType.StaticBody;
-        bodyDef.fixedRotation = false;
-
-        fixtureDef.density = 0;
-        fixtureDef.isSensor = false;
-        fixtureDef.restitution = 0;
-        fixtureDef.friction = 0.2f;
-        fixtureDef.filter.categoryBits = 0x0001;
-        fixtureDef.filter.maskBits = -1;
-        fixtureDef.shape = null;
-    }
 
     private void spawnCollisionAreas() {
+        final BodyDef bodyDef = new BodyDef();
+        final FixtureDef fixtureDef = new FixtureDef();
+
         for (final CollisionArea collisionArea : map.getCollisionAreas()) {
-            resetBodiesAndFixtureDefinition();
+
 
             //create room
             bodyDef.position.set(collisionArea.getX(), collisionArea.getY());
@@ -210,44 +183,12 @@ public class GameScreen extends AbstractScreen {
         }
     }
 
+
     @Override
     public void render(float delta) {
         //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        final float speed = 5;
-        final float speedX;
-        final float speedY;
-
-        if (control.V) {
-            save();
-        }
-
-        if (control.left) {
-            speedX = -1 * speed;
-        } else if (control.right) {
-            speedX = speed;
-        } else {
-            speedX = 0;
-        }
-
-        if (control.down) {
-            speedY = -1 * speed;
-        } else if (control.up) {
-            speedY = speed;
-        } else {
-            speedY = 0;
-        }
-
-
-        player.applyLinearImpulse(
-                (speedX - player.getLinearVelocity().x) * player.getMass(),
-                (speedY - player.getLinearVelocity().y) * player.getMass(),
-                player.getWorldCenter().x,
-                player.getWorldCenter().y,
-                true
-        );
-
+        
         viewport.apply(true);
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
@@ -255,6 +196,8 @@ public class GameScreen extends AbstractScreen {
 
     }
 
+
+    /*
     public void save() {
         float x = mainGame.getPreferences().getPrefs().getFloat("x");
         x = player.getPosition().x;
@@ -267,6 +210,8 @@ public class GameScreen extends AbstractScreen {
 
         mainGame.getPreferences().getPrefs().flush();
     }
+
+     */
 
     @Override
     public void pause() {
