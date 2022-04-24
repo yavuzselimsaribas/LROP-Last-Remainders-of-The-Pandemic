@@ -1,6 +1,7 @@
 package com.cs102.game.map;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.MapObject;
@@ -21,29 +22,36 @@ public class Map {
     private final Array<CollisionArea> collisionAreas;
     private final Vector2 playerStartLocation;
 
+    Preferences pref = Gdx.app.getPreferences("b2dtut");
+
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
         collisionAreas = new Array<>();
 
         parseCollisionLayer();
-        playerStartLocation = new Vector2();
-        parsePlayerStartLocation();
+        playerStartLocation = parsePlayerStartLocation();
     }
 
-    private void parsePlayerStartLocation() {
-        final MapLayer startLocationLayer = tiledMap.getLayers().get("playerStartLocation");
-        if (startLocationLayer == null) {
-            Gdx.app.debug(TAG, "There is no start location layer");
-            return;
-        }
-
-        final MapObjects objects =  startLocationLayer.getObjects();
-        for (final MapObject mapObj : objects) {
-            if (mapObj instanceof RectangleMapObject) {
-                final RectangleMapObject rectangleMapObject = (RectangleMapObject) mapObj;
-                playerStartLocation.set(rectangleMapObject.getRectangle().x * UNIT_SCALE, rectangleMapObject.getRectangle().y * UNIT_SCALE);
+    private Vector2 parsePlayerStartLocation() {
+        float x = 0;
+        float y = 0;
+        if (!pref.contains("x") || !pref.contains("y")) {
+            final MapLayer startLocationLayer = tiledMap.getLayers().get("playerStartLocation");
+            final MapObjects objects =  startLocationLayer.getObjects();
+            for (final MapObject mapObj : objects) {
+                if (mapObj instanceof RectangleMapObject) {
+                    final RectangleMapObject rectangleMapObject = (RectangleMapObject) mapObj;
+                    x = rectangleMapObject.getRectangle().x * UNIT_SCALE;
+                    y =  rectangleMapObject.getRectangle().y * UNIT_SCALE;
+                }
             }
         }
+        else {
+            x = pref.getFloat("x");
+            y = pref.getFloat("y");
+        }
+
+        return new Vector2(x, y);
     }
 
     public Array<CollisionArea> getCollisionAreas() {
