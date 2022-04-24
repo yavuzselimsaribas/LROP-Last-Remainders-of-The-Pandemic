@@ -21,6 +21,7 @@ public class Control extends InputAdapter implements InputProcessor{
     public boolean collect;
     //Deniz added additionally
     public boolean esc;
+    public boolean V;
 
     public boolean LMB;
     public boolean RMB;
@@ -57,6 +58,9 @@ public class Control extends InputAdapter implements InputProcessor{
         }
         //Deniz added additionally
         switch (keycode) {
+            case Keys.V:
+                V = true;
+                break;
             case Keys.E:
                 collect = true;
                 break;
@@ -85,6 +89,9 @@ public class Control extends InputAdapter implements InputProcessor{
         //Deniz added additionally
         //Deniz added additionally
         switch (keycode) {
+            case Keys.V:
+                V = false;
+                break;
             case Keys.E:
                 collect = false;
                 break;
