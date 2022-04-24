@@ -1,9 +1,6 @@
 package com.cs102.game.screens;
 
-import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -24,7 +21,7 @@ import com.cs102.game.ui.LoadingUI;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
 
-public class GameScreen extends AbstractScreen{
+public class GameScreen extends AbstractScreen {
     //Deniz
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
@@ -37,11 +34,11 @@ public class GameScreen extends AbstractScreen{
     private final OrthographicCamera gameCamera;
     private final GLProfiler profiler;
     private final Map map;
+
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
         viewport.setWorldHeight(9);
         viewport.setWorldWidth(16);
-
 
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
@@ -178,7 +175,7 @@ public class GameScreen extends AbstractScreen{
     }
 
     private void resetBodiesAndFixtureDefinition() {
-        bodyDef.position.set(0,0);
+        bodyDef.position.set(0, 0);
         bodyDef.gravityScale = 1;
         bodyDef.type = BodyDef.BodyType.StaticBody;
         bodyDef.fixedRotation = false;
@@ -211,6 +208,7 @@ public class GameScreen extends AbstractScreen{
             chainShape.dispose();
         }
     }
+
     @Override
     public void render(float delta) {
         //Gdx.gl.glClearColor(0,0,0,1);
@@ -220,23 +218,23 @@ public class GameScreen extends AbstractScreen{
         final float speedX;
         final float speedY;
 
+        if (control.V) {
+            save();
+        }
+
         if (control.left) {
             speedX = -1 * speed;
-        }
-        else if (control.right) {
+        } else if (control.right) {
             speedX = speed;
-        }
-        else {
+        } else {
             speedX = 0;
         }
 
         if (control.down) {
             speedY = -1 * speed;
-        }
-        else if (control.up) {
+        } else if (control.up) {
             speedY = speed;
-        }
-        else {
+        } else {
             speedY = 0;
         }
 
@@ -256,6 +254,19 @@ public class GameScreen extends AbstractScreen{
 
     }
 
+    public void save() {
+        float x = mainGame.getPreferences().getPrefs().getFloat("x");
+        x = player.getPosition().x;
+
+        float y = mainGame.getPreferences().getPrefs().getFloat("y");
+        y = player.getPosition().y;
+
+        mainGame.getPreferences().getPrefs().putFloat("x", x);
+        mainGame.getPreferences().getPrefs().putFloat("y", y);
+
+        mainGame.getPreferences().getPrefs().flush();
+    }
+
     @Override
     public void pause() {
 
@@ -268,12 +279,13 @@ public class GameScreen extends AbstractScreen{
 
     //@Override
     protected GameUI getScreenUI(final LastRemaindersOfThePandemic mainGame) {
-       return new GameUI(mainGame.getSkin());
+        return new GameUI(mainGame.getSkin());
     }
 
     @Override
     public void dispose() {
         mapRenderer.dispose();
     }
+
 }
 

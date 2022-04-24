@@ -1,5 +1,5 @@
 {
-BitmapFont: { default-font: { file: default.fnt } },
+
 Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
 	white: { a: 1, b: 1, g: 1, r: 1 },
@@ -15,17 +15,17 @@ ButtonStyle: {
 	toggle: { down: default-round-down, checked: default-round-down, up: default-round }
 },
 TextButtonStyle: {
-	default: { down: default-round-down, up: default-round, font: default-font, fontColor: white },
-	toggle: { down: default-round-down, up: default-round, checked: default-round-down, font: default-font, fontColor: white, downFontColor: red }
+	default: { down: default-round-down, up: default-round, font: "font_20", fontColor: white },
+	toggle: { down: default-round-down, up: default-round, checked: default-round-down, font: "font_20", fontColor: white, downFontColor: red }
 },
 ScrollPaneStyle: {
 	default: { vScroll: default-scroll, hScrollKnob: default-round-large, background: default-rect, hScroll: default-scroll, vScrollKnob: default-round-large }
 },
 SelectBoxStyle: {
 	default: {
-		font: default-font, fontColor: white, background: default-select,
+		font: "font_20", fontColor: white, background: default-select,
 		scrollStyle: default,
-		listStyle: { font: default-font, selection: default-select-selection }
+		listStyle: { font: "font_20", selection: default-select-selection }
 	}
 },
 SplitPaneStyle: {
@@ -33,23 +33,23 @@ SplitPaneStyle: {
 	default-horizontal: { handle: default-splitpane }
 },
 WindowStyle: {
-	default: { titleFont: default-font, background: default-window, titleFontColor: white },
-	dialog: { titleFont: default-font, background: default-window, titleFontColor: white, stageBackground: dialogDim }
+	default: { titleFont: "font_20", background: default-window, titleFontColor: white },
+	dialog: { titleFont: "font_20", background: default-window, titleFontColor: white, stageBackground: dialogDim }
 },
 SliderStyle: {
 	default-horizontal: { background: default-slider, knob: default-slider-knob }
 },
 LabelStyle: {
-	default: { font: default-font, fontColor: white }
+	default: { font: "font_20", fontColor: white }
 },
 TextFieldStyle: {
-	default: { selection: selection, background: textfield, font: default-font, fontColor: white, cursor: cursor }
+	default: { selection: selection, background: textfield, font: "font_20", fontColor: white, cursor: cursor }
 },
 CheckBoxStyle: {
-	default: { checkboxOn: check-on, checkboxOff: check-off, font: default-font, fontColor: white }
+	default: { checkboxOn: check-on, checkboxOff: check-off, font: "font_20", fontColor: white }
 },
 ListStyle: {
-	default: { fontColorUnselected: white, selection: selection, fontColorSelected: white, font: default-font }
+	default: { fontColorUnselected: white, selection: selection, fontColorSelected: white, font: "font_20" }
 },
 TouchpadStyle: {
 	default: { background: default-pane, knob: default-round-large }
