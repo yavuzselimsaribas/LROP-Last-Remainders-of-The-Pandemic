@@ -83,11 +83,6 @@ public class LastRemaindersOfThePandemic extends Game {
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
 
-
-
-
-
-
 	}
 
 	public World getWorld() {
