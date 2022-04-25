@@ -4,12 +4,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.audio.AudioManager;
+import com.cs102.game.audio.AudioType;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputListener;
 import com.cs102.game.input.InputManager;
@@ -22,6 +26,8 @@ import java.nio.file.LinkOption;
 public class LoadingScreen extends AbstractScreen<LoadingUI> {
     private AssetManager assetManager;
 
+    private boolean isMusicLoaded;
+
     public LoadingScreen(LastRemaindersOfThePandemic game) {
         super(game);
         assetManager = game.getAssetManager();
@@ -29,7 +35,11 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
         assetManager.load("map3/mock-up.tmx", TiledMap.class);
         //assetManager.load("default.fnt", BitmapFont.class);
-
+        //load audios
+        isMusicLoaded = false;
+        for(final AudioType audioType: AudioType.values()){
+            assetManager.load(audioType.getFilePath(), audioType.isMusic()? Music.class: Sound.class);
+        }
         //Gdx.input.setInputProcessor(game.getInputManager());
     }
 
@@ -41,10 +51,24 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         System.out.println("LoadingScreen: " + assetManager.getProgress());
         // assetManager updated && any key pressed
         assetManager.update();
+        if(assetManager.isLoaded(AudioType.INTRO.getFilePath()) && !isMusicLoaded){
+            isMusicLoaded = true;
+            audioManager.playAudio(AudioType.INTRO);
+        }
         screenUI.setProgress(assetManager.getProgress());
 
     }
 
+    @Override
+    public void show() {
+        super.show();
+    }
+    // override hide
+    @Override
+    public void hide() {
+        super.hide();
+        audioManager.stopCurrentMusic();
+    }
     @Override
     public void pause() {
 
@@ -62,6 +86,7 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
 
     @Override
     public void keyPressed(InputManager manager, GameKeys keys) {
+        audioManager.playAudio(AudioType.SELECT);
         if(assetManager.getProgress()>=1){
             mainGame.setScreen(ScreenType.GAME);
         }

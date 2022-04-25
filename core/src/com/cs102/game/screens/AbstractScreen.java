@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.audio.AudioManager;
 import com.cs102.game.input.InputListener;
 import com.cs102.game.input.InputManager;
 
@@ -24,6 +25,8 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
     protected final T screenUI;
     protected final InputManager inputManager;
 
+    protected final AudioManager audioManager;
+
 
     public AbstractScreen( final LastRemaindersOfThePandemic mainGame) {
         this.mainGame = mainGame;
@@ -35,6 +38,7 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
         screenUI = getScreenUI(mainGame);
 
         Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
+        audioManager = mainGame.getAudioManager();
     }
 
     @Override
