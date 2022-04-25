@@ -3,6 +3,7 @@ package com.cs102.game.ui;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -27,7 +28,7 @@ public class HomePageUI extends Table {
         setFillParent(true);
         this.mainGame = game;
 
-        Gdx.input.setInputProcessor(mainGame.getStage());
+        Gdx.input.setInputProcessor(new InputMultiplexer(mainGame.getInputManager(), mainGame.getStage()));
         playButton = new TextButton("Play", game.getSkin());
         playButton.getLabel().setWrap(true);
         settingsButton = new TextButton("Settings", game.getSkin());

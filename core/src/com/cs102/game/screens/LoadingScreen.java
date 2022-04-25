@@ -19,7 +19,7 @@ import com.cs102.game.ui.LoadingUI;
 import java.awt.*;
 import java.nio.file.LinkOption;
 
-public class LoadingScreen extends AbstractScreen<LoadingUI>  {
+public class LoadingScreen extends AbstractScreen<LoadingUI> {
     private AssetManager assetManager;
 
     public LoadingScreen(LastRemaindersOfThePandemic game) {
@@ -29,6 +29,8 @@ public class LoadingScreen extends AbstractScreen<LoadingUI>  {
         //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
         assetManager.load("map3/mock-up.tmx", TiledMap.class);
         //assetManager.load("default.fnt", BitmapFont.class);
+
+        //Gdx.input.setInputProcessor(game.getInputManager());
     }
 
 

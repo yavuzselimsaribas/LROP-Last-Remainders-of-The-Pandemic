@@ -31,6 +31,13 @@ public class LoadingUI extends Table {
                 game.getInputManager().onKeyDown(GameKeys.SELECT);
                 return true;
             }
+        });
+        pressToPlay.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                game.getInputManager().onKeyDown(GameKeys.SELECT);
+                return true;
+            }
                                 }
         );
         add(pressToPlay).expand().fill().center().row();

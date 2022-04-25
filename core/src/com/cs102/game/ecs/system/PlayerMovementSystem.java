@@ -4,7 +4,6 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
-import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.components.B2DComponent;

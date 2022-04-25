@@ -10,6 +10,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.ecs.system.PlayerMovementSystem;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.CollisionArea;
@@ -52,7 +53,7 @@ public class GameScreen extends AbstractScreen {
         mapRenderer.setMap(assetManager.get("map3/mock-up.tmx", TiledMap.class));
         map = new Map(tiledMap);
 
-
+        //Gdx.input.setInputProcessor(mainGame.getInputManager());
         //create player
 
         /*
@@ -184,11 +185,11 @@ public class GameScreen extends AbstractScreen {
         //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+
         viewport.apply(true);
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
         b2DDebugRenderer.render(world, viewport.getCamera().combined);
-
     }
 
 
