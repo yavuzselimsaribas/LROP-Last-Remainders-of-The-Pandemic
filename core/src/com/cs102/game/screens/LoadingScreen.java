@@ -10,13 +10,16 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.input.GameKeys;
+import com.cs102.game.input.InputListener;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.ui.GameUI;
 import com.cs102.game.ui.LoadingUI;
 
 import java.awt.*;
 import java.nio.file.LinkOption;
 
-public class LoadingScreen extends AbstractScreen<LoadingUI> {
+public class LoadingScreen extends AbstractScreen<LoadingUI>  {
     private AssetManager assetManager;
 
     public LoadingScreen(LastRemaindersOfThePandemic game) {
@@ -35,9 +38,8 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         Gdx.gl.glClear(16384);
         System.out.println("LoadingScreen: " + assetManager.getProgress());
         // assetManager updated && any key pressed
-        if (assetManager.update() && Gdx.input.isKeyPressed(Input.Keys.ANY_KEY)) {
-            mainGame.setScreen(ScreenType.GAME);
-        }
+        assetManager.update();
+        screenUI.setProgress(assetManager.getProgress());
 
     }
 
@@ -56,4 +58,15 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         return new LoadingUI(game);
     }
 
+    @Override
+    public void keyPressed(InputManager manager, GameKeys keys) {
+        if(assetManager.getProgress()>=1){
+            mainGame.setScreen(ScreenType.GAME);
+        }
+    }
+
+    @Override
+    public void keyUp(InputManager manager, GameKeys keys) {
+
+    }
 }

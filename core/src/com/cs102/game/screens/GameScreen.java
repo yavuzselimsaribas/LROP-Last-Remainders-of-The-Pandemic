@@ -8,12 +8,10 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.cs102.game.Control;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.input.GameKeys;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.map.CollisionArea;
 import com.cs102.game.map.Map;
 import com.cs102.game.ui.GameUI;
@@ -26,7 +24,6 @@ public class GameScreen extends AbstractScreen {
     //Deniz
     //private Body ground;
     //private Body Item;
-    Control control;
     private final AssetManager assetManager;
     private final OrthogonalTiledMapRenderer mapRenderer;
     private final OrthographicCamera gameCamera;
@@ -157,9 +154,6 @@ public class GameScreen extends AbstractScreen {
     }
 
 
-
-
-
     private void spawnCollisionAreas() {
         final BodyDef bodyDef = new BodyDef();
         final FixtureDef fixtureDef = new FixtureDef();
@@ -186,9 +180,10 @@ public class GameScreen extends AbstractScreen {
 
     @Override
     public void render(float delta) {
+
         //Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
+
         viewport.apply(true);
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
@@ -225,7 +220,7 @@ public class GameScreen extends AbstractScreen {
 
     //@Override
     protected GameUI getScreenUI(final LastRemaindersOfThePandemic mainGame) {
-        return new GameUI(mainGame.getSkin());
+        return new GameUI(mainGame);
     }
 
     @Override
@@ -233,5 +228,20 @@ public class GameScreen extends AbstractScreen {
         mapRenderer.dispose();
     }
 
+    @Override
+    public void keyPressed(InputManager manager, GameKeys keys) {
+        if (keys == GameKeys.BACK) {
+            mainGame.setScreen(ScreenType.MENU);
+        }
+    }
+
+
+    @Override
+    public void keyUp(InputManager manager, GameKeys keys) {
+        //input handling is done with ECS engine
+    }
 }
+
+
+
 

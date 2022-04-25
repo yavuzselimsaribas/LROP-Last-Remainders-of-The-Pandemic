@@ -50,6 +50,10 @@ public class ECSEngine extends PooledEngine {
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         final Entity player = this.createEntity();
 
+        final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);
+        playerComponent.speed.set(3,3);
+        player.add(playerComponent);
+
         resetBodiesAndFixtureDefinition();
 
         final B2DComponent b2DComponent = this.createComponent(B2DComponent.class);

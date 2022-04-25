@@ -19,6 +19,8 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.input.GameKeys;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.ui.HomePageUI;
 
 public class HomePage extends AbstractScreen<HomePageUI> {
@@ -48,5 +50,14 @@ public class HomePage extends AbstractScreen<HomePageUI> {
         return new HomePageUI(mainGame);
     }
 
+    @Override
+    public void keyPressed(InputManager manager, GameKeys keys) {
+
     }
+
+    @Override
+    public void keyUp(InputManager manager, GameKeys keys) {
+
+    }
+}
 
