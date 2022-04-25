@@ -81,13 +81,13 @@ public class LastRemaindersOfThePandemic extends Game {
 		skinInitializer();
 		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280,720), batch);
+
 		//input manager
 		inputManager = new InputManager();
-		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager,stage));
+		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
 
 
 		ecsEngine = new ECSEngine(this);
-
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);

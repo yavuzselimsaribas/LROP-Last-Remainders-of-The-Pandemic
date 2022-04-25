@@ -1,5 +1,7 @@
 package com.cs102.game.screens;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
@@ -31,6 +33,8 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
         inputManager = mainGame.getInputManager();
         stage = mainGame.getStage();
         screenUI = getScreenUI(mainGame);
+
+        Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
     }
 
     @Override
