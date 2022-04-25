@@ -10,6 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.input.GameKeys;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.ui.SettingsScreenUI;
 
 public class SettingsScreen extends AbstractScreen {
@@ -45,4 +47,13 @@ public class SettingsScreen extends AbstractScreen {
     }
 
 
+    @Override
+    public void keyPressed(InputManager manager, GameKeys keys) {
+
+    }
+
+    @Override
+    public void keyUp(InputManager manager, GameKeys keys) {
+
+    }
 }

@@ -24,6 +24,10 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.cs102.game.audio.AudioManager;
+import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.ecs.system.PlayerMovementSystem;
+import com.cs102.game.input.InputManager;
 import com.cs102.game.screens.HomePage;
 import com.cs102.game.screens.ScreenType;
 
@@ -57,11 +61,16 @@ public class LastRemaindersOfThePandemic extends Game {
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
 
-	private  Control control;
+	private AudioManager audioManager;
 
+	private ECSEngine ecsEngine;
+
+	private InputManager inputManager;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
+
+
 
 		accumulator = 0;
 		Box2D.init();
@@ -77,11 +86,27 @@ public class LastRemaindersOfThePandemic extends Game {
 		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280,720), batch);
 
+		audioManager = new AudioManager(this);
+
+		//input manager
+		inputManager = new InputManager();
+		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
+
+
+		ecsEngine = new ECSEngine(this);
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
+
+
+
+	}
+
+	// getter of audioManager
+	public AudioManager getAudioManager() {
+		return audioManager;
 	}
 
 	public World getWorld() {
@@ -95,10 +120,15 @@ public class LastRemaindersOfThePandemic extends Game {
 	public Viewport getViewport() {
 		return this.viewport;
 	}
+
+	public ECSEngine getEcsEngine() {
+		return this.ecsEngine;
+	}
 	@Override
 	public void render () {
 		super.render();
 
+		ecsEngine.update(Gdx.graphics.getDeltaTime());
 		accumulator += Math.min(0.25f, Gdx.graphics.getDeltaTime());
 		while (accumulator >= FIXED_TIME_STEP) {
 			world.step(FIXED_TIME_STEP, 6,2);
@@ -193,6 +223,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		skin = assetManager.get("assets/uiskin.json");
 
 	}
+
+	//input manager getter
+	public InputManager getInputManager() {
+		return this.inputManager;
+	}
+
 
 	// game include basement map and three other neigbouring maps
 	// Maps have isUnlocked boolean value

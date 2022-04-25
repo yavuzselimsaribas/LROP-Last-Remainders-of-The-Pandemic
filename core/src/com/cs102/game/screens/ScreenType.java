@@ -8,6 +8,7 @@ public enum ScreenType{
     LOADING(LoadingScreen.class),
     OPTIONS(SettingsScreen.class);
 
+
     private Class<? extends Screen> screenClass;
 
     ScreenType(Class<? extends Screen> screenClass) {
