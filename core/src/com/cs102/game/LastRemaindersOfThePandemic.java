@@ -93,9 +93,13 @@ public class LastRemaindersOfThePandemic extends Game {
 		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
 
 
-		ecsEngine = new ECSEngine(this);
+
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
+
+		ecsEngine = new ECSEngine(this);
+
+
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
