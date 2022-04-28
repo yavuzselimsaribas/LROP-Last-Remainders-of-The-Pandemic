@@ -24,6 +24,7 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.cs102.game.audio.AudioManager;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
 import com.cs102.game.input.InputManager;
@@ -60,12 +61,15 @@ public class LastRemaindersOfThePandemic extends Game {
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
 
+	private AudioManager audioManager;
+
 	private ECSEngine ecsEngine;
 
 	private InputManager inputManager;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
+
 
 
 		accumulator = 0;
@@ -82,20 +86,31 @@ public class LastRemaindersOfThePandemic extends Game {
 		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280,720), batch);
 
+		audioManager = new AudioManager(this);
+
 		//input manager
 		inputManager = new InputManager();
 		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
 
 
-		ecsEngine = new ECSEngine(this);
+
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
+
+		ecsEngine = new ECSEngine(this);
+
+
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
 
 
 
+	}
+
+	// getter of audioManager
+	public AudioManager getAudioManager() {
+		return audioManager;
 	}
 
 	public World getWorld() {

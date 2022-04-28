@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.ecs.components.PlayerComponent;
+import com.cs102.game.ecs.system.PlayerCameraSystem;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
@@ -30,6 +31,7 @@ public class ECSEngine extends PooledEngine {
         fixtureDef = new FixtureDef();
 
         this.addSystem(new PlayerMovementSystem(mainGame));
+        this.addSystem(new PlayerCameraSystem(mainGame));
     }
 
     private void resetBodiesAndFixtureDefinition() {

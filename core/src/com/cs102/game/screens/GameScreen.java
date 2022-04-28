@@ -34,8 +34,8 @@ public class GameScreen extends AbstractScreen {
 
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-        viewport.setWorldHeight(18);
-        viewport.setWorldWidth(32);
+        viewport.setWorldHeight(9);
+        viewport.setWorldWidth(16);
 
         assetManager = mainGame.getAssetManager();
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
@@ -186,7 +186,7 @@ public class GameScreen extends AbstractScreen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
-        viewport.apply(true);
+        viewport.apply(false);
         mapRenderer.setView(gameCamera);
         mapRenderer.render();
         b2DDebugRenderer.render(world, viewport.getCamera().combined);
