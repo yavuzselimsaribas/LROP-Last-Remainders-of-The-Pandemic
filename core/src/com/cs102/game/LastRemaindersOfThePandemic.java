@@ -12,9 +12,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2D;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -28,6 +26,7 @@ import com.cs102.game.audio.AudioManager;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
 import com.cs102.game.input.InputManager;
+import com.cs102.game.map.MapManager;
 import com.cs102.game.screens.HomePage;
 import com.cs102.game.screens.ScreenType;
 
@@ -47,12 +46,14 @@ public class LastRemaindersOfThePandemic extends Game {
 	// Yavuz add AppPreferences
 	private AppPreferences preferences;
 
-	//public static final short BIT_CIRCLE = 1 << 0;
-	//public static final short BIT_BOX = 1 << 1;
+
+	public static final BodyDef BODY_DEF = new BodyDef();
+	public static final FixtureDef FIXTURE_DEF = new FixtureDef();
 	public static final float UNIT_SCALE = 1 / 16f;
 	public static final short BIT_PLAYER = 1 << 0;
 	public static final short BIT_GROUND = 1 << 1;
-	public static final short BIT_ITEM = 1 << 2;
+
+
 	private Box2DDebugRenderer b2dDebugRenderer;
 	private static final float FIXED_TIME_STEP = 1 / 60f;
 	private float accumulator;
@@ -66,11 +67,10 @@ public class LastRemaindersOfThePandemic extends Game {
 	private ECSEngine ecsEngine;
 
 	private InputManager inputManager;
+	private MapManager mapManeger;
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
-
-
 
 		accumulator = 0;
 		Box2D.init();
@@ -92,10 +92,10 @@ public class LastRemaindersOfThePandemic extends Game {
 		inputManager = new InputManager();
 		Gdx.input.setInputProcessor(new InputMultiplexer(inputManager, stage));
 
-
-
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
+
+		mapManeger = new MapManager(this);
 
 		ecsEngine = new ECSEngine(this);
 
@@ -103,9 +103,6 @@ public class LastRemaindersOfThePandemic extends Game {
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		preferences = new AppPreferences();
-
-
-
 	}
 
 	// getter of audioManager
@@ -236,6 +233,25 @@ public class LastRemaindersOfThePandemic extends Game {
 	//input manager getter
 	public InputManager getInputManager() {
 		return this.inputManager;
+	}
+
+	public static void resetBodiesAndFixtureDefinition() {
+		BODY_DEF.position.set(0, 0);
+		BODY_DEF.gravityScale = 1;
+		BODY_DEF.type = BodyDef.BodyType.StaticBody;
+		BODY_DEF.fixedRotation = false;
+
+		FIXTURE_DEF.density = 0;
+		FIXTURE_DEF.isSensor = false;
+		FIXTURE_DEF.restitution = 0;
+		FIXTURE_DEF.friction = 0.2f;
+		FIXTURE_DEF.filter.categoryBits = 0x0001;
+		FIXTURE_DEF.filter.maskBits = -1;
+		FIXTURE_DEF.shape = null;
+	}
+
+	public MapManager getMapManeger() {
+		return this.mapManeger;
 	}
 
 

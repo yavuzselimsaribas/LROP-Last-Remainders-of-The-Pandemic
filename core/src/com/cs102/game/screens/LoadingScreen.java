@@ -17,6 +17,8 @@ import com.cs102.game.audio.AudioType;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputListener;
 import com.cs102.game.input.InputManager;
+import com.cs102.game.map.MapManager;
+import com.cs102.game.map.MapType;
 import com.cs102.game.ui.GameUI;
 import com.cs102.game.ui.LoadingUI;
 
@@ -33,7 +35,7 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         assetManager = game.getAssetManager();
 
         //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
-        assetManager.load("map3/mock-up.tmx", TiledMap.class);
+        assetManager.load(MapType.MAP_1.getFilePath(), TiledMap.class);
         //assetManager.load("default.fnt", BitmapFont.class);
         //load audios
         isMusicLoaded = false;
@@ -86,8 +88,8 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
 
     @Override
     public void keyPressed(InputManager manager, GameKeys keys) {
-        audioManager.playAudio(AudioType.SELECT);
         if(assetManager.getProgress()>=1){
+            audioManager.playAudio(AudioType.SELECT);
             mainGame.setScreen(ScreenType.GAME);
         }
     }
