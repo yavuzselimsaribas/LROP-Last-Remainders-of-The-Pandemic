@@ -63,7 +63,7 @@ public class Map {
         return playerStartLocation;
     }
     private void parseCollisionLayer() {
-        final MapLayer collisionLayer = tiledMap.getLayers().get("collision");
+        MapLayer collisionLayer = tiledMap.getLayers().get("collision");
         if (collisionLayer == null) {
             Gdx.app.debug(TAG, "There is no collision layer!");
             return;

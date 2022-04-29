@@ -27,27 +27,14 @@ public class ECSEngine extends PooledEngine {
         super();
 
         world = mainGame.getWorld();
-        bodyDef = new BodyDef();
-        fixtureDef = new FixtureDef();
+        bodyDef = mainGame.BODY_DEF;
+        fixtureDef = mainGame.FIXTURE_DEF;
 
         this.addSystem(new PlayerMovementSystem(mainGame));
         this.addSystem(new PlayerCameraSystem(mainGame));
     }
 
-    private void resetBodiesAndFixtureDefinition() {
-        bodyDef.position.set(0, 0);
-        bodyDef.gravityScale = 1;
-        bodyDef.type = BodyDef.BodyType.StaticBody;
-        bodyDef.fixedRotation = false;
 
-        fixtureDef.density = 0;
-        fixtureDef.isSensor = false;
-        fixtureDef.restitution = 0;
-        fixtureDef.friction = 0.2f;
-        fixtureDef.filter.categoryBits = 0x0001;
-        fixtureDef.filter.maskBits = -1;
-        fixtureDef.shape = null;
-    }
 
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         final Entity player = this.createEntity();
@@ -56,7 +43,7 @@ public class ECSEngine extends PooledEngine {
         playerComponent.speed.set(3,3);
         player.add(playerComponent);
 
-        resetBodiesAndFixtureDefinition();
+        LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
 
         final B2DComponent b2DComponent = this.createComponent(B2DComponent.class);
         bodyDef.position.set(playerStartLocation.x, playerStartLocation.y + height*0.5f);
