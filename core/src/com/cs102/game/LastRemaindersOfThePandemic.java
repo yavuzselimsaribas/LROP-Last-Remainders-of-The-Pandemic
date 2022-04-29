@@ -129,8 +129,10 @@ public class LastRemaindersOfThePandemic extends Game {
 	public void render () {
 		super.render();
 
-		ecsEngine.update(Gdx.graphics.getDeltaTime());
-		accumulator += Math.min(0.25f, Gdx.graphics.getDeltaTime());
+		final float deltaTime = Math.min(0.25f, Gdx.graphics.getDeltaTime());
+		ecsEngine.update(deltaTime);
+
+		accumulator += deltaTime;
 		while (accumulator >= FIXED_TIME_STEP) {
 			world.step(FIXED_TIME_STEP, 6,2);
 			accumulator -= FIXED_TIME_STEP;
@@ -138,7 +140,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		//final float alpha = accumulator / FIXED_TIME_STEP;
 		stage.getViewport().apply();
-		stage.act();
+		stage.act(deltaTime);
 		stage.draw();
 
 
