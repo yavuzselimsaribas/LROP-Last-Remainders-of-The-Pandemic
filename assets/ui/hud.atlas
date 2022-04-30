@@ -1,0 +1,3233 @@
+
+hud.png
+size: 8192, 4096
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Arrows_0008_Package-----------------
+  rotate: false
+  xy: 1442, 386
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0009_Package-----------------
+  rotate: false
+  xy: 3202, 1880
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0010_Package-----------------
+  rotate: false
+  xy: 1828, 1072
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0011_Package-----------------
+  rotate: false
+  xy: 4098, 2534
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0012_Package-----------------
+  rotate: false
+  xy: 1924, 1072
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0013_Package-----------------
+  rotate: false
+  xy: 3394, 2006
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0014_Package-----------------
+  rotate: false
+  xy: 3394, 1924
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0015_Package-----------------
+  rotate: false
+  xy: 2938, 1732
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0016_Package-----------------
+  rotate: false
+  xy: 2038, 1204
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0017_Package-----------------
+  rotate: false
+  xy: 2020, 1072
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0018_Package-----------------
+  rotate: false
+  xy: 4412, 2662
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0019_Package-----------------
+  rotate: false
+  xy: 1536, 550
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0020_Package-----------------
+  rotate: false
+  xy: 1536, 468
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0021_Package-----------------
+  rotate: false
+  xy: 570, 200
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0022_Package-----------------
+  rotate: false
+  xy: 762, 200
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+Arrows_0023_Package-----------------
+  rotate: false
+  xy: 1440, 468
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+ButtonTextOnlyPNG
+  rotate: false
+  xy: 2878, 2666
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0000_Round-Rect--------------
+  rotate: false
+  xy: 3509, 2155
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0001_Round-Rect--------------
+  rotate: false
+  xy: 3742, 2434
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0002_Round-Rect--------------
+  rotate: false
+  xy: 1136, 198
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0003_Round-Rect--------------
+  rotate: false
+  xy: 5370, 3336
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0004_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2584
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0005_Round-Rect--------------
+  rotate: false
+  xy: 4526, 3222
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0006_Round-Rect--------------
+  rotate: false
+  xy: 1910, 1022
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0007_Round-Rect--------------
+  rotate: false
+  xy: 1070, 348
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0008_Round-Rect--------------
+  rotate: false
+  xy: 926, 298
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0009_Round-Rect--------------
+  rotate: false
+  xy: 1440, 864
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0010_Round-Rect--------------
+  rotate: false
+  xy: 7964, 3798
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0013_Round-Rect--------------
+  rotate: false
+  xy: 7964, 3798
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0011_Round-Rect--------------
+  rotate: false
+  xy: 1440, 632
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0012_Round-Rect--------------
+  rotate: false
+  xy: 2096, 1732
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0014_Round-Rect--------------
+  rotate: false
+  xy: 620, 166
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0015_Round-Rect--------------
+  rotate: false
+  xy: 4120, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0016_Round-Rect--------------
+  rotate: false
+  xy: 4114, 2484
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0017_Round-Rect--------------
+  rotate: false
+  xy: 2970, 1814
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0018_Round-Rect--------------
+  rotate: false
+  xy: 1440, 3526
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0019_Round-Rect--------------
+  rotate: false
+  xy: 2, 152
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0020_Round-Rect--------------
+  rotate: false
+  xy: 828, 282
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0021_Round-Rect--------------
+  rotate: false
+  xy: 1440, 814
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0022_Round-Rect--------------
+  rotate: false
+  xy: 1796, 1022
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0023_Round-Rect--------------
+  rotate: false
+  xy: 778, 332
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0024_Round-Rect--------------
+  rotate: false
+  xy: 4914, 3320
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0027_Round-Rect--------------
+  rotate: false
+  xy: 4914, 3320
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0025_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3518
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0026_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3222
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0028_Round-Rect--------------
+  rotate: false
+  xy: 1570, 653
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0029_Round-Rect--------------
+  rotate: false
+  xy: 3856, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0030_Round-Rect--------------
+  rotate: false
+  xy: 6208, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0031_Round-Rect--------------
+  rotate: false
+  xy: 4344, 2496
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0032_Round-Rect--------------
+  rotate: false
+  xy: 2096, 1798
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0033_Round-Rect--------------
+  rotate: false
+  xy: 2, 70
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0034_Round-Rect--------------
+  rotate: false
+  xy: 2040, 1154
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0035_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1336
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0036_Round-Rect--------------
+  rotate: false
+  xy: 1154, 298
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0037_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1436
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0038_Round-Rect--------------
+  rotate: false
+  xy: 2, 4
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0041_Round-Rect--------------
+  rotate: false
+  xy: 2, 4
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0039_Round-Rect--------------
+  rotate: false
+  xy: 4316, 2744
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0040_Round-Rect--------------
+  rotate: false
+  xy: 3088, 1962
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0042_Round-Rect--------------
+  rotate: false
+  xy: 8142, 3830
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0043_Round-Rect--------------
+  rotate: false
+  xy: 4242, 2632
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0044_Round-Rect--------------
+  rotate: false
+  xy: 1958, 1154
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0045_Round-Rect--------------
+  rotate: false
+  xy: 2388, 1600
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0046_Round-Rect--------------
+  rotate: false
+  xy: 1440, 1226
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0047_Round-Rect--------------
+  rotate: false
+  xy: 422, 316
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0048_Round-Rect--------------
+  rotate: false
+  xy: 5142, 3270
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0049_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1386
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0050_Round-Rect--------------
+  rotate: false
+  xy: 390, 200
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0051_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3008
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0052_Round-Rect--------------
+  rotate: false
+  xy: 2064, 1584
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0055_Round-Rect--------------
+  rotate: false
+  xy: 2064, 1584
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0053_Round-Rect--------------
+  rotate: false
+  xy: 1216, 398
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0054_Round-Rect--------------
+  rotate: false
+  xy: 4736, 3386
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0056_Round-Rect--------------
+  rotate: false
+  xy: 4549, 3010
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0057_Round-Rect--------------
+  rotate: false
+  xy: 3988, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0058_Round-Rect--------------
+  rotate: false
+  xy: 4276, 2562
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0059_Round-Rect--------------
+  rotate: false
+  xy: 3676, 2386
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0060_Round-Rect--------------
+  rotate: false
+  xy: 2, 382
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0061_Round-Rect--------------
+  rotate: false
+  xy: 1650, 3526
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0062_Round-Rect--------------
+  rotate: false
+  xy: 8094, 3698
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0063_Round-Rect--------------
+  rotate: false
+  xy: 5270, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0064_Round-Rect--------------
+  rotate: false
+  xy: 3088, 1912
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0065_Round-Rect--------------
+  rotate: false
+  xy: 3886, 2534
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0066_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3074
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0069_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3074
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0067_Round-Rect--------------
+  rotate: false
+  xy: 2808, 1748
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0068_Round-Rect--------------
+  rotate: false
+  xy: 422, 398
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0070_Round-Rect--------------
+  rotate: false
+  xy: 8015, 3653
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0071_Round-Rect--------------
+  rotate: false
+  xy: 4054, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0072_Round-Rect--------------
+  rotate: false
+  xy: 5880, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0073_Round-Rect--------------
+  rotate: false
+  xy: 5900, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0074_Round-Rect--------------
+  rotate: false
+  xy: 1650, 1226
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0075_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2370
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0076_Round-Rect--------------
+  rotate: false
+  xy: 940, 198
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0077_Round-Rect--------------
+  rotate: false
+  xy: 6146, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0078_Round-Rect--------------
+  rotate: false
+  xy: 2598, 1698
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0079_Round-Rect--------------
+  rotate: false
+  xy: 5124, 3386
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0080_Round-Rect--------------
+  rotate: false
+  xy: 3498, 2386
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0083_Round-Rect--------------
+  rotate: false
+  xy: 3498, 2386
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0081_Round-Rect--------------
+  rotate: false
+  xy: 4316, 2810
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsHoover_0082_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1650
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0000_Round-Rect--------------
+  rotate: false
+  xy: 1570, 687
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0001_Round-Rect--------------
+  rotate: false
+  xy: 4186, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0002_Round-Rect--------------
+  rotate: false
+  xy: 5962, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0003_Round-Rect--------------
+  rotate: false
+  xy: 6032, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0004_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1716
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0005_Round-Rect--------------
+  rotate: false
+  xy: 7996, 3930
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0006_Round-Rect--------------
+  rotate: false
+  xy: 1038, 198
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0007_Round-Rect--------------
+  rotate: false
+  xy: 2878, 1880
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0008_Round-Rect--------------
+  rotate: false
+  xy: 1216, 348
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0009_Round-Rect--------------
+  rotate: false
+  xy: 2694, 1814
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0010_Round-Rect--------------
+  rotate: false
+  xy: 390, 250
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0013_Round-Rect--------------
+  rotate: false
+  xy: 390, 250
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0011_Round-Rect--------------
+  rotate: false
+  xy: 180, 36
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0012_Round-Rect--------------
+  rotate: false
+  xy: 3530, 2600
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0014_Round-Rect--------------
+  rotate: false
+  xy: 3650, 2004
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0015_Round-Rect--------------
+  rotate: false
+  xy: 3856, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0016_Round-Rect--------------
+  rotate: false
+  xy: 5634, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0017_Round-Rect--------------
+  rotate: false
+  xy: 5306, 3270
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0018_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3288
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0019_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1568
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0020_Round-Rect--------------
+  rotate: false
+  xy: 940, 248
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0021_Round-Rect--------------
+  rotate: false
+  xy: 5708, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0022_Round-Rect--------------
+  rotate: false
+  xy: 5028, 3270
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0023_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2238
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0025_Round-Rect--------------
+  rotate: false
+  xy: 7964, 3732
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0026_Round-Rect--------------
+  rotate: false
+  xy: 1440, 3460
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0027_Round-Rect--------------
+  rotate: false
+  xy: 1650, 3460
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0024_Round-Rect--------------
+  rotate: false
+  xy: 1650, 3460
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0028_Round-Rect--------------
+  rotate: false
+  xy: 3555, 2041
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0029_Round-Rect--------------
+  rotate: false
+  xy: 3742, 2400
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0030_Round-Rect--------------
+  rotate: false
+  xy: 4308, 2612
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0031_Round-Rect--------------
+  rotate: false
+  xy: 5436, 3336
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0032_Round-Rect--------------
+  rotate: false
+  xy: 212, 382
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0033_Round-Rect--------------
+  rotate: false
+  xy: 1440, 996
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0034_Round-Rect--------------
+  rotate: false
+  xy: 2008, 1022
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0035_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2138
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0036_Round-Rect--------------
+  rotate: false
+  xy: 4704, 3188
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0037_Round-Rect--------------
+  rotate: false
+  xy: 2064, 1518
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0038_Round-Rect--------------
+  rotate: false
+  xy: 600, 332
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0041_Round-Rect--------------
+  rotate: false
+  xy: 600, 332
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0039_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3584
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0040_Round-Rect--------------
+  rotate: false
+  xy: 212, 316
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0042_Round-Rect--------------
+  rotate: false
+  xy: 1586, 755
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0043_Round-Rect--------------
+  rotate: false
+  xy: 3922, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0044_Round-Rect--------------
+  rotate: false
+  xy: 5716, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0045_Round-Rect--------------
+  rotate: false
+  xy: 5636, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0046_Round-Rect--------------
+  rotate: false
+  xy: 4526, 3370
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0047_Round-Rect--------------
+  rotate: false
+  xy: 2096, 1650
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0048_Round-Rect--------------
+  rotate: false
+  xy: 1038, 248
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0049_Round-Rect--------------
+  rotate: false
+  xy: 5854, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0050_Round-Rect--------------
+  rotate: false
+  xy: 2484, 1698
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0051_Round-Rect--------------
+  rotate: false
+  xy: 810, 398
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0052_Round-Rect--------------
+  rotate: false
+  xy: 2516, 1814
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0055_Round-Rect--------------
+  rotate: false
+  xy: 2516, 1814
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0053_Round-Rect--------------
+  rotate: false
+  xy: 956, 398
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0054_Round-Rect--------------
+  rotate: false
+  xy: 3088, 2028
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0056_Round-Rect--------------
+  rotate: false
+  xy: 3651, 2038
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0057_Round-Rect--------------
+  rotate: false
+  xy: 1316, 298
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0058_Round-Rect--------------
+  rotate: false
+  xy: 4390, 2612
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0059_Round-Rect--------------
+  rotate: false
+  xy: 5502, 3336
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0060_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3930
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0061_Round-Rect--------------
+  rotate: false
+  xy: 1650, 1078
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0062_Round-Rect--------------
+  rotate: false
+  xy: 1330, 332
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0063_Round-Rect--------------
+  rotate: false
+  xy: 5562, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0064_Round-Rect--------------
+  rotate: false
+  xy: 4914, 3270
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0065_Round-Rect--------------
+  rotate: false
+  xy: 2662, 1748
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0067_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3320
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0068_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2452
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0069_Round-Rect--------------
+  rotate: false
+  xy: 3740, 2600
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0066_Round-Rect--------------
+  rotate: false
+  xy: 3740, 2600
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0070_Round-Rect--------------
+  rotate: false
+  xy: 2983, 1698
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0071_Round-Rect--------------
+  rotate: false
+  xy: 246, 2
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0072_Round-Rect--------------
+  rotate: false
+  xy: 2000, 1286
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0073_Round-Rect--------------
+  rotate: false
+  xy: 5304, 3336
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0074_Round-Rect--------------
+  rotate: false
+  xy: 2878, 2012
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0075_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3140
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0076_Round-Rect--------------
+  rotate: false
+  xy: 2810, 1698
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0077_Round-Rect--------------
+  rotate: false
+  xy: 5416, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0078_Round-Rect--------------
+  rotate: false
+  xy: 714, 282
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0079_Round-Rect--------------
+  rotate: false
+  xy: 5092, 3320
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0080_Round-Rect--------------
+  rotate: false
+  xy: 3530, 2452
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0083_Round-Rect--------------
+  rotate: false
+  xy: 3530, 2452
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0081_Round-Rect--------------
+  rotate: false
+  xy: 2840, 1814
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsOriginal_0082_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2518
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0000_Round-Rect--------------
+  rotate: false
+  xy: 2933, 1698
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0001_Round-Rect--------------
+  rotate: false
+  xy: 180, 2
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0002_Round-Rect--------------
+  rotate: false
+  xy: 3434, 2088
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0003_Round-Rect--------------
+  rotate: false
+  xy: 5238, 3320
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0004_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1798
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0005_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3782
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0006_Round-Rect--------------
+  rotate: false
+  xy: 2712, 1698
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0007_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2188
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0008_Round-Rect--------------
+  rotate: false
+  xy: 600, 282
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0009_Round-Rect--------------
+  rotate: false
+  xy: 4494, 3090
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0010_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2304
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0013_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2304
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0011_Round-Rect--------------
+  rotate: false
+  xy: 1440, 698
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0012_Round-Rect--------------
+  rotate: false
+  xy: 1650, 1160
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0014_Round-Rect--------------
+  rotate: false
+  xy: 570, 166
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0015_Round-Rect--------------
+  rotate: false
+  xy: 4054, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0016_Round-Rect--------------
+  rotate: false
+  xy: 4358, 2562
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0017_Round-Rect--------------
+  rotate: false
+  xy: 3644, 2320
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0018_Round-Rect--------------
+  rotate: false
+  xy: 7786, 4012
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0019_Round-Rect--------------
+  rotate: false
+  xy: 3530, 2518
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0020_Round-Rect--------------
+  rotate: false
+  xy: 3298, 1874
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0021_Round-Rect--------------
+  rotate: false
+  xy: 3854, 2484
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0022_Round-Rect--------------
+  rotate: false
+  xy: 1886, 1286
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0023_Round-Rect--------------
+  rotate: false
+  xy: 180, 102
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0024_Round-Rect--------------
+  rotate: false
+  xy: 4704, 3238
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0027_Round-Rect--------------
+  rotate: false
+  xy: 4704, 3238
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0025_Round-Rect--------------
+  rotate: false
+  xy: 1086, 398
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0026_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3864
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0028_Round-Rect--------------
+  rotate: false
+  xy: 1570, 721
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0029_Round-Rect--------------
+  rotate: false
+  xy: 4120, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0030_Round-Rect--------------
+  rotate: false
+  xy: 6044, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0031_Round-Rect--------------
+  rotate: false
+  xy: 6098, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0032_Round-Rect--------------
+  rotate: false
+  xy: 2, 300
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0033_Round-Rect--------------
+  rotate: false
+  xy: 4736, 3304
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0034_Round-Rect--------------
+  rotate: false
+  xy: 3396, 1874
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0035_Round-Rect--------------
+  rotate: false
+  xy: 1440, 764
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0036_Round-Rect--------------
+  rotate: false
+  xy: 1040, 298
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0037_Round-Rect--------------
+  rotate: false
+  xy: 1618, 946
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0038_Round-Rect--------------
+  rotate: false
+  xy: 7996, 3864
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0041_Round-Rect--------------
+  rotate: false
+  xy: 7996, 3864
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0039_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3386
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0040_Round-Rect--------------
+  rotate: false
+  xy: 2306, 1814
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0042_Round-Rect--------------
+  rotate: false
+  xy: 670, 166
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0043_Round-Rect--------------
+  rotate: false
+  xy: 4186, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0044_Round-Rect--------------
+  rotate: false
+  xy: 4196, 2484
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0045_Round-Rect--------------
+  rotate: false
+  xy: 504, 184
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0046_Round-Rect--------------
+  rotate: false
+  xy: 4316, 3370
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0047_Round-Rect--------------
+  rotate: false
+  xy: 212, 234
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0048_Round-Rect--------------
+  rotate: false
+  xy: 1860, 1154
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0049_Round-Rect--------------
+  rotate: false
+  xy: 924, 348
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0050_Round-Rect--------------
+  rotate: false
+  xy: 4000, 2484
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0051_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3650
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0052_Round-Rect--------------
+  rotate: false
+  xy: 1618, 1012
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0055_Round-Rect--------------
+  rotate: false
+  xy: 1618, 1012
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0053_Round-Rect--------------
+  rotate: false
+  xy: 4316, 2876
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0054_Round-Rect--------------
+  rotate: false
+  xy: 4526, 3304
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0056_Round-Rect--------------
+  rotate: false
+  xy: 4499, 3010
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0057_Round-Rect--------------
+  rotate: false
+  xy: 3922, 2416
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0058_Round-Rect--------------
+  rotate: false
+  xy: 6126, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0059_Round-Rect--------------
+  rotate: false
+  xy: 6230, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0060_Round-Rect--------------
+  rotate: false
+  xy: 2878, 1930
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0061_Round-Rect--------------
+  rotate: false
+  xy: 7996, 4012
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0062_Round-Rect--------------
+  rotate: false
+  xy: 8094, 3748
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0063_Round-Rect--------------
+  rotate: false
+  xy: 4096, 2616
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0064_Round-Rect--------------
+  rotate: false
+  xy: 3320, 2088
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0065_Round-Rect--------------
+  rotate: false
+  xy: 3708, 2468
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0066_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3716
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0069_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3716
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0067_Round-Rect--------------
+  rotate: false
+  xy: 4316, 2942
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0068_Round-Rect--------------
+  rotate: false
+  xy: 2, 234
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0070_Round-Rect--------------
+  rotate: false
+  xy: 7965, 3653
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0071_Round-Rect--------------
+  rotate: false
+  xy: 3988, 2450
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0072_Round-Rect--------------
+  rotate: false
+  xy: 5798, 3352
+  size: 80, 48
+  orig: 80, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0073_Round-Rect--------------
+  rotate: false
+  xy: 5702, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0074_Round-Rect--------------
+  rotate: false
+  xy: 1440, 1144
+  size: 208, 80
+  orig: 208, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0075_Round-Rect--------------
+  rotate: false
+  xy: 2306, 1732
+  size: 176, 80
+  orig: 176, 80
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0076_Round-Rect--------------
+  rotate: false
+  xy: 1136, 248
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0077_Round-Rect--------------
+  rotate: false
+  xy: 6000, 3402
+  size: 144, 48
+  orig: 144, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0078_Round-Rect--------------
+  rotate: false
+  xy: 2274, 1616
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0079_Round-Rect--------------
+  rotate: false
+  xy: 3498, 2320
+  size: 144, 64
+  orig: 144, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0080_Round-Rect--------------
+  rotate: false
+  xy: 2484, 1748
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0083_Round-Rect--------------
+  rotate: false
+  xy: 2484, 1748
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0081_Round-Rect--------------
+  rotate: false
+  xy: 7786, 3452
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+ButtonsPressed_0082_Round-Rect--------------
+  rotate: false
+  xy: 1440, 1078
+  size: 208, 64
+  orig: 208, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0000_Round-Rect--------------
+  rotate: false
+  xy: 5438, 3270
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0001_Round-Rect--------------
+  rotate: false
+  xy: 5570, 3270
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0002_Round-Rect--------------
+  rotate: false
+  xy: 5834, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0003_Round-Rect--------------
+  rotate: false
+  xy: 5966, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0004_Round-Rect--------------
+  rotate: false
+  xy: 6164, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0005_Round-Rect--------------
+  rotate: false
+  xy: 4278, 2496
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0006_Package-----------------
+  rotate: false
+  xy: 2210, 1536
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0007_Package-----------------
+  rotate: false
+  xy: 3613, 1961
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0008_Package-----------------
+  rotate: false
+  xy: 4462, 3027
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0009_Package-----------------
+  rotate: false
+  xy: 1586, 883
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0010_Package-----------------
+  rotate: false
+  xy: 720, 161
+  size: 41, 37
+  orig: 41, 37
+  offset: 0, 0
+  index: -1
+GUI_Items_0011_Package-----------------
+  rotate: false
+  xy: 3503, 2275
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0012_Package-----------------
+  rotate: false
+  xy: 3525, 1992
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0013_Package-----------------
+  rotate: false
+  xy: 4477, 2566
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0014_Package-----------------
+  rotate: false
+  xy: 2908, 1698
+  size: 23, 48
+  orig: 23, 48
+  offset: 0, 0
+  index: -1
+GUI_Items_0015_Package-----------------
+  rotate: false
+  xy: 3596, 2231
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0016_Package-----------------
+  rotate: false
+  xy: 1675, 900
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0017_Package-----------------
+  rotate: false
+  xy: 3605, 2041
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0018_Package-----------------
+  rotate: false
+  xy: 1382, 294
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0019_Package-----------------
+  rotate: false
+  xy: 2004, 975
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0020_Package-----------------
+  rotate: false
+  xy: 1234, 249
+  size: 35, 47
+  orig: 35, 47
+  offset: 0, 0
+  index: -1
+GUI_Items_0021_Package-----------------
+  rotate: false
+  xy: 3652, 2112
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0022_Package-----------------
+  rotate: false
+  xy: 3531, 1951
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+GUI_Items_0023_Package-----------------
+  rotate: false
+  xy: 1764, 964
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0024_Package-----------------
+  rotate: false
+  xy: 1908, 974
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0025_Package-----------------
+  rotate: false
+  xy: 1956, 974
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0026_Package-----------------
+  rotate: false
+  xy: 1675, 854
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0027_Round-Rect--------------
+  rotate: false
+  xy: 5372, 3270
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0028_Round-Rect--------------
+  rotate: false
+  xy: 5504, 3270
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0029_Round-Rect--------------
+  rotate: false
+  xy: 5768, 3286
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0030_Package-----------------
+  rotate: false
+  xy: 4640, 3108
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0031_Package-----------------
+  rotate: false
+  xy: 3607, 2001
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0032_Package-----------------
+  rotate: false
+  xy: 2032, 1408
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0033_Package-----------------
+  rotate: false
+  xy: 3466, 2163
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0034_Package-----------------
+  rotate: false
+  xy: 4599, 3005
+  size: 41, 37
+  orig: 41, 37
+  offset: 0, 0
+  index: -1
+GUI_Items_0035_Package-----------------
+  rotate: false
+  xy: 8013, 3687
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0036_Package-----------------
+  rotate: false
+  xy: 3555, 2229
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0037_Package-----------------
+  rotate: false
+  xy: 1586, 789
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0038_Package-----------------
+  rotate: false
+  xy: 3490, 2038
+  size: 23, 48
+  orig: 23, 48
+  offset: 0, 0
+  index: -1
+GUI_Items_0039_Package-----------------
+  rotate: false
+  xy: 3509, 2232
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0040_Package-----------------
+  rotate: false
+  xy: 4499, 3044
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0041_Package-----------------
+  rotate: false
+  xy: 3559, 2075
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0042_Package-----------------
+  rotate: false
+  xy: 3605, 2079
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0043_Package-----------------
+  rotate: false
+  xy: 3755, 2353
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0044_Package-----------------
+  rotate: false
+  xy: 4472, 2613
+  size: 35, 47
+  orig: 35, 47
+  offset: 0, 0
+  index: -1
+GUI_Items_0045_Package-----------------
+  rotate: false
+  xy: 3555, 2189
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0046_Package-----------------
+  rotate: false
+  xy: 3652, 2152
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+GUI_Items_0047_Package-----------------
+  rotate: false
+  xy: 1268, 300
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0048_Package-----------------
+  rotate: false
+  xy: 6292, 3404
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0049_Package-----------------
+  rotate: false
+  xy: 3808, 2420
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0050_Package-----------------
+  rotate: false
+  xy: 2069, 1426
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0051_Package-----------------
+  rotate: false
+  xy: 7932, 3668
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0052_Package-----------------
+  rotate: false
+  xy: 3656, 1964
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0053_Package-----------------
+  rotate: false
+  xy: 4440, 2565
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0054_Package-----------------
+  rotate: false
+  xy: 1586, 836
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0055_Package-----------------
+  rotate: false
+  xy: 763, 161
+  size: 41, 37
+  orig: 41, 37
+  offset: 0, 0
+  index: -1
+GUI_Items_0056_Package-----------------
+  rotate: false
+  xy: 3551, 2275
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0057_Package-----------------
+  rotate: false
+  xy: 3566, 1995
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0058_Package-----------------
+  rotate: false
+  xy: 4410, 2515
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0059_Package-----------------
+  rotate: false
+  xy: 2452, 1682
+  size: 23, 48
+  orig: 23, 48
+  offset: 0, 0
+  index: -1
+GUI_Items_0060_Package-----------------
+  rotate: false
+  xy: 3642, 2231
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0061_Package-----------------
+  rotate: false
+  xy: 1721, 900
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0062_Package-----------------
+  rotate: false
+  xy: 3559, 2151
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0063_Package-----------------
+  rotate: false
+  xy: 3596, 2193
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0064_Package-----------------
+  rotate: false
+  xy: 2051, 975
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0065_Package-----------------
+  rotate: false
+  xy: 3036, 1833
+  size: 35, 47
+  orig: 35, 47
+  offset: 0, 0
+  index: -1
+GUI_Items_0066_Package-----------------
+  rotate: false
+  xy: 3652, 2072
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0067_Package-----------------
+  rotate: false
+  xy: 3572, 1954
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+GUI_Items_0068_Package-----------------
+  rotate: false
+  xy: 1812, 974
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0069_Package-----------------
+  rotate: false
+  xy: 1860, 974
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0070_Package-----------------
+  rotate: false
+  xy: 3024, 1882
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0071_Package-----------------
+  rotate: false
+  xy: 3599, 2274
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0072_Package-----------------
+  rotate: false
+  xy: 326, 120
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+GUI_Items_0073_Package-----------------
+  rotate: false
+  xy: 3516, 2115
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0074_Package-----------------
+  rotate: false
+  xy: 3466, 2257
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0075_Package-----------------
+  rotate: false
+  xy: 3466, 2210
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0076_Text--------------------
+  rotate: false
+  xy: 3808, 2383
+  size: 38, 35
+  orig: 38, 35
+  offset: 0, 0
+  index: -1
+GUI_Items_0077_Package-----------------
+  rotate: false
+  xy: 7965, 3687
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0078_Package-----------------
+  rotate: false
+  xy: 3490, 1946
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0079_Package-----------------
+  rotate: false
+  xy: 1271, 253
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0080_Text--------------------
+  rotate: false
+  xy: 2116, 1107
+  size: 20, 45
+  orig: 20, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0081_Package-----------------
+  rotate: false
+  xy: 4332, 2453
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0082_Package-----------------
+  rotate: false
+  xy: 2115, 1426
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0083_Package-----------------
+  rotate: false
+  xy: 3559, 2113
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0084_Package-----------------
+  rotate: false
+  xy: 3605, 2117
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0085_------------------------
+  rotate: false
+  xy: 1721, 855
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0086_Text--------------------
+  rotate: false
+  xy: 3490, 1992
+  size: 33, 44
+  orig: 33, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0087_Path--------------------
+  rotate: false
+  xy: 3848, 2378
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0088_Path--------------------
+  rotate: false
+  xy: 3887, 2378
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0089_Path--------------------
+  rotate: false
+  xy: 2161, 1426
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0090_Path--------------------
+  rotate: false
+  xy: 4591, 3044
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0091_Path--------------------
+  rotate: false
+  xy: 1629, 900
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0092_Package-----------------
+  rotate: false
+  xy: 2115, 1472
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0093_Package-----------------
+  rotate: false
+  xy: 3516, 2075
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0095_Package-----------------
+  rotate: false
+  xy: 3516, 2075
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+GUI_Items_0094_Package-----------------
+  rotate: false
+  xy: 2032, 1455
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0098_Package-----------------
+  rotate: false
+  xy: 2032, 1455
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0096_Package-----------------
+  rotate: false
+  xy: 2032, 1361
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0097_Package-----------------
+  rotate: false
+  xy: 2032, 1361
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0101_Text--------------------
+  rotate: false
+  xy: 3515, 2038
+  size: 38, 35
+  orig: 38, 35
+  offset: 0, 0
+  index: -1
+GUI_Items_0102_Text--------------------
+  rotate: false
+  xy: 3515, 2038
+  size: 38, 35
+  orig: 38, 35
+  offset: 0, 0
+  index: -1
+GUI_Items_0103_Package-----------------
+  rotate: false
+  xy: 1316, 253
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0104_Package-----------------
+  rotate: false
+  xy: 1316, 253
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0105_Package-----------------
+  rotate: false
+  xy: 4378, 2450
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0106_Package-----------------
+  rotate: false
+  xy: 4378, 2450
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0109_Round-Rect--------------
+  rotate: false
+  xy: 4818, 3172
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0110_Package-----------------
+  rotate: false
+  xy: 3710, 2339
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0111_Package-----------------
+  rotate: false
+  xy: 3710, 2339
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0112_Text--------------------
+  rotate: false
+  xy: 358, 187
+  size: 20, 45
+  orig: 20, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0114_Text--------------------
+  rotate: false
+  xy: 358, 187
+  size: 20, 45
+  orig: 20, 45
+  offset: 0, 0
+  index: -1
+GUI_Items_0113_Package-----------------
+  rotate: false
+  xy: 3509, 2189
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0115_Package-----------------
+  rotate: false
+  xy: 3509, 2189
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+GUI_Items_0116_Package-----------------
+  rotate: false
+  xy: 1629, 854
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0117_Package-----------------
+  rotate: false
+  xy: 1629, 854
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0118_Package-----------------
+  rotate: false
+  xy: 3643, 2193
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0119_Package-----------------
+  rotate: false
+  xy: 3643, 2193
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0120_Package-----------------
+  rotate: false
+  xy: 3605, 2155
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0122_Package-----------------
+  rotate: false
+  xy: 3605, 2155
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0121_Path--------------------
+  rotate: false
+  xy: 884, 162
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0123_------------------------
+  rotate: false
+  xy: 4287, 2451
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0124_------------------------
+  rotate: false
+  xy: 4287, 2451
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+GUI_Items_0125_Round-Rect--------------
+  rotate: false
+  xy: 5568, 3336
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0127_Text--------------------
+  rotate: false
+  xy: 4252, 2438
+  size: 33, 44
+  orig: 33, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0126_Text--------------------
+  rotate: false
+  xy: 4252, 2438
+  size: 33, 44
+  orig: 33, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0128_Path--------------------
+  rotate: false
+  xy: 3926, 2378
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+GUI_Items_0129_Path--------------------
+  rotate: false
+  xy: 806, 161
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+GUI_Items_0130_Path--------------------
+  rotate: false
+  xy: 845, 161
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+GUI_Items_0131_Package-----------------
+  rotate: false
+  xy: 4882, 3258
+  size: 29, 44
+  orig: 29, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0132_Package-----------------
+  rotate: false
+  xy: 4882, 3258
+  size: 29, 44
+  orig: 29, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0134_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0099_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0100_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0107_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0108_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0133_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0135_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0136_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0137_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0138_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0139_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0140_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0141_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0142_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0144_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0145_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0148_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0149_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0154_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0156_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0158_Round-Rect--------------
+  rotate: false
+  xy: 4032, 2534
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0143_Round-Rect--------------
+  rotate: false
+  xy: 5240, 3254
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+GUI_Items_0146_Path--------------------
+  rotate: false
+  xy: 4545, 3044
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0147_Path--------------------
+  rotate: false
+  xy: 4545, 3044
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0150_Path--------------------
+  rotate: false
+  xy: 3645, 2274
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0151_Path--------------------
+  rotate: false
+  xy: 3645, 2274
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0152_Path--------------------
+  rotate: false
+  xy: 2069, 1472
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0155_Path--------------------
+  rotate: false
+  xy: 2069, 1472
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0153_Package-----------------
+  rotate: false
+  xy: 2161, 1472
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+GUI_Items_0157_Package-----------------
+  rotate: false
+  xy: 2161, 1472
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+InverseButtonTextOnlyPNG
+  rotate: false
+  xy: 1440, 1880
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+InverseHooveredLevelPNG
+  rotate: false
+  xy: 2, 2822
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+InverseOriginalLevelPNG
+  rotate: false
+  xy: 2, 1250
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+InversePressedLevelPNG
+  rotate: false
+  xy: 1440, 2666
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+MenuItemsGray
+  rotate: false
+  xy: 2, 3608
+  size: 1826, 484
+  orig: 1826, 484
+  offset: 0, 0
+  index: -1
+arrowHoover_0000_Package-----------------
+  rotate: false
+  xy: 1538, 386
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0001_Package-----------------
+  rotate: false
+  xy: 666, 200
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0002_Package-----------------
+  rotate: false
+  xy: 1440, 550
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0003_Package-----------------
+  rotate: false
+  xy: 4316, 2662
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0004_Package-----------------
+  rotate: false
+  xy: 1346, 382
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0005_Package-----------------
+  rotate: false
+  xy: 3298, 2006
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0006_Package-----------------
+  rotate: false
+  xy: 3298, 1924
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowHoover_0007_Package-----------------
+  rotate: false
+  xy: 1860, 1204
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+arrowsPNG
+  rotate: false
+  xy: 2878, 2094
+  size: 440, 570
+  orig: 440, 570
+  offset: 0, 0
+  index: -1
+arrowsPNG_B
+  rotate: false
+  xy: 1440, 1308
+  size: 444, 570
+  orig: 444, 570
+  offset: 0, 0
+  index: -1
+btnHoover
+  rotate: false
+  xy: 180, 168
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+btnOrig
+  rotate: false
+  xy: 4494, 3156
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+btnPressed
+  rotate: false
+  xy: 3708, 2534
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+buttonHoovered
+  rotate: false
+  xy: 4946, 3386
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+buttonOriginal
+  rotate: false
+  xy: 1886, 1502
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+buttonPressed
+  rotate: false
+  xy: 1440, 930
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+buttons1
+  rotate: false
+  xy: 4842, 3452
+  size: 1504, 640
+  orig: 1504, 640
+  offset: 0, 0
+  index: -1
+buttons2pressed
+  rotate: false
+  xy: 3336, 3452
+  size: 1504, 640
+  orig: 1504, 640
+  offset: 0, 0
+  index: -1
+buttons3hoover
+  rotate: false
+  xy: 1830, 3452
+  size: 1504, 640
+  orig: 1504, 640
+  offset: 0, 0
+  index: -1
+circHoover
+  rotate: false
+  xy: 858, 200
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+circNormal
+  rotate: false
+  xy: 4194, 2534
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+circPressed
+  rotate: false
+  xy: 1956, 1204
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+hoovered
+  rotate: false
+  xy: 2274, 1666
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+hooveredLevelPNG
+  rotate: false
+  xy: 2, 464
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+original
+  rotate: false
+  xy: 632, 398
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+originalLevelPNG
+  rotate: false
+  xy: 6348, 3308
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1
+pressed
+  rotate: false
+  xy: 3918, 2600
+  size: 176, 64
+  orig: 176, 64
+  offset: 0, 0
+  index: -1
+pressedLevelPNG
+  rotate: false
+  xy: 2, 2036
+  size: 1436, 784
+  orig: 1436, 784
+  offset: 0, 0
+  index: -1

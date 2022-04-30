@@ -1,0 +1,139 @@
+
+map.png
+size: 2048, 1024
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+candleA
+  rotate: false
+  xy: 260, 258
+  size: 7, 16
+  orig: 7, 16
+  offset: 0, 0
+  index: 3
+candleA
+  rotate: false
+  xy: 1028, 884
+  size: 7, 15
+  orig: 7, 15
+  offset: 0, 0
+  index: 2
+candleA
+  rotate: false
+  xy: 35, 35
+  size: 7, 14
+  orig: 7, 14
+  offset: 0, 0
+  index: 4
+candleA
+  rotate: false
+  xy: 293, 293
+  size: 7, 14
+  orig: 7, 14
+  offset: 0, 0
+  index: 1
+candleB
+  rotate: false
+  xy: 1046, 933
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: 1
+candleB
+  rotate: false
+  xy: 2, 16
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: 4
+candleB
+  rotate: false
+  xy: 20, 35
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: 3
+candleB
+  rotate: false
+  xy: 278, 293
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: 2
+decorative
+  rotate: false
+  xy: 2, 51
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+mainlevbuild
+  rotate: false
+  xy: 2, 309
+  size: 1024, 640
+  orig: 1024, 640
+  offset: 0, 0
+  index: -1
+spike
+  rotate: false
+  xy: 260, 276
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: 4
+spike
+  rotate: false
+  xy: 1028, 901
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: 3
+spike
+  rotate: false
+  xy: 1046, 919
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: 0
+spike
+  rotate: false
+  xy: 1061, 937
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: 2
+spike
+  rotate: false
+  xy: 2, 2
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: 1
+torch
+  rotate: false
+  xy: 1028, 933
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 4
+torch
+  rotate: false
+  xy: 2, 33
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 1
+torch
+  rotate: false
+  xy: 260, 292
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: 2
+torch
+  rotate: false
+  xy: 1028, 916
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: 3
