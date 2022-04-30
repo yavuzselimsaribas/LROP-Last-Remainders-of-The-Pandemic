@@ -7,6 +7,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -17,6 +18,8 @@ import com.cs102.game.audio.AudioType;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputListener;
 import com.cs102.game.input.InputManager;
+import com.cs102.game.map.MapManager;
+import com.cs102.game.map.MapType;
 import com.cs102.game.ui.GameUI;
 import com.cs102.game.ui.LoadingUI;
 
@@ -32,9 +35,13 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         super(game);
         assetManager = game.getAssetManager();
 
-        //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
-        assetManager.load("map3/mock-up.tmx", TiledMap.class);
-        //assetManager.load("default.fnt", BitmapFont.class);
+        //load character and effects
+        assetManager.load("character_and_effects/character_and_effects.atlas", TextureAtlas.class);
+
+        //load maps
+        for (final MapType mapType : MapType.values()) {
+            assetManager.load(mapType.getFilePath(), TiledMap.class);
+        }
         //load audios
         isMusicLoaded = false;
         for(final AudioType audioType: AudioType.values()){
@@ -86,8 +93,8 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
 
     @Override
     public void keyPressed(InputManager manager, GameKeys keys) {
-        audioManager.playAudio(AudioType.SELECT);
         if(assetManager.getProgress()>=1){
+            audioManager.playAudio(AudioType.SELECT);
             mainGame.setScreen(ScreenType.GAME);
         }
     }

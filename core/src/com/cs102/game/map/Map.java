@@ -63,7 +63,7 @@ public class Map {
         return playerStartLocation;
     }
     private void parseCollisionLayer() {
-        final MapLayer collisionLayer = tiledMap.getLayers().get("collision");
+        MapLayer collisionLayer = tiledMap.getLayers().get("collision");
         if (collisionLayer == null) {
             Gdx.app.debug(TAG, "There is no collision layer!");
             return;
@@ -107,5 +107,8 @@ public class Map {
                 Gdx.app.debug(TAG, "MapObject of type " + mapObj + " is not supported");
             }
         }
+    }
+    public TiledMap getTiledMap() {
+        return this.tiledMap;
     }
 }

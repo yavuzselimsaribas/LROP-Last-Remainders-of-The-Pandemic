@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.ecs.components.AnimationComponent;
 import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.ecs.components.PlayerComponent;
 import com.cs102.game.ecs.system.PlayerCameraSystem;
@@ -27,27 +28,14 @@ public class ECSEngine extends PooledEngine {
         super();
 
         world = mainGame.getWorld();
-        bodyDef = new BodyDef();
-        fixtureDef = new FixtureDef();
+        bodyDef = mainGame.BODY_DEF;
+        fixtureDef = mainGame.FIXTURE_DEF;
 
         this.addSystem(new PlayerMovementSystem(mainGame));
         this.addSystem(new PlayerCameraSystem(mainGame));
     }
 
-    private void resetBodiesAndFixtureDefinition() {
-        bodyDef.position.set(0, 0);
-        bodyDef.gravityScale = 1;
-        bodyDef.type = BodyDef.BodyType.StaticBody;
-        bodyDef.fixedRotation = false;
 
-        fixtureDef.density = 0;
-        fixtureDef.isSensor = false;
-        fixtureDef.restitution = 0;
-        fixtureDef.friction = 0.2f;
-        fixtureDef.filter.categoryBits = 0x0001;
-        fixtureDef.filter.maskBits = -1;
-        fixtureDef.shape = null;
-    }
 
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         final Entity player = this.createEntity();
@@ -56,7 +44,7 @@ public class ECSEngine extends PooledEngine {
         playerComponent.speed.set(3,3);
         player.add(playerComponent);
 
-        resetBodiesAndFixtureDefinition();
+        LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
 
         final B2DComponent b2DComponent = this.createComponent(B2DComponent.class);
         bodyDef.position.set(playerStartLocation.x, playerStartLocation.y + height*0.5f);
@@ -66,16 +54,21 @@ public class ECSEngine extends PooledEngine {
         b2DComponent.body.setUserData("PLAYER");
         b2DComponent.width = width;
         b2DComponent.height = height;
+        b2DComponent.renderPosition.set(b2DComponent.body.getPosition());
 
         fixtureDef.filter.categoryBits = BIT_PLAYER;
         fixtureDef.filter.maskBits = BIT_GROUND;
         final PolygonShape polygonShape = new PolygonShape();
-        polygonShape.setAsBox(0.5f, 1f);
+        polygonShape.setAsBox(0.25f, 0.5f);
         fixtureDef.shape = polygonShape;
         b2DComponent.body.createFixture(fixtureDef);
         polygonShape.dispose();
 
         player.add(b2DComponent);
+
+        //animation component
+        final AnimationComponent animationComponent = this.createComponent(AnimationComponent.class);
+        player.add(animationComponent);
         this.addEntity(player);
     }
 }
