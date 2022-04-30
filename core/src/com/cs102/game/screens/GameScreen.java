@@ -1,68 +1,31 @@
 package com.cs102.game.screens;
 
-import com.badlogic.gdx.*;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.profiling.GLProfiler;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.physics.box2d.*;
 import com.cs102.game.LastRemaindersOfThePandemic;
-import com.cs102.game.ecs.ECSEngine;
-import com.cs102.game.ecs.system.PlayerMovementSystem;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
 import com.cs102.game.ui.GameUI;
-import com.cs102.game.ui.LoadingUI;
 //import com.sun.tools.javac.jvm.Code;
 
-import static com.cs102.game.LastRemaindersOfThePandemic.*;
 
 public class GameScreen extends AbstractScreen implements MapListener {
-    //Deniz
-    //private Body ground;
-    //private Body Item;
-    private final OrthogonalTiledMapRenderer mapRenderer;
-    private final OrthographicCamera gameCamera;
-    private final GLProfiler profiler;
-    //private final Map map;
     private final MapManager mapManager;
 
 
     public GameScreen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
-        viewport.setWorldHeight(9);
-        viewport.setWorldWidth(16);
 
-        mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, mainGame.getSpriteBatch());
-        this.gameCamera = mainGame.getGameCamera();
-
-        profiler = new GLProfiler(Gdx.graphics);
-        profiler.enable();
-
-        mapManager = mainGame.getMapManeger();
+        mapManager = mainGame.getMapManager();
         mapManager.addMapListener(this);
         mapManager.setMap(MapType.MAP_1);
 
-        mapRenderer.setMap(mapManager.getTiledMap());
-        mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 1, 2);
+        mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
     }
 
 
 
     @Override
     public void render(float delta) {
-
-        //Gdx.gl.glClearColor(0,0,0,1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-
-        viewport.apply(false);
-        mapRenderer.setView(gameCamera);
-        mapRenderer.render();
-        b2DDebugRenderer.render(world, viewport.getCamera().combined);
     }
 
 
@@ -99,7 +62,6 @@ public class GameScreen extends AbstractScreen implements MapListener {
 
     @Override
     public void dispose() {
-        mapRenderer.dispose();
     }
 
     @Override

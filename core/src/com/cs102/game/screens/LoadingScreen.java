@@ -7,6 +7,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -34,9 +35,13 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         super(game);
         assetManager = game.getAssetManager();
 
-        //assetManager.load("loadingScreenTile/lab.tmx", TiledMap.class);
-        assetManager.load(MapType.MAP_1.getFilePath(), TiledMap.class);
-        //assetManager.load("default.fnt", BitmapFont.class);
+        //load character and effects
+        assetManager.load("character_and_effects/character_and_effects.atlas", TextureAtlas.class);
+
+        //load maps
+        for (final MapType mapType : MapType.values()) {
+            assetManager.load(mapType.getFilePath(), TiledMap.class);
+        }
         //load audios
         isMusicLoaded = false;
         for(final AudioType audioType: AudioType.values()){

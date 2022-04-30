@@ -108,4 +108,7 @@ public class Map {
             }
         }
     }
+    public TiledMap getTiledMap() {
+        return this.tiledMap;
+    }
 }

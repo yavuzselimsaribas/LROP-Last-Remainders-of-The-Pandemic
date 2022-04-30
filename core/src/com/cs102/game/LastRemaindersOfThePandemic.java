@@ -3,10 +3,8 @@ package com.cs102.game;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.SkinLoader;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -17,21 +15,17 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.audio.AudioManager;
 import com.cs102.game.ecs.ECSEngine;
-import com.cs102.game.ecs.system.PlayerMovementSystem;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.MapManager;
-import com.cs102.game.screens.HomePage;
 import com.cs102.game.screens.ScreenType;
+import com.cs102.game.ui.GameRenderer;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 
 public class LastRemaindersOfThePandemic extends Game {
 	private Skin skin;
@@ -45,6 +39,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 	// Yavuz add AppPreferences
 	private AppPreferences preferences;
+	public static float alpha;
 
 
 	public static final BodyDef BODY_DEF = new BodyDef();
@@ -67,7 +62,9 @@ public class LastRemaindersOfThePandemic extends Game {
 	private ECSEngine ecsEngine;
 
 	private InputManager inputManager;
-	private MapManager mapManeger;
+	private MapManager mapManager;
+	private GameRenderer gameRenderer;
+
 	public void create () {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
@@ -95,9 +92,10 @@ public class LastRemaindersOfThePandemic extends Game {
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 
-		mapManeger = new MapManager(this);
+		mapManager = new MapManager(this);
 
 		ecsEngine = new ECSEngine(this);
+		gameRenderer = new GameRenderer(this);
 
 
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
@@ -138,7 +136,8 @@ public class LastRemaindersOfThePandemic extends Game {
 			accumulator -= FIXED_TIME_STEP;
 		}
 
-		//final float alpha = accumulator / FIXED_TIME_STEP;
+		alpha = accumulator / FIXED_TIME_STEP;
+		gameRenderer.render(alpha);
 		stage.getViewport().apply();
 		stage.act(deltaTime);
 		stage.draw();
@@ -252,8 +251,8 @@ public class LastRemaindersOfThePandemic extends Game {
 		FIXTURE_DEF.shape = null;
 	}
 
-	public MapManager getMapManeger() {
-		return this.mapManeger;
+	public MapManager getMapManager() {
+		return this.mapManager;
 	}
 
 
