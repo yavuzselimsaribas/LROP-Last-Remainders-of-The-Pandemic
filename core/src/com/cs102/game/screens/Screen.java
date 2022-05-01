@@ -10,11 +10,11 @@ import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 //import com.sun.tools.javac.jvm.Code;
 
 
-public class GameScreen extends AbstractScreen implements MapListener {
+public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
 
 
-    public GameScreen(LastRemaindersOfThePandemic mainGame) {
+    public Screen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
 
         mapManager = mainGame.getMapManager();

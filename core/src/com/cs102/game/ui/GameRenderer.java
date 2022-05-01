@@ -7,9 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -26,6 +24,8 @@ import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.map.Map;
 import com.cs102.game.map.MapListener;
 
+import java.util.EnumMap;
+
 import static com.cs102.game.LastRemaindersOfThePandemic.UNIT_SCALE;
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 
@@ -36,7 +36,7 @@ public class GameRenderer implements Disposable, MapListener {
     private final Viewport viewport;
     private final SpriteBatch spriteBatch;
     private final AssetManager assetManager;
-
+    private final EnumMap<AnimationType, Animation<Sprite>> animationCache;
     private final ImmutableArray<Entity> animatedEntities;
     private final OrthogonalTiledMapRenderer mapRenderer;
     private final Array<TiledMapTileLayer> tiledMapLayers;
@@ -56,6 +56,8 @@ public class GameRenderer implements Disposable, MapListener {
 
         gameCamera = mainGame.getGameCamera();
         spriteBatch = mainGame.getSpriteBatch();
+        animationCache = new EnumMap<>(AnimationType.class);
+
 
         animatedEntities = mainGame.getEcsEngine().getEntitiesFor(Family.all(AnimationComponent.class, B2DComponent.class).get());
 
@@ -112,10 +114,39 @@ public class GameRenderer implements Disposable, MapListener {
 
     private void renderEntity(final Entity entity, final float alpha) {
         final B2DComponent b2DComponent = ECSEngine.b2dCmpMapper.get(entity);
+        final AnimationComponent animationComponent = ECSEngine.animationCmpMapper.get(entity);
 
-        b2DComponent.renderPosition.lerp(b2DComponent.body.getPosition(), alpha);
-        dummySprite.setBounds(b2DComponent.renderPosition.x - b2DComponent.width * 0.5f, b2DComponent.renderPosition.y - b2DComponent.height * 0.5f, b2DComponent.width, b2DComponent.height);
-        dummySprite.draw(spriteBatch);
+        if(animationComponent.animationType != null) {
+            final Animation<Sprite> animation = getAnimation(animationComponent.animationType);
+            final Sprite frame = animation.getKeyFrame(animationComponent.animationTime);
+            b2DComponent.renderPosition.lerp(b2DComponent.body.getPosition(), alpha);
+            frame.setBounds(b2DComponent.renderPosition.x - animationComponent.width * 0.5f, b2DComponent.renderPosition.y - b2DComponent.height * 0.5f, animationComponent.width, animationComponent.height);
+            frame.draw(spriteBatch);
+        }
+    }
+
+    private Animation<Sprite> getAnimation(final AnimationType animationType) {
+        Animation<Sprite> animation = animationCache.get(animationType);
+        if (animation == null) {
+            //create animation
+            Gdx.app.debug(TAG, "Creating new animation of the type " + animationType);
+            final TextureAtlas.AtlasRegion atlasRegion = assetManager.get(animationType.getAtlasPath(), TextureAtlas.class).findRegion(animationType.getAtlasKey());
+            //split the atlas region into frames
+            final TextureRegion[][] textureRegions = atlasRegion.split(64,64);
+            animation = new Animation<Sprite>(animationType.getFrameDuration(), getKeyFrames(textureRegions[animationType.getFrameIndex()]), Animation.PlayMode.LOOP);
+            animationCache.put(animationType, animation);
+        }
+        return animation;
+    }
+
+    private Array<? extends Sprite> getKeyFrames(final TextureRegion[] textureRegion) {
+        final Array<Sprite> keyFrames = new Array<Sprite>();
+        for (final TextureRegion region : textureRegion) {
+            final Sprite sprite = new Sprite(region);
+            sprite.setOriginCenter();
+            keyFrames.add(sprite);
+        }
+        return keyFrames;
     }
 
     @Override
