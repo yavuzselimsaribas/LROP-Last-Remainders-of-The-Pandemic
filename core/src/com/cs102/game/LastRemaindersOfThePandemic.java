@@ -95,11 +95,12 @@ public class LastRemaindersOfThePandemic extends Game {
 		mapManager = new MapManager(this);
 
 		ecsEngine = new ECSEngine(this);
-		gameRenderer = new GameRenderer(this);
+
 
 
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
+		gameRenderer = new GameRenderer(this);
 		preferences = new AppPreferences();
 	}
 
@@ -137,12 +138,11 @@ public class LastRemaindersOfThePandemic extends Game {
 		}
 
 		alpha = accumulator / FIXED_TIME_STEP;
-		gameRenderer.render(alpha);
+		//DENİZ : I moved GameRenderer.render() to GameScreen's render method be able to dispose GameRenderer.render()
+ 		//gameRenderer.render(alpha);
 		stage.getViewport().apply();
 		stage.act(deltaTime);
 		stage.draw();
-
-
 	}
 
 	//Yavuz Set screen method
@@ -248,6 +248,9 @@ public class LastRemaindersOfThePandemic extends Game {
 
 	public MapManager getMapManager() {
 		return this.mapManager;
+	}
+	public GameRenderer getGameRenderer() {
+		return this.gameRenderer;
 	}
 
 

@@ -5,14 +5,16 @@ import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
 import com.cs102.game.ui.GameUI;
+
+import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 //import com.sun.tools.javac.jvm.Code;
 
 
-public class GameScreen extends AbstractScreen implements MapListener {
+public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
 
 
-    public GameScreen(LastRemaindersOfThePandemic mainGame) {
+    public Screen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
 
         mapManager = mainGame.getMapManager();
@@ -26,6 +28,7 @@ public class GameScreen extends AbstractScreen implements MapListener {
 
     @Override
     public void render(float delta) {
+        mainGame.getGameRenderer().render(alpha);
     }
 
 
@@ -62,6 +65,7 @@ public class GameScreen extends AbstractScreen implements MapListener {
 
     @Override
     public void dispose() {
+
     }
 
     @Override
@@ -77,6 +81,11 @@ public class GameScreen extends AbstractScreen implements MapListener {
 
     @Override
     public void mapChange(Map map) {
+
+    }
+
+    @Override
+    public void hide(){
 
     }
 }

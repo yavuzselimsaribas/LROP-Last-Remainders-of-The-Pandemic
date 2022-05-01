@@ -12,14 +12,19 @@ import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.components.AnimationComponent;
 import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.ecs.components.PlayerComponent;
+import com.cs102.game.ecs.system.AnimationSystem;
+import com.cs102.game.ecs.system.PlayerAnimationSystem;
 import com.cs102.game.ecs.system.PlayerCameraSystem;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
+import com.cs102.game.ui.AnimationType;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
 
 public class ECSEngine extends PooledEngine {
     public static final ComponentMapper<PlayerComponent> playerCmpMapper = ComponentMapper.getFor(PlayerComponent.class);
     public static final ComponentMapper<B2DComponent> b2dCmpMapper = ComponentMapper.getFor(B2DComponent.class);
+    public static final ComponentMapper<AnimationComponent> animationCmpMapper = ComponentMapper.getFor(AnimationComponent.class);
+
     private final World world;
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
@@ -33,6 +38,8 @@ public class ECSEngine extends PooledEngine {
 
         this.addSystem(new PlayerMovementSystem(mainGame));
         this.addSystem(new PlayerCameraSystem(mainGame));
+        this.addSystem(new AnimationSystem(mainGame));
+        this.addSystem(new PlayerAnimationSystem(mainGame));
     }
 
 
@@ -68,7 +75,11 @@ public class ECSEngine extends PooledEngine {
 
         //animation component
         final AnimationComponent animationComponent = this.createComponent(AnimationComponent.class);
+        animationComponent.animationType = AnimationType.HERO_MOVE_DOWN;
+        animationComponent.width = 64* UNIT_SCALE*0.3f;
+        animationComponent.height = 64* UNIT_SCALE*0.3f;
         player.add(animationComponent);
+
         this.addEntity(player);
     }
 }
