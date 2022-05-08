@@ -24,11 +24,9 @@ public class ECSEngine extends PooledEngine {
     public static final ComponentMapper<PlayerComponent> playerCmpMapper = ComponentMapper.getFor(PlayerComponent.class);
     public static final ComponentMapper<B2DComponent> b2dCmpMapper = ComponentMapper.getFor(B2DComponent.class);
     public static final ComponentMapper<AnimationComponent> animationCmpMapper = ComponentMapper.getFor(AnimationComponent.class);
-
     private final World world;
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
-
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
 
@@ -41,8 +39,6 @@ public class ECSEngine extends PooledEngine {
         this.addSystem(new AnimationSystem(mainGame));
         this.addSystem(new PlayerAnimationSystem(mainGame));
     }
-
-
 
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         final Entity player = this.createEntity();

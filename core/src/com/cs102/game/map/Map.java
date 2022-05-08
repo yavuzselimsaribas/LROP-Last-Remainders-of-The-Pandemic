@@ -23,7 +23,6 @@ public class Map {
     private final Vector2 playerStartLocation;
 
     Preferences pref = Gdx.app.getPreferences("b2dtut");
-
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
         collisionAreas = new Array<>();
@@ -31,7 +30,6 @@ public class Map {
         parseCollisionLayer();
         playerStartLocation = parsePlayerStartLocation();
     }
-
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
@@ -108,6 +106,7 @@ public class Map {
             }
         }
     }
+
     public TiledMap getTiledMap() {
         return this.tiledMap;
     }

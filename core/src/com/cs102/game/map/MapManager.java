@@ -14,12 +14,9 @@ import static com.cs102.game.LastRemaindersOfThePandemic.BIT_GROUND;
 
 public class MapManager {
     public static final String TAG = MapManager.class.getSimpleName();
-
     private final World world;
     private final Array<Body> bodies;
-
     private final AssetManager assetManager;
-
     private MapType currentMapType;
     private Map currentMap;
     private final EnumMap<MapType, Map> mapCache;
@@ -44,6 +41,7 @@ public class MapManager {
         if (currentMapType == type) {
             return;
         }
+
         if (currentMap != null) {
             world.getBodies(bodies);
             destroyCollisionAreas();
