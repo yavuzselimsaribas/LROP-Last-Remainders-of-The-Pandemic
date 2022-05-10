@@ -24,9 +24,7 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
     protected final Stage stage;
     protected final T screenUI;
     protected final InputManager inputManager;
-
     protected final AudioManager audioManager;
-
 
     public AbstractScreen( final LastRemaindersOfThePandemic mainGame) {
         this.mainGame = mainGame;
