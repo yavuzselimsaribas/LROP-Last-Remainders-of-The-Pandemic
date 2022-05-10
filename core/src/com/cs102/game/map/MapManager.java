@@ -1,5 +1,6 @@
 package com.cs102.game.map;
 
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -8,18 +9,18 @@ import com.badlogic.gdx.physics.box2d.ChainShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.ecs.ECSEngine;
 
 import java.util.EnumMap;
 import static com.cs102.game.LastRemaindersOfThePandemic.BIT_GROUND;
 
 public class MapManager {
     public static final String TAG = MapManager.class.getSimpleName();
-
     private final World world;
     private final Array<Body> bodies;
-
     private final AssetManager assetManager;
-
+    private final ECSEngine ecsEngine;
+    private final Array<Entity> gameObjectsToRemove;
     private MapType currentMapType;
     private Map currentMap;
     private final EnumMap<MapType, Map> mapCache;
@@ -27,13 +28,17 @@ public class MapManager {
     private TiledMap tiledMap;
 
     public MapManager(final LastRemaindersOfThePandemic mainGame) {
+
         currentMapType = null;
         currentMap = null;
         world = mainGame.getWorld();
+        ecsEngine = mainGame.getEcsEngine();
         assetManager = mainGame.getAssetManager();
+        gameObjectsToRemove = new Array<Entity>();
         bodies = new Array<Body>();
         mapCache = new EnumMap<MapType, Map>(MapType.class);
         listeners = new Array<MapListener>();
+
     }
 
     public void addMapListener(final MapListener listener) {
@@ -41,12 +46,15 @@ public class MapManager {
     }
 
     public void setMap(final MapType type) {
+        Gdx.app.debug("hi", "hi");
         if (currentMapType == type) {
             return;
         }
+
         if (currentMap != null) {
             world.getBodies(bodies);
             destroyCollisionAreas();
+            destroyGameObjects();
         }
 
         //new map
@@ -62,10 +70,29 @@ public class MapManager {
         }
 
         spawnCollisionAreas();
+        spawnGameObjects();
 
         for (final MapListener listener : listeners) {
             listener.mapChange(currentMap);
         }
+    }
+
+    private void spawnGameObjects() {
+        for (final GameObject gameObject : currentMap.getGameObjects()) {
+            ecsEngine.createGameObject(gameObject);
+        }
+    }
+
+    private void destroyGameObjects() {
+        for (final Entity entity : ecsEngine.getEntities()) {
+            if (ECSEngine.gameObjCmpMapper.get(entity) != null) {
+                gameObjectsToRemove.add(entity);
+            }
+        }
+        for (final Entity entity : gameObjectsToRemove) {
+            ecsEngine.removeEntity(entity);
+        }
+        gameObjectsToRemove.clear();
     }
 
     private void destroyCollisionAreas() {
@@ -75,7 +102,6 @@ public class MapManager {
             }
         }
     }
-
 
     private void spawnCollisionAreas() {
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
@@ -89,6 +115,7 @@ public class MapManager {
 
             LastRemaindersOfThePandemic.FIXTURE_DEF.filter.categoryBits = BIT_GROUND;
             LastRemaindersOfThePandemic.FIXTURE_DEF.filter.maskBits = -1;
+
             final ChainShape chainShape = new ChainShape();
             chainShape.createChain(collisionArea.getVertices());
             LastRemaindersOfThePandemic.FIXTURE_DEF.shape = chainShape;

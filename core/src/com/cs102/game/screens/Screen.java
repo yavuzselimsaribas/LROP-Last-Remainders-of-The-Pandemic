@@ -9,10 +9,8 @@ import com.cs102.game.ui.GameUI;
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 //import com.sun.tools.javac.jvm.Code;
 
-
 public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
-
 
     public Screen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
@@ -22,9 +20,9 @@ public class Screen extends AbstractScreen implements MapListener {
         mapManager.setMap(MapType.MAP_1);
 
         mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
+        //TEMP
+        mainGame.getGameCamera().position.set(mapManager.getCurrentMap().getPlayerStartLocation(), 0);
     }
-
-
 
     @Override
     public void render(float delta) {
