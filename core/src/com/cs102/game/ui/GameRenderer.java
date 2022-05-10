@@ -1,5 +1,6 @@
 package com.cs102.game.ui;
 
+import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
@@ -104,6 +105,7 @@ public class GameRenderer implements Disposable, MapListener {
 
         mapRenderer.setView(gameCamera);
         spriteBatch.begin();
+        
         if (mapRenderer.getMap() != null) {
             AnimatedTiledMapTile.updateAnimationBaseTime();
             for (final TiledMapTileLayer layer : tiledMapLayers) {
@@ -123,7 +125,6 @@ public class GameRenderer implements Disposable, MapListener {
         profiler.enable();
         if (profiler.isEnabled()) {
             profiler.reset();
-
             box2DDebugRenderer.render(world, viewport.getCamera().combined);
         }
     }

@@ -17,6 +17,7 @@ public class B2DComponent implements Component, Pool.Poolable {
             body.getWorld().destroyBody(body);
             body = null;
         }
+
         width = height = 0;
         renderPosition.set(0, 0);
     }

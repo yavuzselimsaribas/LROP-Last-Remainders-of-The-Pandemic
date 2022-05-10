@@ -18,6 +18,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
 
+import javax.print.DocFlavor;
+
 import static com.cs102.game.LastRemaindersOfThePandemic.UNIT_SCALE;
 
 public class Map {
@@ -27,15 +29,14 @@ public class Map {
     private final Vector2 playerStartLocation;
     private final Array<GameObject> gameObjects;
     private final IntMap<Animation<Sprite>> mapAnimations;
-
     Preferences pref = Gdx.app.getPreferences("b2dtut");
-
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
         collisionAreas = new Array<>();
 
         parseCollisionLayer();
         playerStartLocation = parsePlayerStartLocation();
+
         gameObjects = new Array<GameObject>();
         mapAnimations = new IntMap<Animation<Sprite>>();
         parseGameObjectLayer();
@@ -200,13 +201,15 @@ public class Map {
             }
         }
     }
+
     public TiledMap getTiledMap() {
         return this.tiledMap;
     }
 
     public Array<GameObject> getGameObjects() {
-        return this.gameObjects;
+        return gameObjects;
     }
+
     public IntMap<Animation<Sprite>> getMapAnimations() {
         return mapAnimations;
     }

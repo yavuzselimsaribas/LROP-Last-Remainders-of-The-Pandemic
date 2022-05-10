@@ -7,7 +7,6 @@ public class InputManager implements InputProcessor {
     private final GameKeys[] keyMappings;
     private final boolean[] keyStates;
     private final Array<InputListener> listeners;
-
     public InputManager() {
         this.keyMappings = new GameKeys[256];
         for(final GameKeys gameKey : GameKeys.values()) {
@@ -22,6 +21,7 @@ public class InputManager implements InputProcessor {
     public void addInputListener(final InputListener listener) {
         listeners.add(listener);
     }
+
     public void removeListener(final InputListener listener) {
         listeners.removeValue(listener, true);
     }
@@ -91,6 +91,4 @@ public class InputManager implements InputProcessor {
     public boolean scrolled(float amountX, float amountY) {
         return false;
     }
-
-
 }
