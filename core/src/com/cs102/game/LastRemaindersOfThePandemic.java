@@ -45,8 +45,9 @@ public class LastRemaindersOfThePandemic extends Game {
 	public static final BodyDef BODY_DEF = new BodyDef();
 	public static final FixtureDef FIXTURE_DEF = new FixtureDef();
 	public static final float UNIT_SCALE = 1 / 16f;
-	public static final short BIT_PLAYER = 1 << 0;
-	public static final short BIT_GROUND = 1 << 1;
+	public static final short BIT_PLAYER = 1 << 1;
+	public static final short BIT_GROUND = 1 << 2;
+	public static final short BIT_GAME_OBJECT = 1 << 3;
 
 
 	private Box2DDebugRenderer b2dDebugRenderer;
@@ -92,11 +93,8 @@ public class LastRemaindersOfThePandemic extends Game {
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 
-		mapManager = new MapManager(this);
-
 		ecsEngine = new ECSEngine(this);
-
-
+		mapManager = new MapManager(this);
 
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);

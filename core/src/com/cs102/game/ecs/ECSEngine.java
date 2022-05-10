@@ -3,6 +3,7 @@ package com.cs102.game.ecs;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -11,11 +12,13 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.components.AnimationComponent;
 import com.cs102.game.ecs.components.B2DComponent;
+import com.cs102.game.ecs.components.GameObjectComponent;
 import com.cs102.game.ecs.components.PlayerComponent;
 import com.cs102.game.ecs.system.AnimationSystem;
 import com.cs102.game.ecs.system.PlayerAnimationSystem;
 import com.cs102.game.ecs.system.PlayerCameraSystem;
 import com.cs102.game.ecs.system.PlayerMovementSystem;
+import com.cs102.game.map.GameObject;
 import com.cs102.game.ui.AnimationType;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
@@ -24,10 +27,14 @@ public class ECSEngine extends PooledEngine {
     public static final ComponentMapper<PlayerComponent> playerCmpMapper = ComponentMapper.getFor(PlayerComponent.class);
     public static final ComponentMapper<B2DComponent> b2dCmpMapper = ComponentMapper.getFor(B2DComponent.class);
     public static final ComponentMapper<AnimationComponent> animationCmpMapper = ComponentMapper.getFor(AnimationComponent.class);
+    public static final ComponentMapper<GameObjectComponent> gameObjCmpMapper = ComponentMapper.getFor(GameObjectComponent.class);
 
     private final World world;
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
+    private final Vector2 localPosition;
+    private final Vector2 posBeforeRotation;
+    private final Vector2 posAfterRotation;
 
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
@@ -35,6 +42,10 @@ public class ECSEngine extends PooledEngine {
         world = mainGame.getWorld();
         bodyDef = mainGame.BODY_DEF;
         fixtureDef = mainGame.FIXTURE_DEF;
+
+        localPosition = new Vector2();
+        posBeforeRotation = new Vector2();
+        posAfterRotation = new Vector2();
 
         this.addSystem(new PlayerMovementSystem(mainGame));
         this.addSystem(new PlayerCameraSystem(mainGame));
@@ -64,7 +75,7 @@ public class ECSEngine extends PooledEngine {
         b2DComponent.renderPosition.set(b2DComponent.body.getPosition());
 
         fixtureDef.filter.categoryBits = BIT_PLAYER;
-        fixtureDef.filter.maskBits = BIT_GROUND;
+        fixtureDef.filter.maskBits = BIT_GROUND | BIT_GAME_OBJECT;
         final PolygonShape polygonShape = new PolygonShape();
         polygonShape.setAsBox(0.25f, 0.5f);
         fixtureDef.shape = polygonShape;
@@ -81,5 +92,51 @@ public class ECSEngine extends PooledEngine {
         player.add(animationComponent);
 
         this.addEntity(player);
+    }
+
+    public void createGameObject(final GameObject gameObject) {
+        final Entity gameObjEntity = this.createEntity();
+
+        final AnimationComponent animationComponent = this.createComponent(AnimationComponent.class);
+        animationComponent.animationType = null;
+        animationComponent.width = gameObject.getWidth();
+        animationComponent.height = gameObject.getHeight();
+        gameObjEntity.add(animationComponent);
+
+        LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
+        final float halfW = gameObject.getWidth() * 0.5f;
+        final float halfH = gameObject.getHeight() * 0.5f;
+        final float angleRad = -gameObject.getRotDegree() * MathUtils.degreesToRadians;
+        final B2DComponent b2DComponent = this.createComponent(B2DComponent.class);
+        BODY_DEF.type = BodyDef.BodyType.StaticBody;
+        BODY_DEF.position.set(gameObject.getPosition().x + halfW, gameObject.getPosition().y + halfH);
+        b2DComponent.body = world.createBody(BODY_DEF);
+        b2DComponent.body.setUserData("GAMEOBJECT");
+        b2DComponent.width = gameObject.getWidth();
+        b2DComponent.height = gameObject.getHeight();
+
+        localPosition.set(-halfW, -halfH);
+        posBeforeRotation.set(b2DComponent.body.getWorldPoint(localPosition));
+        b2DComponent.body.setTransform(b2DComponent.body.getPosition(), angleRad);
+        posAfterRotation.set(b2DComponent.body.getWorldPoint(localPosition));
+
+        b2DComponent.body.setTransform(b2DComponent.body.getPosition().add(posBeforeRotation).sub(posAfterRotation), angleRad);
+        b2DComponent.renderPosition.set(b2DComponent.body.getPosition().x - animationComponent.width * 0.5f, b2DComponent.body.getPosition().y - b2DComponent.height * 0.5f);
+
+        FIXTURE_DEF.filter.categoryBits = BIT_GAME_OBJECT;
+        FIXTURE_DEF.filter.maskBits = BIT_PLAYER;
+        final PolygonShape pShape = new PolygonShape();
+        pShape.setAsBox(halfW, halfH);
+        FIXTURE_DEF.shape = pShape;
+        b2DComponent.body.createFixture(FIXTURE_DEF);
+        pShape.dispose();
+        gameObjEntity.add(b2DComponent);
+
+        final GameObjectComponent gameObjectComponent = this.createComponent(GameObjectComponent.class);
+        gameObjectComponent.animationIndex = gameObject.getAnimationIndex();
+        gameObjectComponent.type = gameObject.getType();
+        gameObjEntity.add(gameObjectComponent);
+
+        this.addEntity(gameObjEntity);
     }
 }

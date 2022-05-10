@@ -22,6 +22,8 @@ public class Screen extends AbstractScreen implements MapListener {
         mapManager.setMap(MapType.MAP_1);
 
         mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
+        //TEMP
+        mainGame.getGameCamera().position.set(mapManager.getCurrentMap().getPlayerStartLocation(), 0);
     }
 
 
