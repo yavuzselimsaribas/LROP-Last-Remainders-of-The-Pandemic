@@ -22,6 +22,7 @@ public class SettingsScreenUI extends Table {
     private CheckBox musicCheckbox;
     private CheckBox soundEffectsCheckbox;
     private TextButton backButton;
+    private TextButton turnBackToGameButton;
 
 
 
@@ -80,6 +81,14 @@ public class SettingsScreenUI extends Table {
                 game.setScreen(ScreenType.MENU);
             }
         });
+        turnBackToGameButton = new TextButton("Back to game", game.getSkin());
+
+        turnBackToGameButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                game.setScreen(ScreenType.GAME);
+            }
+        });
 
         Gdx.input.setInputProcessor(game.getStage());
 
@@ -104,6 +113,7 @@ public class SettingsScreenUI extends Table {
         add(soundEffectsCheckbox).width(200).height(50).pad(10);
         row();
         add(backButton).width(200).height(50).pad(10);
+        add(turnBackToGameButton).width(200).height(50).pad(10);
 
 
     }
