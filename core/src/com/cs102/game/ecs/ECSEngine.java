@@ -38,6 +38,8 @@ public class ECSEngine extends PooledEngine {
     private final Vector2 posBeforeRotation;
     private final Vector2 posAfterRotation;
 
+    public static Entity player;
+
 
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
@@ -61,7 +63,7 @@ public class ECSEngine extends PooledEngine {
     }
 
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
-        final Entity player = this.createEntity();
+        player = this.createEntity();
 
         final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);
         playerComponent.speed.set(3, 3);

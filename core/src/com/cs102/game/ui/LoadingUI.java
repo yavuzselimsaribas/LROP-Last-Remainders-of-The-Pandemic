@@ -40,9 +40,8 @@ public class LoadingUI extends Table {
             }
                                 }
         );
-        add(pressToPlay).expand().fill().center().row();
-        add(textButton).expand().fill().bottom().row();
-        bottom();
+        add(pressToPlay).expand().fill().row();
+        add(textButton).expand().fill().row();
     }
 
 
