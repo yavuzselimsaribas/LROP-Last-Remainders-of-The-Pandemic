@@ -1,5 +1,9 @@
 package com.cs102.game.ui;
 
+
+import box2dLight.RayHandler;
+import com.badlogic.ashley.core.ComponentMapper;
+
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
@@ -45,6 +49,11 @@ public class GameRenderer implements Disposable, MapListener {
     private final Box2DDebugRenderer box2DDebugRenderer;
     private final World world;
 
+    private IntMap<Animation<Sprite>> mapAnimations;
+    private ObjectMap<String, TextureRegion[][]> regionCache;
+    private final RayHandler rayHandler;
+
+
     private Sprite dummySprite;
 
     public GameRenderer(final LastRemaindersOfThePandemic mainGame) {
@@ -77,6 +86,7 @@ public class GameRenderer implements Disposable, MapListener {
             box2DDebugRenderer = null;
             world = null;
         }
+        rayHandler = mainGame.getRayHandler();
     }
     @Override
     public void dispose() {
@@ -104,6 +114,9 @@ public class GameRenderer implements Disposable, MapListener {
             renderEntity(entity, alpha);
         }
         spriteBatch.end();
+
+        rayHandler.setCombinedMatrix(gameCamera);
+        rayHandler.updateAndRender();
         profiler.disable();
         if (profiler.isEnabled()) {
             profiler.reset();

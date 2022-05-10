@@ -1,8 +1,14 @@
 package com.cs102.game.ecs;
 
+import box2dLight.PointLight;
+import box2dLight.RayHandler;
+import box2dLight.BlendFunc;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.graphics.Color;
+
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -12,10 +18,9 @@ import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.components.AnimationComponent;
 import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.ecs.components.PlayerComponent;
-import com.cs102.game.ecs.system.AnimationSystem;
-import com.cs102.game.ecs.system.PlayerAnimationSystem;
-import com.cs102.game.ecs.system.PlayerCameraSystem;
-import com.cs102.game.ecs.system.PlayerMovementSystem;
+import com.cs102.game.ecs.system.*;
+import com.cs102.game.map.GameObject;
+
 import com.cs102.game.ui.AnimationType;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.*;
@@ -25,14 +30,17 @@ public class ECSEngine extends PooledEngine {
     public static final ComponentMapper<B2DComponent> b2dCmpMapper = ComponentMapper.getFor(B2DComponent.class);
     public static final ComponentMapper<AnimationComponent> animationCmpMapper = ComponentMapper.getFor(AnimationComponent.class);
 
+    private final RayHandler rayHandler;
     private final World world;
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
+
 
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
 
         world = mainGame.getWorld();
+        rayHandler = mainGame.getRayHandler();
         bodyDef = mainGame.BODY_DEF;
         fixtureDef = mainGame.FIXTURE_DEF;
 
@@ -40,6 +48,7 @@ public class ECSEngine extends PooledEngine {
         this.addSystem(new PlayerCameraSystem(mainGame));
         this.addSystem(new AnimationSystem(mainGame));
         this.addSystem(new PlayerAnimationSystem(mainGame));
+        this.addSystem(new LightingSystem());
     }
 
 
@@ -71,7 +80,15 @@ public class ECSEngine extends PooledEngine {
         b2DComponent.body.createFixture(fixtureDef);
         polygonShape.dispose();
 
+        //create player light radius
+        b2DComponent.lightDistance = 6;
+        b2DComponent.lightFluctuationSpeed = 4;
+        b2DComponent.light = new PointLight(rayHandler,64,new Color().set(1,1,1,0.7f), b2DComponent.lightDistance, b2DComponent.body.getPosition().x,b2DComponent.body.getPosition().y);
+        b2DComponent.lightFluctuationDistance = b2DComponent.light.getDistance()*0.16f;
+        b2DComponent.light.setSoft(true);
+        b2DComponent.light.attachToBody(b2DComponent.body);
         player.add(b2DComponent);
+
 
         //animation component
         final AnimationComponent animationComponent = this.createComponent(AnimationComponent.class);

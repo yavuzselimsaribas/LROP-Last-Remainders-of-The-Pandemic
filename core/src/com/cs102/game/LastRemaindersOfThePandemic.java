@@ -1,5 +1,7 @@
 package com.cs102.game;
 
+import box2dLight.Light;
+import box2dLight.RayHandler;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.SkinLoader;
@@ -29,6 +31,8 @@ import java.util.EnumMap;
 
 public class LastRemaindersOfThePandemic extends Game {
 	private Skin skin;
+	//rayHandler is used to render the rays
+	private RayHandler rayHandler;
 	//initialize the ortographic camera
 	public OrthographicCamera gameCamera;
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
@@ -65,7 +69,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	private MapManager mapManager;
 	private GameRenderer gameRenderer;
 
-	public void create () {
+	public void create() {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		batch = new SpriteBatch();
 
@@ -74,14 +78,18 @@ public class LastRemaindersOfThePandemic extends Game {
 		world = new World(new Vector2(0, 0.f), true);
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
+		rayHandler = new RayHandler(world);
+		rayHandler.setAmbientLight(0.2f);
+		Light.setGlobalContactFilter(BIT_PLAYER,(short) 1,BIT_GROUND);
+
 		b2dDebugRenderer = new Box2DDebugRenderer();
 
 		//initialize asset manager
 		assetManager = new AssetManager();
-		assetManager.setLoader(TiledMap.class,new TmxMapLoader(assetManager.getFileHandleResolver()));
+		assetManager.setLoader(TiledMap.class, new TmxMapLoader(assetManager.getFileHandleResolver()));
 		skinInitializer();
 		//Yavuz initialize the stage
-		stage = new Stage(new FitViewport(1280,720), batch);
+		stage = new Stage(new FitViewport(1280, 720), batch);
 
 		audioManager = new AudioManager(this);
 
@@ -95,6 +103,8 @@ public class LastRemaindersOfThePandemic extends Game {
 		mapManager = new MapManager(this);
 
 		ecsEngine = new ECSEngine(this);
+
+
 
 
 
@@ -124,8 +134,9 @@ public class LastRemaindersOfThePandemic extends Game {
 	public ECSEngine getEcsEngine() {
 		return this.ecsEngine;
 	}
+
 	@Override
-	public void render () {
+	public void render() {
 		super.render();
 
 		final float deltaTime = Math.min(0.25f, Gdx.graphics.getDeltaTime());
@@ -133,13 +144,13 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		accumulator += deltaTime;
 		while (accumulator >= FIXED_TIME_STEP) {
-			world.step(FIXED_TIME_STEP, 6,2);
+			world.step(FIXED_TIME_STEP, 6, 2);
 			accumulator -= FIXED_TIME_STEP;
 		}
 
 		alpha = accumulator / FIXED_TIME_STEP;
 		//DENİZ : I moved GameRenderer.render() to GameScreen's render method be able to dispose GameRenderer.render()
- 		//gameRenderer.render(alpha);
+		//gameRenderer.render(alpha);
 		stage.getViewport().apply();
 		stage.act(deltaTime);
 		stage.draw();
@@ -151,15 +162,13 @@ public class LastRemaindersOfThePandemic extends Game {
 		if (screen == null) {
 			try {
 				Gdx.app.debug(TAG, "Creating new screen: " + screenType);
-				final Screen screenInstance = (Screen)ClassReflection.getConstructor(screenType.getScreenClass(),LastRemaindersOfThePandemic.class).newInstance(this);
+				final Screen screenInstance = (Screen) ClassReflection.getConstructor(screenType.getScreenClass(), LastRemaindersOfThePandemic.class).newInstance(this);
 				screenCache.put(screenType, screenInstance);
 				super.setScreen(screenInstance);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				throw new GdxRuntimeException("Could not instantiate screen: " + screenType, e);
 			}
-		}
-		else {
+		} else {
 			Gdx.app.debug(TAG, "Screen already instantiated: " + screenType);
 			super.setScreen(screen);
 		}
@@ -170,20 +179,24 @@ public class LastRemaindersOfThePandemic extends Game {
 	public void dispose() {
 		super.dispose();
 		b2dDebugRenderer.dispose();
+		rayHandler.dispose();
 		world.dispose();
 		assetManager.dispose();
 		batch.dispose();
 		stage.dispose();
+
 	}
 
 
 	public SpriteBatch getSpriteBatch() {
 		return this.batch;
 	}
+
 	//AssetManager getter
 	public AssetManager getAssetManager() {
 		return this.assetManager;
 	}
+
 	//get camera
 	public OrthographicCamera getGameCamera() {
 		return this.gameCamera;
@@ -199,32 +212,34 @@ public class LastRemaindersOfThePandemic extends Game {
 	public WorldContactListener getWorldContactListener() {
 		return this.worldContactListener;
 	}
-  
+
 	//Deniz added additionally
 	//getter of skin and stage
 	public Stage getStage() {
 		return this.stage;
 	}
+
 	public Skin getSkin() {
 		return this.skin;
 	}
 
-	public void skinInitializer(){
+	public void skinInitializer() {
 		final ObjectMap<String, Object> resources = new ObjectMap<String, Object>();
 		// generate tff bitmap font
 		final FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("assets/ui/SaucerBB.ttf"));
 		final FreeTypeFontGenerator.FreeTypeFontParameter fontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		fontParameter.minFilter = Texture.TextureFilter.Linear;
 		fontParameter.magFilter = Texture.TextureFilter.Linear;
-		final int[] sizes = {16,20,26,32};
-		for(int size : sizes){
+		final int[] sizes = {16, 20, 26, 32};
+		for (int size : sizes) {
+
 			fontParameter.size = size;
 			fontGenerator.generateFont(fontParameter);
-			resources.put("font_"+size, fontGenerator.generateFont(fontParameter));
+			resources.put("font_" + size, fontGenerator.generateFont(fontParameter));
 		}
 		fontGenerator.dispose();
 		// LOAD SKIN
-		final SkinLoader.SkinParameter skinParameter = new SkinLoader.SkinParameter("assets/uiskin.atlas",resources);
+		final SkinLoader.SkinParameter skinParameter = new SkinLoader.SkinParameter("assets/uiskin.atlas", resources);
 		assetManager.load("assets/uiskin.json", Skin.class, skinParameter);
 		assetManager.finishLoading();
 		skin = assetManager.get("assets/uiskin.json");
@@ -254,22 +269,15 @@ public class LastRemaindersOfThePandemic extends Game {
 	public MapManager getMapManager() {
 		return this.mapManager;
 	}
+
 	public GameRenderer getGameRenderer() {
 		return this.gameRenderer;
 	}
 
-
-	// game include basement map and three other neigbouring maps
-	// Maps have isUnlocked boolean value
-	// Basement map is unlocked by default
-	// other maps are locked by default
-	// when player reach the map, map is unlocked
-	//  if map is unlocked, player can go to that map
-	// check map is unlocked or not
-	// if map is unlocked, setScreen(map)
-	// if map is locked, pop up a dialog box
-
-	// update setScreen method
-	// if map is unlocked, setScreen(map)
-	// if map is locked, pop up a dialog box
+	public RayHandler getRayHandler() {
+		return this.rayHandler;
+	}
 }
+
+
+
