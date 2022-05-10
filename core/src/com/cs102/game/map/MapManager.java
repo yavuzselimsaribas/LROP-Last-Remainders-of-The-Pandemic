@@ -26,11 +26,9 @@ public class MapManager {
     private final EnumMap<MapType, Map> mapCache;
     private final Array<MapListener> listeners;
     private TiledMap tiledMap;
-    private ECSEngine ecsEngine;
-    private Array<Entity> gameObjectsToRemove;
 
     public MapManager(final LastRemaindersOfThePandemic mainGame) {
-        ecsEngine = mainGame.getEcsEngine();
+
         currentMapType = null;
         currentMap = null;
         world = mainGame.getWorld();
@@ -40,7 +38,7 @@ public class MapManager {
         bodies = new Array<Body>();
         mapCache = new EnumMap<MapType, Map>(MapType.class);
         listeners = new Array<MapListener>();
-        gameObjectsToRemove = new Array<>();
+
     }
 
     public void addMapListener(final MapListener listener) {

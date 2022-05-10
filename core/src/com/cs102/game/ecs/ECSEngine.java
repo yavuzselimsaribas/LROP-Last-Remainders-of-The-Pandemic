@@ -43,9 +43,7 @@ public class ECSEngine extends PooledEngine {
         world = mainGame.getWorld();
         bodyDef = mainGame.BODY_DEF;
         fixtureDef = mainGame.FIXTURE_DEF;
-        localPosition = new Vector2();
-        posBeforeRotation = new Vector2();
-        posAfterRotation = new Vector2();
+
 
         localPosition = new Vector2();
         posBeforeRotation = new Vector2();
