@@ -13,13 +13,12 @@ public class AnimationSystem extends IteratingSystem {
         super(Family.all(AnimationComponent.class).get());
     }
 
-
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         final AnimationComponent animationComponent = ECSEngine.animationCmpMapper.get(entity);
-        if(animationComponent.animationType != null) {
+
             animationComponent.animationTime += deltaTime;  // update animation time
-        }
+
 
     }
 }

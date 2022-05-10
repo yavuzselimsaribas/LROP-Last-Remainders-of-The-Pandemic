@@ -29,7 +29,6 @@ import java.util.EnumMap;
 
 public class LastRemaindersOfThePandemic extends Game {
 	private Skin skin;
-	//initialize the ortographic camera
 	public OrthographicCamera gameCamera;
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
 	private EnumMap<ScreenType, Screen> screenCache;
@@ -44,6 +43,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	public static final float UNIT_SCALE = 1 / 16f;
 	public static final short BIT_PLAYER = 1 << 0;
 	public static final short BIT_GROUND = 1 << 1;
+	public static final short BIT_GAME_OBJECT = 1 << 2;
 	private Box2DDebugRenderer b2dDebugRenderer;
 	private static final float FIXED_TIME_STEP = 1 / 60f;
 	private float accumulator;
@@ -84,9 +84,9 @@ public class LastRemaindersOfThePandemic extends Game {
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 
+		ecsEngine = new ECSEngine(this);
 		mapManager = new MapManager(this);
 
-		ecsEngine = new ECSEngine(this);
 
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);

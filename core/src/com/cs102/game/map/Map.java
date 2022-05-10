@@ -2,17 +2,23 @@ package com.cs102.game.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
-import com.badlogic.gdx.maps.MapLayer;
-import com.badlogic.gdx.maps.MapLayers;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.maps.*;
 import com.badlogic.gdx.maps.objects.PolylineMapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
+import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
+import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
+import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.Polyline;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.IntMap;
+
+import javax.print.DocFlavor;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.UNIT_SCALE;
 
@@ -21,7 +27,8 @@ public class Map {
     private final TiledMap tiledMap;
     private final Array<CollisionArea> collisionAreas;
     private final Vector2 playerStartLocation;
-
+    private final Array<GameObject> gameObjects;
+    private final IntMap<Animation<Sprite>> mapAnimations;
     Preferences pref = Gdx.app.getPreferences("b2dtut");
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
@@ -29,7 +36,78 @@ public class Map {
 
         parseCollisionLayer();
         playerStartLocation = parsePlayerStartLocation();
+
+        gameObjects = new Array<GameObject>();
+        mapAnimations = new IntMap<Animation<Sprite>>();
+        parseGameObjectLayer();
     }
+
+    private void parseGameObjectLayer() {
+        final MapLayer gameObjectsLayer = tiledMap.getLayers().get("gameObjects");
+
+        if(gameObjectsLayer == null) {
+            Gdx.app.debug(TAG, "There is no gameObjects layer!");
+            return;
+        }
+
+        final MapObjects objects = gameObjectsLayer.getObjects();
+        for(final MapObject mapObject : objects) {
+            if(!(mapObject instanceof TiledMapTileMapObject)) {
+                Gdx.app.debug(TAG, "GameObject of type " + mapObject + " is not supported!");
+                continue;
+            }
+
+            final TiledMapTileMapObject tiledMapTileMapObject = (TiledMapTileMapObject) mapObject;
+            final MapProperties tiledMapObjectProperties = tiledMapTileMapObject.getProperties();
+            final MapProperties tileProperties = tiledMapTileMapObject.getTile().getProperties();
+            final GameObjectType type;
+            if(tiledMapObjectProperties.containsKey("type")) {
+                type = GameObjectType.valueOf(tiledMapObjectProperties.get("type", String.class));
+            } else if(tileProperties.containsKey("type")) {
+                type = GameObjectType.valueOf(tileProperties.get("type", String.class));
+            } else {
+                Gdx.app.log(TAG, "There is no gameObjectType defined for tile " + tiledMapObjectProperties.get("id", Integer.class));
+                continue;
+            }
+
+            final int animationIndex = tiledMapTileMapObject.getTile().getId();
+            if(!createAnimation(animationIndex, tiledMapTileMapObject.getTile())) {
+                Gdx.app.debug(TAG, "Could not create animation for tile  " + tiledMapObjectProperties.get("id", Integer.class));
+                continue;
+
+            }
+            final float width = tiledMapObjectProperties.get("width" , Float.class) * UNIT_SCALE;
+            final float height = tiledMapObjectProperties.get("height" , Float.class) * UNIT_SCALE;
+            gameObjects.add(new GameObject(type, new Vector2(tiledMapTileMapObject.getX() * UNIT_SCALE, tiledMapTileMapObject.getY() * UNIT_SCALE), height, width, tiledMapTileMapObject.getRotation(), animationIndex));
+
+        }
+    }
+
+    private boolean createAnimation(int animationIndex, TiledMapTile tile) {
+        Animation<Sprite> animation = mapAnimations.get(animationIndex);
+        if(animation == null) {
+            Gdx.app.debug(TAG, "Creating new map animation for tile " + tile.getId());
+            if(tile instanceof AnimatedTiledMapTile) {
+                final AnimatedTiledMapTile animatedTiledMapTile = (AnimatedTiledMapTile) tile;
+                final Sprite[] keyFrames = new Sprite[animatedTiledMapTile.getFrameTiles().length];
+                int i = 0;
+                for(final StaticTiledMapTile staticTile : animatedTiledMapTile.getFrameTiles()) {
+                    keyFrames[i++] = new Sprite(staticTile.getTextureRegion());
+                }
+                animation = new Animation<Sprite>(animatedTiledMapTile.getAnimationIntervals()[0] * 0.001f, keyFrames);
+                animation.setPlayMode(Animation.PlayMode.LOOP);
+                mapAnimations.put(animationIndex, animation);
+            } else if(tile instanceof StaticTiledMapTile) {
+                animation = new Animation<Sprite>(0, new Sprite(tile.getTextureRegion()));
+            } else {
+                Gdx.app.log(TAG, "Tile of type " + tile + " is not supported for map animations!");
+                return false;
+            }
+        }
+        return true;
+
+    }
+
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
@@ -109,5 +187,13 @@ public class Map {
 
     public TiledMap getTiledMap() {
         return this.tiledMap;
+    }
+
+    public Array<GameObject> getGameObjects() {
+        return gameObjects;
+    }
+
+    public IntMap<Animation<Sprite>> getMapAnimations() {
+        return mapAnimations;
     }
 }

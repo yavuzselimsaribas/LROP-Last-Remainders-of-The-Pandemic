@@ -1,5 +1,6 @@
 package com.cs102.game.ui;
 
+import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
@@ -12,15 +13,18 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.components.AnimationComponent;
 import com.cs102.game.ecs.components.B2DComponent;
+import com.cs102.game.ecs.components.GameObjectComponent;
 import com.cs102.game.map.Map;
 import com.cs102.game.map.MapListener;
 
@@ -44,8 +48,9 @@ public class GameRenderer implements Disposable, MapListener {
     private final GLProfiler profiler;
     private final Box2DDebugRenderer box2DDebugRenderer;
     private final World world;
-
+    private final ImmutableArray<Entity> gameObjectEntities;
     private Sprite dummySprite;
+    private IntMap<Animation<Sprite>> mapAnimations;
 
     public GameRenderer(final LastRemaindersOfThePandemic mainGame) {
         assetManager = mainGame.getAssetManager();
@@ -58,8 +63,8 @@ public class GameRenderer implements Disposable, MapListener {
         spriteBatch = mainGame.getSpriteBatch();
         animationCache = new EnumMap<>(AnimationType.class);
 
-
-        animatedEntities = mainGame.getEcsEngine().getEntitiesFor(Family.all(AnimationComponent.class, B2DComponent.class).get());
+        gameObjectEntities = mainGame.getEcsEngine().getEntitiesFor(Family.all(GameObjectComponent.class, B2DComponent.class, AnimationComponent.class).get());
+        animatedEntities = mainGame.getEcsEngine().getEntitiesFor(Family.all(AnimationComponent.class, B2DComponent.class).exclude(GameObjectComponent.class).get());
 
         mapRenderer = new OrthogonalTiledMapRenderer(null, UNIT_SCALE, spriteBatch);
         mainGame.getMapManager().addMapListener(this);
@@ -92,6 +97,7 @@ public class GameRenderer implements Disposable, MapListener {
 
         viewport.apply(false);
         spriteBatch.begin();
+        
         if (mapRenderer.getMap() != null) {
             AnimatedTiledMapTile.updateAnimationBaseTime();
             mapRenderer.setView(gameCamera);
@@ -99,16 +105,38 @@ public class GameRenderer implements Disposable, MapListener {
                 mapRenderer.renderTileLayer(layer);
             }
         }
-
+        
+        for(final Entity entity : gameObjectEntities) {
+            renderGameObject(entity, alpha);
+        }
+        
         for (final Entity entity : animatedEntities) {
             renderEntity(entity, alpha);
         }
         spriteBatch.end();
+
         profiler.disable();
         if (profiler.isEnabled()) {
             profiler.reset();
-
             box2DDebugRenderer.render(world, viewport.getCamera().combined);
+        }
+    }
+
+    private void renderGameObject(Entity entity, float alpha) {
+        final B2DComponent b2DComponent = ECSEngine.b2dCmpMapper.get(entity);
+        final AnimationComponent animationComponent = ECSEngine.animationCmpMapper.get(entity);
+        final GameObjectComponent gameObjectComponent = ECSEngine.gameObjectCmpMapper.get(entity);
+
+        if(gameObjectComponent.animationIndex != -1) {
+            final Animation<Sprite> animation = mapAnimations.get(gameObjectComponent.animationIndex);
+            final Sprite frame = animation.getKeyFrame(animationComponent.animationTime);
+            //set bounds before origin and rotation although documentation says it's slightly less efficient
+            //but otherwise there is a strange flickering for first few seconds
+
+            frame.setBounds(b2DComponent.renderPosition.x, b2DComponent.renderPosition.y, animationComponent.width, animationComponent.height);
+            frame.setOriginCenter();
+            frame.setRotation(b2DComponent.body.getAngle() * MathUtils.radDeg);
+            frame.draw(spriteBatch);
         }
     }
 
@@ -154,11 +182,6 @@ public class GameRenderer implements Disposable, MapListener {
 
         mapRenderer.setMap(map.getTiledMap());
         map.getTiledMap().getLayers().getByType(TiledMapTileLayer.class, tiledMapLayers);
-
-        if(dummySprite == null) {
-
-            dummySprite = assetManager.get("character_and_effects/character_and_effects.atlas", TextureAtlas.class).createSprite("fireball");
-            dummySprite.setOriginCenter();
-        }
+        mapAnimations = map.getMapAnimations();
     }
 }
