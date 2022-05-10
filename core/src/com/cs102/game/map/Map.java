@@ -42,6 +42,7 @@ public class Map {
         parseGameObjectLayer();
     }
 
+
     private void parseGameObjectLayer() {
         final MapLayer gameObjectLayer = tiledMap.getLayers().get("gameObjects");
         if (gameObjectLayer == null) {
@@ -109,6 +110,7 @@ public class Map {
         return true;
     }
 
+
     /*
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
@@ -131,7 +133,9 @@ public class Map {
 
         return new Vector2(x, y);
     }
-    */
+
+     */
+
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
