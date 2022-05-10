@@ -9,6 +9,7 @@ import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.components.GameObjectComponent;
 import com.cs102.game.ecs.components.RemoveComponent;
 import com.cs102.game.map.GameObjectType;
+import com.cs102.game.ui.GameUI;
 
 public class PlayerCollisionSystem extends IteratingSystem implements WorldContactListener.PlayerCollisionListener {
     public PlayerCollisionSystem(final LastRemaindersOfThePandemic mainGame) {
@@ -33,6 +34,9 @@ public class PlayerCollisionSystem extends IteratingSystem implements WorldConta
                 break;
             case FIRE :
                 break;
+            //case INFECTIOUS :
+            //    GameUI.health
+           //     break;
         }
     }
 }
