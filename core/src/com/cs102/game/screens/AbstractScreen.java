@@ -1,5 +1,6 @@
 package com.cs102.game.screens;
 
+import box2dLight.RayHandler;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
@@ -18,6 +19,8 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
     protected final LastRemaindersOfThePandemic mainGame;
     protected final World world;
     protected final Box2DDebugRenderer b2DDebugRenderer;
+
+    protected final RayHandler rayHandler;
     protected final Stage stage;
     protected final T screenUI;
     protected final InputManager inputManager;
@@ -29,6 +32,7 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
         this.mainGame = mainGame;
         viewport = mainGame.getViewport();
         this.world = mainGame.getWorld();
+        rayHandler = mainGame.getRayHandler();
         this.b2DDebugRenderer = mainGame.getB2dDebugRenderer();
         inputManager = mainGame.getInputManager();
         stage = mainGame.getStage();
@@ -48,6 +52,8 @@ public abstract class AbstractScreen<T extends Table> implements Screen, InputLi
     public void resize(final int width,final int height) {
         viewport.update(width, height);
         stage.getViewport().update(width, height, true);
+        rayHandler.useCustomViewport(viewport.getScreenX(), viewport.getScreenY(), viewport.getScreenWidth(), viewport.getScreenHeight());
+
     }
 
     @Override
