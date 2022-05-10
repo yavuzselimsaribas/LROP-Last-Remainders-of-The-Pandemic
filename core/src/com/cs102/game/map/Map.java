@@ -43,71 +43,73 @@ public class Map {
     }
 
     private void parseGameObjectLayer() {
-        final MapLayer gameObjectsLayer = tiledMap.getLayers().get("gameObjects");
-
-        if(gameObjectsLayer == null) {
-            Gdx.app.debug(TAG, "There is no gameObjects layer!");
+        final MapLayer gameObjectLayer = tiledMap.getLayers().get("gameObjects");
+        if (gameObjectLayer == null) {
+            Gdx.app.debug(TAG, "There is no gameObject layer");
             return;
         }
 
-        final MapObjects objects = gameObjectsLayer.getObjects();
-        for(final MapObject mapObject : objects) {
-            if(!(mapObject instanceof TiledMapTileMapObject)) {
-                Gdx.app.debug(TAG, "GameObject of type " + mapObject + " is not supported!");
+        final MapObjects objects = gameObjectLayer.getObjects();
+        for (final MapObject mapObj : objects) {
+            if (!(mapObj instanceof TiledMapTileMapObject)) {
+                Gdx.app.log(TAG, "gameObject of type " + mapObj + " is not supported");
                 continue;
             }
 
-            final TiledMapTileMapObject tiledMapTileMapObject = (TiledMapTileMapObject) mapObject;
-            final MapProperties tiledMapObjectProperties = tiledMapTileMapObject.getProperties();
-            final MapProperties tileProperties = tiledMapTileMapObject.getTile().getProperties();
-            final GameObjectType type;
-            if(tiledMapObjectProperties.containsKey("type")) {
-                type = GameObjectType.valueOf(tiledMapObjectProperties.get("type", String.class));
-            } else if(tileProperties.containsKey("type")) {
-                type = GameObjectType.valueOf(tileProperties.get("type", String.class));
-            } else {
-                Gdx.app.log(TAG, "There is no gameObjectType defined for tile " + tiledMapObjectProperties.get("id", Integer.class));
+            final TiledMapTileMapObject tiledMapObj = (TiledMapTileMapObject) mapObj;
+            final MapProperties tiledMapObjProperties = tiledMapObj.getProperties();
+            final MapProperties tileProperties = tiledMapObj.getTile().getProperties();
+            final GameObjectType gameObjType;
+            if (tiledMapObjProperties.containsKey("type")) {
+                gameObjType = GameObjectType.valueOf(tiledMapObjProperties.get("type", String.class));
+            }
+            else if(tileProperties.containsKey("type")) {
+                gameObjType = GameObjectType.valueOf(tileProperties.get("type", String.class));
+            }
+            else {
+                Gdx.app.log(TAG, "There is no object defined");
                 continue;
             }
 
-            final int animationIndex = tiledMapTileMapObject.getTile().getId();
-            if(!createAnimation(animationIndex, tiledMapTileMapObject.getTile())) {
-                Gdx.app.debug(TAG, "Could not create animation for tile  " + tiledMapObjectProperties.get("id", Integer.class));
-                continue;
-
+            final int animationIndex = tiledMapObj.getTile().getId();
+            if (!createAnimation(animationIndex, tiledMapObj.getTile())) {
+                Gdx.app.debug(TAG, "Could not create animation");
             }
-            final float width = tiledMapObjectProperties.get("width" , Float.class) * UNIT_SCALE;
-            final float height = tiledMapObjectProperties.get("height" , Float.class) * UNIT_SCALE;
-            gameObjects.add(new GameObject(type, new Vector2(tiledMapTileMapObject.getX() * UNIT_SCALE, tiledMapTileMapObject.getY() * UNIT_SCALE), height, width, tiledMapTileMapObject.getRotation(), animationIndex));
-
+            final float width = tiledMapObjProperties.get("width", Float.class) * UNIT_SCALE;
+            final float height = tiledMapObjProperties.get("height", Float.class) * UNIT_SCALE;
+            gameObjects.add( new GameObject(gameObjType, new Vector2(tiledMapObj.getX() * UNIT_SCALE, tiledMapObj.getY() * UNIT_SCALE), width, height, tiledMapObj.getRotation(), animationIndex));
         }
     }
 
     private boolean createAnimation(int animationIndex, TiledMapTile tile) {
         Animation<Sprite> animation = mapAnimations.get(animationIndex);
-        if(animation == null) {
-            Gdx.app.debug(TAG, "Creating new map animation for tile " + tile.getId());
-            if(tile instanceof AnimatedTiledMapTile) {
-                final AnimatedTiledMapTile animatedTiledMapTile = (AnimatedTiledMapTile) tile;
-                final Sprite[] keyFrames = new Sprite[animatedTiledMapTile.getFrameTiles().length];
+        if (animation == null) {
+            Gdx.app.debug(TAG, "Creating new mpa animation for tile " + tile.getId());
+            if (tile instanceof AnimatedTiledMapTile) {
+                final AnimatedTiledMapTile aniTile = (AnimatedTiledMapTile) tile;
+                final Sprite[] keyFrames = new Sprite[aniTile.getFrameTiles().length];
+
                 int i = 0;
-                for(final StaticTiledMapTile staticTile : animatedTiledMapTile.getFrameTiles()) {
+                for (final StaticTiledMapTile staticTile : aniTile.getFrameTiles()) {
                     keyFrames[i++] = new Sprite(staticTile.getTextureRegion());
                 }
-                animation = new Animation<Sprite>(animatedTiledMapTile.getAnimationIntervals()[0] * 0.001f, keyFrames);
+                animation = new Animation<Sprite>(aniTile.getAnimationIntervals()[0] * 0.001f, keyFrames);
                 animation.setPlayMode(Animation.PlayMode.LOOP);
                 mapAnimations.put(animationIndex, animation);
-            } else if(tile instanceof StaticTiledMapTile) {
+            }
+            else if(tile instanceof StaticTiledMapTile) {
                 animation = new Animation<Sprite>(0, new Sprite(tile.getTextureRegion()));
-            } else {
-                Gdx.app.log(TAG, "Tile of type " + tile + " is not supported for map animations!");
+                mapAnimations.put(animationIndex, animation);
+            }
+            else {
+                Gdx.app.debug(TAG, "tile is not supported for animation");
                 return false;
             }
         }
         return true;
-
     }
 
+    /*
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
@@ -127,6 +129,21 @@ public class Map {
             y = pref.getFloat("y");
         }
 
+        return new Vector2(x, y);
+    }
+    */
+    private Vector2 parsePlayerStartLocation() {
+        float x = 0;
+        float y = 0;
+        final MapLayer startLocationLayer = tiledMap.getLayers().get("playerStartLocation");
+        final MapObjects objects =  startLocationLayer.getObjects();
+        for (final MapObject mapObj : objects) {
+            if (mapObj instanceof RectangleMapObject) {
+                final RectangleMapObject rectangleMapObject = (RectangleMapObject) mapObj;
+                x = rectangleMapObject.getRectangle().x * UNIT_SCALE;
+                y =  rectangleMapObject.getRectangle().y * UNIT_SCALE;
+            }
+        }
         return new Vector2(x, y);
     }
 

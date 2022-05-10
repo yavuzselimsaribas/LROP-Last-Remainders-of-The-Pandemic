@@ -24,8 +24,10 @@ public class SettingsScreenUI extends Table {
     private TextButton backButton;
 
 
+
     public SettingsScreenUI(final LastRemaindersOfThePandemic game) {
         super(game.getSkin());
+
         this.setFillParent(true);
 
         //volume

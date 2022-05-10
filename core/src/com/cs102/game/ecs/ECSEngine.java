@@ -28,13 +28,14 @@ public class ECSEngine extends PooledEngine {
     public static final ComponentMapper<PlayerComponent> playerCmpMapper = ComponentMapper.getFor(PlayerComponent.class);
     public static final ComponentMapper<B2DComponent> b2dCmpMapper = ComponentMapper.getFor(B2DComponent.class);
     public static final ComponentMapper<AnimationComponent> animationCmpMapper = ComponentMapper.getFor(AnimationComponent.class);
-    public static final ComponentMapper<GameObjectComponent> gameObjectCmpMapper = ComponentMapper.getFor(GameObjectComponent.class);
+    public static final ComponentMapper<GameObjectComponent> gameObjCmpMapper = ComponentMapper.getFor(GameObjectComponent.class);
+
     private final World world;
     private final BodyDef bodyDef;
     private final FixtureDef fixtureDef;
-    private Vector2 localPosition;
-    private Vector2 posBeforeRotation;
-    private Vector2 posAfterRotation;
+    private final Vector2 localPosition;
+    private final Vector2 posBeforeRotation;
+    private final Vector2 posAfterRotation;
 
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
@@ -42,6 +43,10 @@ public class ECSEngine extends PooledEngine {
         world = mainGame.getWorld();
         bodyDef = mainGame.BODY_DEF;
         fixtureDef = mainGame.FIXTURE_DEF;
+        localPosition = new Vector2();
+        posBeforeRotation = new Vector2();
+        posAfterRotation = new Vector2();
+
         localPosition = new Vector2();
         posBeforeRotation = new Vector2();
         posAfterRotation = new Vector2();
@@ -72,7 +77,7 @@ public class ECSEngine extends PooledEngine {
         b2DComponent.renderPosition.set(b2DComponent.body.getPosition());
 
         fixtureDef.filter.categoryBits = BIT_PLAYER;
-        fixtureDef.filter.maskBits = BIT_GROUND;
+        fixtureDef.filter.maskBits = BIT_GROUND | BIT_GAME_OBJECT;
         final PolygonShape polygonShape = new PolygonShape();
         polygonShape.setAsBox(0.25f, 0.5f);
         fixtureDef.shape = polygonShape;
@@ -91,55 +96,49 @@ public class ECSEngine extends PooledEngine {
         this.addEntity(player);
     }
 
-    public void createGameObject(GameObject gameObject) {
-        final Entity gameObjectEntity = this.createEntity();
+    public void createGameObject(final GameObject gameObject) {
+        final Entity gameObjEntity = this.createEntity();
 
-        //GameObject component
-        final GameObjectComponent gameObjectComponent = this.createComponent(GameObjectComponent.class);
-        gameObjectComponent.animationIndex = gameObject.getAnimationIndex();
-        gameObjectComponent.type = gameObject.getType();
-        gameObjectEntity.add(gameObjectComponent);
-
-        //AnimationComponent
         final AnimationComponent animationComponent = this.createComponent(AnimationComponent.class);
         animationComponent.animationType = null;
         animationComponent.width = gameObject.getWidth();
         animationComponent.height = gameObject.getHeight();
-        gameObjectEntity.add(animationComponent);
+        gameObjEntity.add(animationComponent);
 
-        //BOX2DComponent
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
         final float halfW = gameObject.getWidth() * 0.5f;
         final float halfH = gameObject.getHeight() * 0.5f;
         final float angleRad = -gameObject.getRotDegree() * MathUtils.degreesToRadians;
         final B2DComponent b2DComponent = this.createComponent(B2DComponent.class);
-        LastRemaindersOfThePandemic.BODY_DEF.type = BodyDef.BodyType.StaticBody;
-        LastRemaindersOfThePandemic.BODY_DEF.position.set(gameObject.getPosition().x + halfW, gameObject.getPosition().y + halfH);
-        b2DComponent.body = world.createBody(LastRemaindersOfThePandemic.BODY_DEF);
+        BODY_DEF.type = BodyDef.BodyType.StaticBody;
+        BODY_DEF.position.set(gameObject.getPosition().x + halfW, gameObject.getPosition().y + halfH);
+        b2DComponent.body = world.createBody(BODY_DEF);
         b2DComponent.body.setUserData("GAMEOBJECT");
         b2DComponent.width = gameObject.getWidth();
         b2DComponent.height = gameObject.getHeight();
 
-        //save position before rotation - Tiled is rotating around the bottom left corner instead of the center of a Tile
         localPosition.set(-halfW, -halfH);
         posBeforeRotation.set(b2DComponent.body.getWorldPoint(localPosition));
-        //rotate body
         b2DComponent.body.setTransform(b2DComponent.body.getPosition(), angleRad);
-        //get position after rotation
         posAfterRotation.set(b2DComponent.body.getWorldPoint(localPosition));
-        //adjust position to its original value before rotation
-        b2DComponent.body.setTransform(b2DComponent.body.getPosition().add(posBeforeRotation).sub(posAfterRotation), angleRad);
-        b2DComponent.renderPosition.set(b2DComponent.body.getPosition().x - animationComponent.width * 0.5f, b2DComponent.body.getPosition().y - animationComponent.height * 0.5f);
 
-        LastRemaindersOfThePandemic.FIXTURE_DEF.filter.categoryBits = BIT_GAME_OBJECT;
-        LastRemaindersOfThePandemic.FIXTURE_DEF.filter.maskBits = BIT_PLAYER;
+        b2DComponent.body.setTransform(b2DComponent.body.getPosition().add(posBeforeRotation).sub(posAfterRotation), angleRad);
+        b2DComponent.renderPosition.set(b2DComponent.body.getPosition().x - animationComponent.width * 0.5f, b2DComponent.body.getPosition().y - b2DComponent.height * 0.5f);
+
+        FIXTURE_DEF.filter.categoryBits = BIT_GAME_OBJECT;
+        FIXTURE_DEF.filter.maskBits = BIT_PLAYER;
         final PolygonShape pShape = new PolygonShape();
         pShape.setAsBox(halfW, halfH);
-        LastRemaindersOfThePandemic.FIXTURE_DEF.shape = pShape;
-        b2DComponent.body.createFixture(LastRemaindersOfThePandemic.FIXTURE_DEF);
+        FIXTURE_DEF.shape = pShape;
+        b2DComponent.body.createFixture(FIXTURE_DEF);
         pShape.dispose();
-        gameObjectEntity.add(b2DComponent);
+        gameObjEntity.add(b2DComponent);
 
-        this.addEntity(gameObjectEntity);
+        final GameObjectComponent gameObjectComponent = this.createComponent(GameObjectComponent.class);
+        gameObjectComponent.animationIndex = gameObject.getAnimationIndex();
+        gameObjectComponent.type = gameObject.getType();
+        gameObjEntity.add(gameObjectComponent);
+
+        this.addEntity(gameObjEntity);
     }
 }

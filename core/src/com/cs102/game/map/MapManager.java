@@ -26,8 +26,11 @@ public class MapManager {
     private final EnumMap<MapType, Map> mapCache;
     private final Array<MapListener> listeners;
     private TiledMap tiledMap;
+    private ECSEngine ecsEngine;
+    private Array<Entity> gameObjectsToRemove;
 
     public MapManager(final LastRemaindersOfThePandemic mainGame) {
+        ecsEngine = mainGame.getEcsEngine();
         currentMapType = null;
         currentMap = null;
         world = mainGame.getWorld();
@@ -37,6 +40,7 @@ public class MapManager {
         bodies = new Array<Body>();
         mapCache = new EnumMap<MapType, Map>(MapType.class);
         listeners = new Array<MapListener>();
+        gameObjectsToRemove = new Array<>();
     }
 
     public void addMapListener(final MapListener listener) {
@@ -44,6 +48,7 @@ public class MapManager {
     }
 
     public void setMap(final MapType type) {
+        Gdx.app.debug("hi", "hi");
         if (currentMapType == type) {
             return;
         }
@@ -75,18 +80,18 @@ public class MapManager {
     }
 
     private void spawnGameObjects() {
-        for(final GameObject gameObject : currentMap.getGameObjects()) {
+        for (final GameObject gameObject : currentMap.getGameObjects()) {
             ecsEngine.createGameObject(gameObject);
         }
     }
 
     private void destroyGameObjects() {
-        for(final Entity entity : ecsEngine.getEntities()) {
-            if(ECSEngine.gameObjectCmpMapper.get(entity) != null) {
+        for (final Entity entity : ecsEngine.getEntities()) {
+            if (ECSEngine.gameObjCmpMapper.get(entity) != null) {
                 gameObjectsToRemove.add(entity);
             }
         }
-        for(final Entity entity : gameObjectsToRemove) {
+        for (final Entity entity : gameObjectsToRemove) {
             ecsEngine.removeEntity(entity);
         }
         gameObjectsToRemove.clear();

@@ -213,6 +213,14 @@
   <object id="35" x="16.3333" y="959.667" width="31" height="48"/>
   <object id="40" x="160.333" y="912.333" width="63" height="30.3333"/>
  </objectgroup>
+ <objectgroup id="12" name="gameObjects">
+  <object id="45" gid="528" x="63" y="927.333" width="16" height="16"/>
+  <object id="46" gid="528" x="190.333" y="991.667" width="16" height="16">
+   <properties>
+    <property name="down" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="11" name="playerStartLocation">
   <object id="41" x="96" y="901.333">
    <point/>
