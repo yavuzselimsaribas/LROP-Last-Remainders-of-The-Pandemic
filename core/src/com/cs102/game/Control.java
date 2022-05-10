@@ -1,5 +1,6 @@
 package com.cs102.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputProcessor;
@@ -7,23 +8,25 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.cs102.game.screens.ScreenType;
 
 public class Control extends InputAdapter implements InputProcessor{
     OrthographicCamera camera;
-
     public boolean up;
     public boolean down;
     public boolean left;
     public boolean right;
-
+    //Deniz added additionally
+    public boolean collect;
+    //Deniz added additionally
+    public boolean esc;
+    public boolean V;
     public boolean LMB;
     public boolean RMB;
     public boolean processedClick;
     public Vector2 mouseClickPos = new Vector2();
     public Vector2 mapClickPos = new Vector2();
-
     public boolean debug;
-
     int screenWidth;
     int screenHeight;
 
@@ -43,9 +46,22 @@ public class Control extends InputAdapter implements InputProcessor{
         this.camera.unproject(vector3);
         return new Vector2(vector3.x, vector3.y);
     }
+
     @Override
     public boolean keyDown(int keycode) {
+        //Deniz added additionally
+        if (keycode == Keys.E) {
+            collect = true;
+        }
+
+        //Deniz added additionally
         switch (keycode) {
+            case Keys.V:
+                V = true;
+                break;
+            case Keys.E:
+                collect = true;
+                break;
             case Keys.DOWN:
             case Keys.S:
                 down = true;
@@ -68,7 +84,15 @@ public class Control extends InputAdapter implements InputProcessor{
 
     @Override
     public boolean keyUp(int keycode) {
+        //Deniz added additionally
+        //Deniz added additionally
         switch (keycode) {
+            case Keys.V:
+                V = false;
+                break;
+            case Keys.E:
+                collect = false;
+                break;
             case Keys.DOWN:
             case Keys.S:
                 down = false;
@@ -86,7 +110,8 @@ public class Control extends InputAdapter implements InputProcessor{
                 right = false;
                 break;
             case Keys.ESCAPE:
-                Gdx.app.exit();
+                //Gdx.app.exit();
+                esc = true;
                 break;
             case Keys.BACKSPACE:
                 debug = !debug;
@@ -135,7 +160,6 @@ public class Control extends InputAdapter implements InputProcessor{
     public boolean mouseMoved(int screenX, int screenY) {
         return false;
     }
-
 
     public boolean scrolled(int amount) {
         return false;

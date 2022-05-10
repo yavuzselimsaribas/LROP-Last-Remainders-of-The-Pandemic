@@ -1,20 +1,19 @@
 package com.cs102.game.screens;
 
-import com.badlogic.gdx.Screen;
-
-public enum ScreenType {
-    GAME(GameScreen.class),
+public enum ScreenType{
+    GAME(Screen.class),
     MENU(HomePage.class),
     LOADING(LoadingScreen.class),
     OPTIONS(SettingsScreen.class);
 
-    private Class<? extends Screen> screenClass;
 
-    ScreenType(Class<? extends Screen> screenClass) {
+    private Class<? extends com.badlogic.gdx.Screen> screenClass;
+
+    ScreenType(Class<? extends com.badlogic.gdx.Screen> screenClass) {
         this.screenClass = screenClass;
     }
 
-    public Class<? extends Screen> getScreenClass() {
+    public Class<? extends com.badlogic.gdx.Screen> getScreenClass() {
         return screenClass;
     }
 }

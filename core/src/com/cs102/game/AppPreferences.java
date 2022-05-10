@@ -2,10 +2,11 @@ package com.cs102.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.math.Vector2;
 
 public class AppPreferences {
 
-protected Preferences getPrefs() {
+public Preferences getPrefs() {
         return Gdx.app.getPreferences(PREFS_NAME);
         }
     private static final String PREF_MUSIC_VOLUME = "volume";
@@ -13,6 +14,7 @@ protected Preferences getPrefs() {
     private static final String PREF_SOUND_ENABLED = "sound.enabled";
     private static final String PREF_SOUND_VOL = "sound";
     private static final String PREFS_NAME = "b2dtut";
+
 
     public boolean isSoundEffectsEnabled() {
         return getPrefs().getBoolean(PREF_SOUND_ENABLED, true);
