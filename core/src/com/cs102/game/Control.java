@@ -12,7 +12,6 @@ import com.cs102.game.screens.ScreenType;
 
 public class Control extends InputAdapter implements InputProcessor{
     OrthographicCamera camera;
-
     public boolean up;
     public boolean down;
     public boolean left;
@@ -22,15 +21,12 @@ public class Control extends InputAdapter implements InputProcessor{
     //Deniz added additionally
     public boolean esc;
     public boolean V;
-
     public boolean LMB;
     public boolean RMB;
     public boolean processedClick;
     public Vector2 mouseClickPos = new Vector2();
     public Vector2 mapClickPos = new Vector2();
-
     public boolean debug;
-
     int screenWidth;
     int screenHeight;
 
@@ -50,12 +46,14 @@ public class Control extends InputAdapter implements InputProcessor{
         this.camera.unproject(vector3);
         return new Vector2(vector3.x, vector3.y);
     }
+
     @Override
     public boolean keyDown(int keycode) {
         //Deniz added additionally
         if (keycode == Keys.E) {
             collect = true;
         }
+
         //Deniz added additionally
         switch (keycode) {
             case Keys.V:
@@ -162,7 +160,6 @@ public class Control extends InputAdapter implements InputProcessor{
     public boolean mouseMoved(int screenX, int screenY) {
         return false;
     }
-
 
     public boolean scrolled(int amount) {
         return false;

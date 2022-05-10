@@ -10,7 +10,6 @@ public class AudioManager {
     private AudioType currentMusicType;
     private Music currentMusic;
     private final AssetManager assetManager;
-
     public AudioManager(final LastRemaindersOfThePandemic mainGame) {
         this.assetManager = mainGame.getAssetManager();
         currentMusicType = null;
@@ -45,8 +44,6 @@ public class AudioManager {
             currentMusic = null;
             currentMusicType = null;
         }
-
     }
-
-    }
+}
 

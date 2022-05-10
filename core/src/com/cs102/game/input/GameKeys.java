@@ -9,15 +9,10 @@ public enum GameKeys {
     RIGHT(Input.Keys.D, Input.Keys.RIGHT),
     SELECT(Input.Keys.ENTER, Input.Keys.SPACE),
     BACK(Input.Keys.ESCAPE, Input.Keys.BACKSPACE);
-
     final int[] keyCodes;
-
-
     GameKeys(final int... keyCodes) {
         this.keyCodes = keyCodes;
     }
-
-
 
     public int[] getKeyCodes() {
         return keyCodes;

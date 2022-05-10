@@ -25,17 +25,13 @@ public class PlayerMovementSystem extends IteratingSystem implements InputListen
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
 
-        if(directionChanged){
-            final PlayerComponent playerComponent = ECSEngine.playerCmpMapper.get(entity);
-            final B2DComponent b2DComponent = ECSEngine.b2dCmpMapper.get(entity);
-            directionChanged = false;
-            b2DComponent.body.applyLinearImpulse(
-                    (xFactor * playerComponent.speed.x - b2DComponent.body.getLinearVelocity().x) * b2DComponent.body.getMass(),
-                    (yFactor * playerComponent.speed.y - b2DComponent.body.getLinearVelocity().y) * b2DComponent.body.getMass(),
-                    b2DComponent.body.getWorldCenter().x,b2DComponent.body.getWorldCenter().y,true);
-        }
-
-
+        final PlayerComponent playerComponent = ECSEngine.playerCmpMapper.get(entity);
+        final B2DComponent b2DComponent = ECSEngine.b2dCmpMapper.get(entity);
+        directionChanged = false;
+        b2DComponent.body.applyLinearImpulse(
+                (xFactor * playerComponent.speed.x - b2DComponent.body.getLinearVelocity().x) * b2DComponent.body.getMass(),
+                (yFactor * playerComponent.speed.y - b2DComponent.body.getLinearVelocity().y) * b2DComponent.body.getMass(),
+                b2DComponent.body.getWorldCenter().x,b2DComponent.body.getWorldCenter().y,true);
     }
 
     @Override
