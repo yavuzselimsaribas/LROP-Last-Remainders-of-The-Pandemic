@@ -22,8 +22,12 @@ public class GameUI extends Table {
     private TextButton saveAndExitButton;
     private int xp;
     private int level;
+
+    private int health;
     private Label worldLabel;
     private Label xpLabel;
+
+    private Label healthLabel;
 
 
     public GameUI(final LastRemaindersOfThePandemic mainGame) {
@@ -33,11 +37,11 @@ public class GameUI extends Table {
         Gdx.input.setInputProcessor(mainGame.getStage());
         xp = 0;
         level = 0;
+        health = 100;
         xpLabel = new Label("XP: " + xp, mainGame.getSkin());
         worldLabel = new Label("World: " + level, mainGame.getSkin());
+        healthLabel = new Label("Health: " + health, mainGame.getSkin());
         init(mainGame);
-        add(xpLabel).left().top().row();
-        add(worldLabel).left().top().row();
 
 
     }
@@ -56,7 +60,12 @@ public class GameUI extends Table {
                                   }
         );
         initOptionsTable(mainGame);
-        add(optionsButton).expand().right().top().row();
+        add(healthLabel).left().top().expandX();
+        add(xpLabel).center().top().expandX();
+        add(worldLabel).right().top().expandX();
+        this.row();
+        add(optionsButton).left().top().expandX();
+        add(optionsTable).expand().center().width(250).height(250);
 
 
     }
@@ -76,7 +85,6 @@ public class GameUI extends Table {
         settingsButton.addListener(new ChangeListener() {
                                        @Override
                                        public void changed(ChangeEvent event, Actor actor) {
-                                           makeVisibleOptions(false);
                                            mainGame.setScreen(ScreenType.OPTIONS);
 
                                        }
@@ -103,13 +111,12 @@ public class GameUI extends Table {
         // set the table to the center of the screen
         // make the table background opaque with a grey color
         optionsTable = new Table();
-        optionsTable.setFillParent(true);
         optionsTable.setBackground(new NinePatchDrawable(new NinePatch(new Texture("options.jpg"), 1, 1, 1, 1)));
         optionsTable.add(settingsButton).width(200).height(50).pad(10).row();
         optionsTable.add(resumeButton).width(200).height(50).pad(10).row();
         optionsTable.add(saveAndExitButton).width(200).height(50).pad(10).row();
         makeVisibleOptions(false);
-        add(optionsTable).expand().center().fill();
+
     }
 
     private void makeVisibleOptions(boolean show) {

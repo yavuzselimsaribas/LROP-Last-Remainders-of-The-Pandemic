@@ -1,6 +1,7 @@
 package com.cs102.game.screens;
 
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.audio.AudioType;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
@@ -22,6 +23,7 @@ public class Screen extends AbstractScreen implements MapListener {
         mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
         //TEMP
         mainGame.getGameCamera().position.set(mapManager.getCurrentMap().getPlayerStartLocation(), 0);
+        audioManager.playAudio(AudioType.GAME);
     }
 
     @Override
