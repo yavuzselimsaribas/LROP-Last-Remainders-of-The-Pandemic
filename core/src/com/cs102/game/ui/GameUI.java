@@ -23,7 +23,7 @@ public class GameUI extends Table {
     private int xp;
     private int level;
 
-    private int health;
+    public int health;
     private Label worldLabel;
     private Label xpLabel;
 
