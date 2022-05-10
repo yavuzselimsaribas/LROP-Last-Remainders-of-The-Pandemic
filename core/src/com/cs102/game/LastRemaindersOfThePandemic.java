@@ -29,21 +29,26 @@ import java.util.EnumMap;
 
 public class LastRemaindersOfThePandemic extends Game {
 	private Skin skin;
+	//initialize the ortographic camera
 	public OrthographicCamera gameCamera;
 	private static final String TAG = LastRemaindersOfThePandemic.class.getSimpleName();
 	private EnumMap<ScreenType, Screen> screenCache;
 	private Viewport viewport;
 	private Stage stage;
 	private SpriteBatch batch;
+
 	// Yavuz add AppPreferences
 	private AppPreferences preferences;
 	public static float alpha;
+
+
 	public static final BodyDef BODY_DEF = new BodyDef();
 	public static final FixtureDef FIXTURE_DEF = new FixtureDef();
 	public static final float UNIT_SCALE = 1 / 16f;
 	public static final short BIT_PLAYER = 1 << 0;
 	public static final short BIT_GROUND = 1 << 1;
-	public static final short BIT_GAME_OBJECT = 1 << 2;
+
+
 	private Box2DDebugRenderer b2dDebugRenderer;
 	private static final float FIXED_TIME_STEP = 1 / 60f;
 	private float accumulator;
@@ -51,8 +56,11 @@ public class LastRemaindersOfThePandemic extends Game {
 	private WorldContactListener worldContactListener;
 	//Yavuz add AssetManager
 	private AssetManager assetManager;
+
 	private AudioManager audioManager;
+
 	private ECSEngine ecsEngine;
+
 	private InputManager inputManager;
 	private MapManager mapManager;
 	private GameRenderer gameRenderer;
@@ -63,7 +71,7 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		accumulator = 0;
 		Box2D.init();
-		world = new World(new Vector2(0, 0), true);
+		world = new World(new Vector2(0, 0.f), true);
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
 		b2dDebugRenderer = new Box2DDebugRenderer();
@@ -84,8 +92,10 @@ public class LastRemaindersOfThePandemic extends Game {
 		gameCamera = new OrthographicCamera();
 		viewport = new FitViewport(1280, 720, gameCamera);
 
-		ecsEngine = new ECSEngine(this);
 		mapManager = new MapManager(this);
+
+		ecsEngine = new ECSEngine(this);
+
 
 
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
@@ -154,6 +164,8 @@ public class LastRemaindersOfThePandemic extends Game {
 			super.setScreen(screen);
 		}
 	}
+
+  
 	@Override
 	public void dispose() {
 		super.dispose();
@@ -163,6 +175,8 @@ public class LastRemaindersOfThePandemic extends Game {
 		batch.dispose();
 		stage.dispose();
 	}
+
+
 	public SpriteBatch getSpriteBatch() {
 		return this.batch;
 	}
@@ -173,13 +187,15 @@ public class LastRemaindersOfThePandemic extends Game {
 	//get camera
 	public OrthographicCamera getGameCamera() {
 		return this.gameCamera;
+
 	}
+
 	//get preferences
 	public AppPreferences getPreferences() {
 		return this.preferences;
 	}
 
-    //Deniz added additionally
+  //Deniz added additionally
 	public WorldContactListener getWorldContactListener() {
 		return this.worldContactListener;
 	}
@@ -200,9 +216,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		final FreeTypeFontGenerator.FreeTypeFontParameter fontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		fontParameter.minFilter = Texture.TextureFilter.Linear;
 		fontParameter.magFilter = Texture.TextureFilter.Linear;
-
 		final int[] sizes = {16,20,26,32};
-
 		for(int size : sizes){
 			fontParameter.size = size;
 			fontGenerator.generateFont(fontParameter);

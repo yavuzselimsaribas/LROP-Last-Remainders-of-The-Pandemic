@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class AppPreferences {
 
+
 public Preferences getPrefs() {
         return Gdx.app.getPreferences(PREFS_NAME);
         }
@@ -51,4 +52,5 @@ public Preferences getPrefs() {
         getPrefs().putFloat(PREF_SOUND_VOL, volume);
         getPrefs().flush();
     }
+
 }
