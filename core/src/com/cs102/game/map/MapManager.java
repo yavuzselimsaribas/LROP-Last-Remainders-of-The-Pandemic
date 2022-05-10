@@ -16,30 +16,29 @@ import static com.cs102.game.LastRemaindersOfThePandemic.BIT_GROUND;
 
 public class MapManager {
     public static final String TAG = MapManager.class.getSimpleName();
-
     private final World world;
     private final Array<Body> bodies;
-
     private final AssetManager assetManager;
-
+    private final ECSEngine ecsEngine;
+    private final Array<Entity> gameObjectsToRemove;
     private MapType currentMapType;
     private Map currentMap;
     private final EnumMap<MapType, Map> mapCache;
     private final Array<MapListener> listeners;
     private TiledMap tiledMap;
-    private ECSEngine ecsEngine;
-    private Array<Entity> gameObjectsToRemove;
 
     public MapManager(final LastRemaindersOfThePandemic mainGame) {
-        ecsEngine = mainGame.getEcsEngine();
+
         currentMapType = null;
         currentMap = null;
         world = mainGame.getWorld();
+        ecsEngine = mainGame.getEcsEngine();
         assetManager = mainGame.getAssetManager();
+        gameObjectsToRemove = new Array<Entity>();
         bodies = new Array<Body>();
         mapCache = new EnumMap<MapType, Map>(MapType.class);
         listeners = new Array<MapListener>();
-        gameObjectsToRemove = new Array<>();
+
     }
 
     public void addMapListener(final MapListener listener) {
@@ -51,6 +50,7 @@ public class MapManager {
         if (currentMapType == type) {
             return;
         }
+
         if (currentMap != null) {
             world.getBodies(bodies);
             destroyCollisionAreas();
@@ -103,7 +103,6 @@ public class MapManager {
         }
     }
 
-
     private void spawnCollisionAreas() {
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
 
@@ -116,6 +115,7 @@ public class MapManager {
 
             LastRemaindersOfThePandemic.FIXTURE_DEF.filter.categoryBits = BIT_GROUND;
             LastRemaindersOfThePandemic.FIXTURE_DEF.filter.maskBits = -1;
+
             final ChainShape chainShape = new ChainShape();
             chainShape.createChain(collisionArea.getVertices());
             LastRemaindersOfThePandemic.FIXTURE_DEF.shape = chainShape;

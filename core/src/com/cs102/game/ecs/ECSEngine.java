@@ -1,5 +1,6 @@
 package com.cs102.game.ecs;
 
+import box2dLight.BlendFunc;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
@@ -43,6 +44,7 @@ public class ECSEngine extends PooledEngine {
         bodyDef = mainGame.BODY_DEF;
         fixtureDef = mainGame.FIXTURE_DEF;
 
+
         localPosition = new Vector2();
         posBeforeRotation = new Vector2();
         posAfterRotation = new Vector2();
@@ -53,13 +55,11 @@ public class ECSEngine extends PooledEngine {
         this.addSystem(new PlayerAnimationSystem(mainGame));
     }
 
-
-
     public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         final Entity player = this.createEntity();
 
         final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);
-        playerComponent.speed.set(3,3);
+        playerComponent.speed.set(3, 3);
         player.add(playerComponent);
 
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();

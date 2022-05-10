@@ -28,9 +28,7 @@ import java.nio.file.LinkOption;
 
 public class LoadingScreen extends AbstractScreen<LoadingUI> {
     private AssetManager assetManager;
-
     private boolean isMusicLoaded;
-
     public LoadingScreen(LastRemaindersOfThePandemic game) {
         super(game);
         assetManager = game.getAssetManager();
@@ -50,11 +48,10 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
         //Gdx.input.setInputProcessor(game.getInputManager());
     }
 
-
     @Override
     public void render(float delta) {
-        //Gdx.gl.glClearColor(0, 0, 0, 1);
-        //Gdx.gl.glClear(16384);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(16384);
         System.out.println("LoadingScreen: " + assetManager.getProgress());
         // assetManager updated && any key pressed
         assetManager.update();
@@ -63,19 +60,20 @@ public class LoadingScreen extends AbstractScreen<LoadingUI> {
             audioManager.playAudio(AudioType.INTRO);
         }
         screenUI.setProgress(assetManager.getProgress());
-
     }
 
     @Override
     public void show() {
         super.show();
     }
+
     // override hide
     @Override
     public void hide() {
         super.hide();
         audioManager.stopCurrentMusic();
     }
+
     @Override
     public void pause() {
 
