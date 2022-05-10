@@ -1,7 +1,9 @@
 package com.cs102.game.audio;
 public enum AudioType {
     INTRO("audio/intro.mp3",true,0.3f),
-    SELECT("audio/android_assets_audio_select.wav", false,0.5f);
+    SELECT("audio/android_assets_audio_select.wav", false,0.5f),
+
+    GAME("audio/gamesound.mp3", false,0.5f);
 
     private final String filePath;
     private final boolean isMusic;

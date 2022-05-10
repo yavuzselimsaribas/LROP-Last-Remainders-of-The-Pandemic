@@ -19,6 +19,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.audio.AudioType;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.ui.HomePageUI;

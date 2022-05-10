@@ -56,6 +56,7 @@ public class ECSEngine extends PooledEngine {
         this.addSystem(new PlayerCameraSystem(mainGame));
         this.addSystem(new AnimationSystem(mainGame));
         this.addSystem(new PlayerAnimationSystem(mainGame));
+        this.addSystem(new PlayerCollisionSystem(mainGame));
         this.addSystem(new LightingSystem());
     }
 
@@ -73,7 +74,7 @@ public class ECSEngine extends PooledEngine {
         bodyDef.fixedRotation = true;
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         b2DComponent.body = world.createBody(bodyDef);
-        b2DComponent.body.setUserData("PLAYER");
+        b2DComponent.body.setUserData(player);
         b2DComponent.width = width;
         b2DComponent.height = height;
         b2DComponent.renderPosition.set(b2DComponent.body.getPosition());
@@ -123,7 +124,7 @@ public class ECSEngine extends PooledEngine {
         BODY_DEF.type = BodyDef.BodyType.StaticBody;
         BODY_DEF.position.set(gameObject.getPosition().x + halfW, gameObject.getPosition().y + halfH);
         b2DComponent.body = world.createBody(BODY_DEF);
-        b2DComponent.body.setUserData("GAMEOBJECT");
+        b2DComponent.body.setUserData(gameObjEntity);
         b2DComponent.width = gameObject.getWidth();
         b2DComponent.height = gameObject.getHeight();
 

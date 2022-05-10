@@ -73,7 +73,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		worldContactListener = new WorldContactListener();
 		world.setContactListener(worldContactListener);
 		rayHandler = new RayHandler(world);
-		rayHandler.setAmbientLight(0.2f);
+		rayHandler.setAmbientLight(0.1f);
 		Light.setGlobalContactFilter(BIT_PLAYER,(short) 1,BIT_GROUND);
 
 		b2dDebugRenderer = new Box2DDebugRenderer();
