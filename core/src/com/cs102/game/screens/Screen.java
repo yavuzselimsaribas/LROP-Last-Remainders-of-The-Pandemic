@@ -8,6 +8,7 @@ import com.cs102.game.PreferenceManager;
 import com.cs102.game.audio.AudioType;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.components.PlayerComponent;
+import com.cs102.game.ecs.system.PlayerCollisionSystem;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
@@ -50,6 +51,10 @@ public class Screen extends AbstractScreen implements MapListener {
         }
         else if(Gdx.input.isKeyJustPressed(Input.Keys.O)) {
             preferenceManager.loadGameState(player);
+        }
+        else if(Gdx.input.isKeyJustPressed(Input.Keys.K) && PlayerCollisionSystem.teleport) {
+            ECSEngine.b2dCmpMapper.get(player).body.setTransform(20,20,0);
+            PlayerCollisionSystem.teleport = false;
         }
 
         ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
