@@ -71,14 +71,11 @@ public class GameUI extends Table {
         this.row();
         add(optionsButton).left().top().expandX();
         add(optionsTable).expand().center().width(250).height(250);
-        updateItemCount(itemCount);
+
 
     }
 
-    public void updateItemCount(int itemCount) {
-        this.itemCount = itemCount;
-        itemCountLabel.setText("Item Count: " + itemCount);
-    }
+
 
     private void showOptionBar(boolean show) {
         if (show) {
@@ -137,6 +134,16 @@ public class GameUI extends Table {
             optionsTable.setVisible(false);
             optionsButton.setVisible(true);
         }
+    }
+
+    //add 1 to the item count and update the label
+    public void addItem(int newItemCount) {
+        itemCount = newItemCount;
+        itemCountLabel.setText("Item Count: " + itemCount);
+    }
+    public void updateHealth(int newHealth) {
+        health = newHealth;
+        healthLabel.setText("Health: " + health);
     }
 }
 
