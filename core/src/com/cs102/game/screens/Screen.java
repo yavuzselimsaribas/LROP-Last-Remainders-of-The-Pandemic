@@ -70,6 +70,9 @@ public class Screen extends AbstractScreen implements MapListener {
         if(ECSEngine.playerCmpMapper.get(player).itemCount == 5 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x >= 43 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x <= 48 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y >= 1 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y <= 5) {
             mainGame.setScreen(ScreenType.WIN);
         }
+        if(playerCmpMapper.get(player).health <= 0) {
+            mainGame.setScreen(ScreenType.GAMEOVER);
+        }
 
         ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
         ((GameUI) screenUI).updateHealth(ECSEngine.playerCmpMapper.get(player).health);
