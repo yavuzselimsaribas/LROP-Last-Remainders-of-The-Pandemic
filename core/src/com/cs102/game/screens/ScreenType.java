@@ -5,9 +5,11 @@ public enum ScreenType{
     MENU(HomePage.class),
     LOADING(LoadingScreen.class),
     OPTIONS(SettingsScreen.class),
-    ABOUT(AboutScreen.class);
+    ABOUT(AboutScreen.class),
 
+    GAMEOVER(GameOver.class),
 
+    WIN(WinScreen.class);
 
     private Class<? extends com.badlogic.gdx.Screen> screenClass;
 
