@@ -157,4 +157,9 @@ public class ECSEngine extends PooledEngine {
 
         this.addEntity(gameObjEntity);
     }
+
+    //getter of player
+    public Entity getPlayer() {
+        return player;
+    }
 }
