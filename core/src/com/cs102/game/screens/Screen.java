@@ -1,13 +1,19 @@
 package com.cs102.game.screens;
 
+import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.PreferenceManager;
 import com.cs102.game.audio.AudioType;
 import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.ecs.components.PlayerComponent;
+import com.cs102.game.ecs.system.PlayerCollisionSystem;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
 import com.cs102.game.ui.GameUI;
+
 
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 import static com.cs102.game.ecs.ECSEngine.player;
@@ -15,6 +21,8 @@ import static com.cs102.game.ecs.ECSEngine.player;
 
 public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
+    PreferenceManager preferenceManager;
+    private Entity player;
 
 
 
@@ -24,8 +32,9 @@ public class Screen extends AbstractScreen implements MapListener {
         mapManager = mainGame.getMapManager();
         mapManager.addMapListener(this);
         mapManager.setMap(MapType.MAP_1);
+        preferenceManager = new PreferenceManager();
 
-        mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
+        player = mainGame.getEcsEngine().createPlayer(mapManager.getCurrentMap().getPlayerStartLocation(), 0.5f, 1f);
         //TEMP
         mainGame.getGameCamera().position.set(mapManager.getCurrentMap().getPlayerStartLocation(), 0);
         audioManager.playAudio(AudioType.GAME);
@@ -36,8 +45,21 @@ public class Screen extends AbstractScreen implements MapListener {
     public void render(float delta) {
         super.render(delta);
         mainGame.getGameRenderer().render(alpha);
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.P)) {
+            preferenceManager.saveGameState(player);
+        }
+        else if(Gdx.input.isKeyJustPressed(Input.Keys.O)) {
+            preferenceManager.loadGameState(player);
+        }
+        else if(Gdx.input.isKeyJustPressed(Input.Keys.K) && PlayerCollisionSystem.teleport) {
+            ECSEngine.b2dCmpMapper.get(player).body.setTransform(20,20,0);
+            PlayerCollisionSystem.teleport = false;
+        }
+
         ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
         ((GameUI) screenUI).updateHealth(ECSEngine.playerCmpMapper.get(player).health);
+
     }
 
 
