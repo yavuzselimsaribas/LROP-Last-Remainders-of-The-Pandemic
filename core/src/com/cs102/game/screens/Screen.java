@@ -2,16 +2,19 @@ package com.cs102.game.screens;
 
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.audio.AudioType;
+import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
 import com.cs102.game.ui.GameUI;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
+import static com.cs102.game.ecs.ECSEngine.player;
 //import com.sun.tools.javac.jvm.Code;
 
 public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
+
 
     public Screen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);

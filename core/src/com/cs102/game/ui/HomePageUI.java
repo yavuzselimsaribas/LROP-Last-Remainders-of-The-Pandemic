@@ -5,11 +5,15 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.screens.ScreenType;
 
@@ -20,6 +24,8 @@ public class HomePageUI extends Table {
     private final TextButton aboutButton;
     private final TextButton exitButton;
 
+    private final Label titleLabel;
+
     private LastRemaindersOfThePandemic mainGame;
 
 
@@ -27,7 +33,15 @@ public class HomePageUI extends Table {
         super(game.getSkin());
         setFillParent(true);
         this.mainGame = game;
-
+        this.setBackground(new NinePatchDrawable(new NinePatch(new Texture("main_menu.jpg"), 1, 1, 1, 1)));
+        titleLabel = new Label("Last Remainders of the Pandemic", game.getSkin());
+        titleLabel.setFontScale(2);
+        titleLabel.setAlignment(2);
+        titleLabel.setWrap(true);
+        titleLabel.setWidth(Gdx.graphics.getWidth());
+        titleLabel.setHeight(Gdx.graphics.getHeight()/2);
+        titleLabel.setPosition(0, Gdx.graphics.getHeight()/2);
+        add(titleLabel).row();
         Gdx.input.setInputProcessor(new InputMultiplexer(mainGame.getInputManager(), mainGame.getStage()));
         playButton = new TextButton("Play", game.getSkin());
         playButton.getLabel().setWrap(true);
@@ -54,7 +68,7 @@ public class HomePageUI extends Table {
         aboutButton.addListener(new ChangeListener() {
                                     @Override
                                     public void changed(ChangeEvent event, Actor actor) {
-                                        System.out.println("About");
+                                        mainGame.setScreen(ScreenType.ABOUT);
                                     }
                                 }
         );
@@ -75,4 +89,10 @@ public class HomePageUI extends Table {
 
 
 
-}
+
+
+    }
+
+
+
+
