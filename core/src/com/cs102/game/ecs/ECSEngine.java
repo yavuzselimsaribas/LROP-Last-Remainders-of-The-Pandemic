@@ -67,7 +67,7 @@ public class ECSEngine extends PooledEngine {
         player = this.createEntity();
 
         final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);
-        playerComponent.speed.set(10, 10);
+        playerComponent.speed.set(50, 50);
         player.add(playerComponent);
 
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();

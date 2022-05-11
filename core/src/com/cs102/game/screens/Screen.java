@@ -3,6 +3,7 @@ package com.cs102.game.screens;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.math.Vector2;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.PreferenceManager;
 import com.cs102.game.audio.AudioType;
@@ -17,6 +18,7 @@ import com.cs102.game.ui.GameUI;
 
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
 import static com.cs102.game.ecs.ECSEngine.player;
+import static com.cs102.game.ecs.ECSEngine.playerCmpMapper;
 //import com.sun.tools.javac.jvm.Code;
 
 public class Screen extends AbstractScreen implements MapListener {
@@ -53,8 +55,21 @@ public class Screen extends AbstractScreen implements MapListener {
             preferenceManager.loadGameState(player);
         }
         else if(Gdx.input.isKeyJustPressed(Input.Keys.K) && PlayerCollisionSystem.teleport) {
-            ECSEngine.b2dCmpMapper.get(player).body.setTransform(20,20,0);
+            ECSEngine.b2dCmpMapper.get(player).body.setTransform(6.5f,46,0);
+            ECSEngine.playerCmpMapper.get(player).itemCount = 0;
             PlayerCollisionSystem.teleport = false;
+        }
+        else if(Gdx.input.isKeyJustPressed(Input.Keys.L) && PlayerCollisionSystem.teleport) {
+            ECSEngine.b2dCmpMapper.get(player).body.setTransform(91,67,0);
+            PlayerCollisionSystem.teleport = false;
+        }
+
+        if(playerCmpMapper.get(player).health <= 0) {
+            mainGame.setScreen(ScreenType.GAMEOVER);
+        }
+
+        if(ECSEngine.playerCmpMapper.get(player).itemCount == 5 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x >= 43 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x <= 48 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y >= 91 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y <= 95) {
+            mainGame.setScreen(ScreenType.WIN);
         }
 
         ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
