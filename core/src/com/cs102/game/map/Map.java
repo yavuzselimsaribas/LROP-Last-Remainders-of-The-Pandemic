@@ -29,7 +29,7 @@ public class Map {
     private final Vector2 playerStartLocation;
     private final Array<GameObject> gameObjects;
     private final IntMap<Animation<Sprite>> mapAnimations;
-    Preferences pref = Gdx.app.getPreferences("b2dtut");
+    Preferences pref = Gdx.app.getPreferences("CS102_Preferences");
     public Map ( final TiledMap tiledMap) {
         this.tiledMap = tiledMap;
         collisionAreas = new Array<>();
@@ -111,7 +111,7 @@ public class Map {
     }
 
 
-    /*
+
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
@@ -134,8 +134,9 @@ public class Map {
         return new Vector2(x, y);
     }
 
-     */
 
+
+    /*
     private Vector2 parsePlayerStartLocation() {
         float x = 0;
         float y = 0;
@@ -150,6 +151,7 @@ public class Map {
         }
         return new Vector2(x, y);
     }
+    */
 
     public Array<CollisionArea> getCollisionAreas() {
         return collisionAreas;
