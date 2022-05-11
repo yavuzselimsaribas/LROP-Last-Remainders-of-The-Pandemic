@@ -63,7 +63,7 @@ public class ECSEngine extends PooledEngine {
     }
 
 
-    public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
+    public Entity createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
         player = this.createEntity();
 
         final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);

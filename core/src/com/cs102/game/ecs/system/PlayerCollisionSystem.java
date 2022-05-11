@@ -7,12 +7,14 @@ import com.badlogic.gdx.Gdx;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.WorldContactListener;
 import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.ecs.components.B2DComponent;
 import com.cs102.game.ecs.components.GameObjectComponent;
 import com.cs102.game.ecs.components.RemoveComponent;
 import com.cs102.game.map.GameObjectType;
 import com.cs102.game.ui.GameUI;
 
 public class PlayerCollisionSystem extends IteratingSystem implements WorldContactListener.PlayerCollisionListener {
+    public static boolean teleport;
     public PlayerCollisionSystem(final LastRemaindersOfThePandemic mainGame) {
         super(Family.all(RemoveComponent.class).get());
 
@@ -39,9 +41,11 @@ public class PlayerCollisionSystem extends IteratingSystem implements WorldConta
                 ECSEngine.playerCmpMapper.get(player).health--;
                 break;
             case PORTAL1 :
-                if(ECSEngine.playerCmpMapper.get(player).itemCount >= 6) {
-
+                if (ECSEngine.playerCmpMapper.get(player).itemCount >= 6) {
+                    teleport = true;
+                    ECSEngine.playerCmpMapper.get(player).itemCount = 0;
                 }
+
                 break;
             case PORTAL2 :
                 break;

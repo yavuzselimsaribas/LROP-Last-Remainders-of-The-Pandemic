@@ -52,7 +52,7 @@ public class PreferenceManager implements Json.Serializable{
         b2DComponent.body.setTransform(savedJsonStr.getFloat("PLAYER_X", 0f),savedJsonStr.getFloat("PLAYER_Y", 0f),b2DComponent.body.getAngle());
         final PlayerComponent playerComponent = ECSEngine.playerCmpMapper.get(player);
         playerComponent.itemCount = savedJsonStr.getInt("ITEM_COLLECTED", 0);
-    } 
+    }
 
     @Override
     public void write(Json json) {
