@@ -10,14 +10,11 @@ public class PlayerComponent implements Component, Pool.Poolable {
 
     public int health;
     public int xp;
-
     public int itemCount;
-
     public Vector2 speed = new Vector2();
-
     @Override
     public void reset() {
-        health = 0;
+        health = 100;
         xp = 0;
         itemCount = 0;
         speed.setZero();
