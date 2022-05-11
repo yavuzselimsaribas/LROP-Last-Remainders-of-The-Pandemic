@@ -6,6 +6,8 @@ import com.badlogic.gdx.Input;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.PreferenceManager;
 import com.cs102.game.audio.AudioType;
+import com.cs102.game.ecs.ECSEngine;
+import com.cs102.game.ecs.components.PlayerComponent;
 import com.cs102.game.input.GameKeys;
 import com.cs102.game.input.InputManager;
 import com.cs102.game.map.*;
@@ -13,12 +15,15 @@ import com.cs102.game.ui.GameUI;
 
 
 import static com.cs102.game.LastRemaindersOfThePandemic.alpha;
+import static com.cs102.game.ecs.ECSEngine.player;
 //import com.sun.tools.javac.jvm.Code;
 
 public class Screen extends AbstractScreen implements MapListener {
     private final MapManager mapManager;
     PreferenceManager preferenceManager;
     private Entity player;
+
+
 
     public Screen(LastRemaindersOfThePandemic mainGame) {
         super(mainGame);
@@ -32,18 +37,24 @@ public class Screen extends AbstractScreen implements MapListener {
         //TEMP
         mainGame.getGameCamera().position.set(mapManager.getCurrentMap().getPlayerStartLocation(), 0);
         audioManager.playAudio(AudioType.GAME);
+
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
         mainGame.getGameRenderer().render(alpha);
+
         if(Gdx.input.isKeyJustPressed(Input.Keys.P)) {
             preferenceManager.saveGameState(player);
         }
         else if(Gdx.input.isKeyJustPressed(Input.Keys.O)) {
             preferenceManager.loadGameState(player);
         }
+
+        ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
+        ((GameUI) screenUI).updateHealth(ECSEngine.playerCmpMapper.get(player).health);
+
     }
 
 

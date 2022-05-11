@@ -38,6 +38,8 @@ public class ECSEngine extends PooledEngine {
     private final Vector2 posBeforeRotation;
     private final Vector2 posAfterRotation;
 
+    public static Entity player;
+
 
     public ECSEngine(final LastRemaindersOfThePandemic mainGame) {
         super();
@@ -60,11 +62,12 @@ public class ECSEngine extends PooledEngine {
         this.addSystem(new LightingSystem());
     }
 
-    public Entity createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
-        final Entity player = this.createEntity();
+
+    public void createPlayer(final Vector2 playerStartLocation, final float width, final float height) {
+        player = this.createEntity();
 
         final PlayerComponent playerComponent = this.createComponent(PlayerComponent.class);
-        playerComponent.speed.set(3, 3);
+        playerComponent.speed.set(10, 10);
         player.add(playerComponent);
 
         LastRemaindersOfThePandemic.resetBodiesAndFixtureDefinition();
@@ -142,7 +145,7 @@ public class ECSEngine extends PooledEngine {
         final PolygonShape pShape = new PolygonShape();
         pShape.setAsBox(halfW, halfH);
         FIXTURE_DEF.shape = pShape;
-        if(gameObject.getType().name().equals("INFECTIOUS")) {
+        if(gameObject.getType().name().equals("INFECTIOUS") || gameObject.getType().name().equals("PORTAL1") || gameObject.getType().name().equals("PORTAL2")) {
             FIXTURE_DEF.isSensor = true;
         }
         b2DComponent.body.createFixture(FIXTURE_DEF);
@@ -155,5 +158,10 @@ public class ECSEngine extends PooledEngine {
         gameObjEntity.add(gameObjectComponent);
 
         this.addEntity(gameObjEntity);
+    }
+
+    //getter of player
+    public Entity getPlayer() {
+        return player;
     }
 }

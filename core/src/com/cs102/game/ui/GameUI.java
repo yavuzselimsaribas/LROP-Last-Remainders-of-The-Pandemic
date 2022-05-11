@@ -10,7 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.cs102.game.LastRemaindersOfThePandemic;
+import com.cs102.game.ecs.ECSEngine;
 import com.cs102.game.screens.ScreenType;
+
+import javax.swing.text.html.parser.Entity;
 
 public class GameUI extends Table {
     // buttons include in hud
@@ -21,13 +24,15 @@ public class GameUI extends Table {
     private TextButton resumeButton;
     private TextButton saveAndExitButton;
     private int xp;
-    private int level;
+    public int itemCount;
 
-    public int health;
-    private Label worldLabel;
+    private int health;
     private Label xpLabel;
 
     private Label healthLabel;
+
+    private Label itemCountLabel;
+
 
 
     public GameUI(final LastRemaindersOfThePandemic mainGame) {
@@ -36,10 +41,10 @@ public class GameUI extends Table {
         this.setFillParent(true);
         Gdx.input.setInputProcessor(mainGame.getStage());
         xp = 0;
-        level = 0;
+        itemCount = 0;
         health = 100;
         xpLabel = new Label("XP: " + xp, mainGame.getSkin());
-        worldLabel = new Label("World: " + level, mainGame.getSkin());
+        itemCountLabel = new Label("Item Count: " +itemCount , mainGame.getSkin());
         healthLabel = new Label("Health: " + health, mainGame.getSkin());
         init(mainGame);
 
@@ -62,13 +67,15 @@ public class GameUI extends Table {
         initOptionsTable(mainGame);
         add(healthLabel).left().top().expandX();
         add(xpLabel).center().top().expandX();
-        add(worldLabel).right().top().expandX();
+        add(itemCountLabel).right().top().expandX();
         this.row();
         add(optionsButton).left().top().expandX();
         add(optionsTable).expand().center().width(250).height(250);
 
 
     }
+
+
 
     private void showOptionBar(boolean show) {
         if (show) {
@@ -127,6 +134,16 @@ public class GameUI extends Table {
             optionsTable.setVisible(false);
             optionsButton.setVisible(true);
         }
+    }
+
+    //add 1 to the item count and update the label
+    public void addItem(int newItemCount) {
+        itemCount = newItemCount;
+        itemCountLabel.setText("Item Count: " + itemCount);
+    }
+    public void updateHealth(int newHealth) {
+        health = newHealth;
+        healthLabel.setText("Health: " + health);
     }
 }
 

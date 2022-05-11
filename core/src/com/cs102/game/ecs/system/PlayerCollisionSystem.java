@@ -35,9 +35,16 @@ public class PlayerCollisionSystem extends IteratingSystem implements WorldConta
                 break;
             case FIRE :
                 break;
-            //case INFECTIOUS :
-            //    GameUI.health
-           //     break;
+            case INFECTIOUS :
+                ECSEngine.playerCmpMapper.get(player).health--;
+                break;
+            case PORTAL1 :
+                if(ECSEngine.playerCmpMapper.get(player).itemCount >= 6) {
+
+                }
+                break;
+            case PORTAL2 :
+                break;
         }
     }
 }
