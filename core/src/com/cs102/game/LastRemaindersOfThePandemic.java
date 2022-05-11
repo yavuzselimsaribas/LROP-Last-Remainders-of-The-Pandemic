@@ -62,6 +62,7 @@ public class LastRemaindersOfThePandemic extends Game {
 	private InputManager inputManager;
 	private MapManager mapManager;
 	private GameRenderer gameRenderer;
+	private PreferenceManager preferenceManager;
 
 	public void create() {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
@@ -97,9 +98,7 @@ public class LastRemaindersOfThePandemic extends Game {
 		ecsEngine = new ECSEngine(this);
 		mapManager = new MapManager(this);
 
-
-
-
+		preferenceManager = new PreferenceManager();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
 		setScreen(ScreenType.MENU);
 		gameRenderer = new GameRenderer(this);
