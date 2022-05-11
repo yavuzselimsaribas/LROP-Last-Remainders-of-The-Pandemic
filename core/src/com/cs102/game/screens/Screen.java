@@ -61,14 +61,13 @@ public class Screen extends AbstractScreen implements MapListener {
         }
         else if(Gdx.input.isKeyJustPressed(Input.Keys.L) && PlayerCollisionSystem.teleport) {
             ECSEngine.b2dCmpMapper.get(player).body.setTransform(91,67,0);
-            PlayerCollisionSystem.teleport = false;
         }
 
         if(playerCmpMapper.get(player).health <= 0) {
             mainGame.setScreen(ScreenType.GAMEOVER);
         }
 
-        if(ECSEngine.playerCmpMapper.get(player).itemCount == 5 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x >= 43 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x <= 48 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y >= 91 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y <= 95) {
+        if(ECSEngine.playerCmpMapper.get(player).itemCount == 5 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x >= 43 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().x <= 48 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y >= 1 && ECSEngine.b2dCmpMapper.get(player).body.getPosition().y <= 5) {
             mainGame.setScreen(ScreenType.WIN);
         }
 
