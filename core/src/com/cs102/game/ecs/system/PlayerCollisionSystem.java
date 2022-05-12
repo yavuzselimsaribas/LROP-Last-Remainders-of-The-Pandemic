@@ -45,7 +45,6 @@ public class PlayerCollisionSystem extends IteratingSystem implements WorldConta
                     teleport = true;
                     ECSEngine.playerCmpMapper.get(player).itemCount = 0;
                 }
-
                 break;
             case PORTAL2 :
                 break;

@@ -18,12 +18,14 @@ public class PreferenceManager implements Json.Serializable{
     private final JsonReader jsonReader;
     private Vector2 playerPos;
     private int itemCollected;
+    private int health;
 
     public PreferenceManager() {
         preferences = Gdx.app.getPreferences("CS102_Preferences");
         json = new Json();
         jsonReader = new JsonReader();
         playerPos = new Vector2();
+        health = 0;
     }
 
     public boolean containsKey(String key) {
@@ -40,6 +42,7 @@ public class PreferenceManager implements Json.Serializable{
     public void saveGameState(Entity player) {
         playerPos.set(ECSEngine.b2dCmpMapper.get(player).body.getPosition());
         itemCollected = ECSEngine.playerCmpMapper.get(player).itemCount;
+        health = ECSEngine.playerCmpMapper.get(player).health;
 
         preferences.putString("GAME_STATE", new Json().toJson(this));
 
@@ -52,6 +55,7 @@ public class PreferenceManager implements Json.Serializable{
         b2DComponent.body.setTransform(savedJsonStr.getFloat("PLAYER_X", 0f),savedJsonStr.getFloat("PLAYER_Y", 0f),b2DComponent.body.getAngle());
         final PlayerComponent playerComponent = ECSEngine.playerCmpMapper.get(player);
         playerComponent.itemCount = savedJsonStr.getInt("ITEM_COLLECTED", 0);
+        playerComponent.health = savedJsonStr.getInt("HEALTH", 100);
     }
 
     @Override
@@ -59,6 +63,7 @@ public class PreferenceManager implements Json.Serializable{
         json.writeValue("PLAYER_X", playerPos.x);
         json.writeValue("PLAYER_Y", playerPos.y);
         json.writeValue("ITEM_COLLECTED", itemCollected);
+        json.writeValue("HEALTH", health);
     }
 
     @Override
