@@ -79,11 +79,9 @@ public class LastRemaindersOfThePandemic extends Game {
 
 		b2dDebugRenderer = new Box2DDebugRenderer();
 
-		//initialize asset manager
 		assetManager = new AssetManager();
 		assetManager.setLoader(TiledMap.class, new TmxMapLoader(assetManager.getFileHandleResolver()));
 		skinInitializer();
-		//Yavuz initialize the stage
 		stage = new Stage(new FitViewport(1280, 720), batch);
 
 		audioManager = new AudioManager(this);
