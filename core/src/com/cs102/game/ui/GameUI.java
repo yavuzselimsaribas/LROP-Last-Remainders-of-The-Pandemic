@@ -145,6 +145,11 @@ public class GameUI extends Table {
         health = newHealth;
         healthLabel.setText("Health: " + health);
     }
+
+    public void addXP(int newXP) {
+        xp = newXP;
+        xpLabel.setText("XP: " + xp);
+    }
 }
 
 

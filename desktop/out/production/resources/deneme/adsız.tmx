@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="96" height="96" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="318">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="96" height="96" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="320">
  <tileset firstgid="1" source="labtileset1.tsx"/>
  <tileset firstgid="1025" source="outdoor.tsx"/>
  <tileset firstgid="2025" source="indoor2.tsx"/>
@@ -393,6 +393,12 @@
   </object>
   <object id="200" x="13.6667" y="1408.33">
    <polyline points="0,0 10,-1.33333 19.3333,16.3333 40.3333,19 42,93 0.333333,94.3333"/>
+  </object>
+  <object id="318" x="81.375" y="800.125">
+   <polyline points="0,0 46,-0.125"/>
+  </object>
+  <object id="319" x="1424.63" y="479.75">
+   <polyline points="0,0 46.5,0"/>
   </object>
  </objectgroup>
  <objectgroup id="7" name="gameObjects">

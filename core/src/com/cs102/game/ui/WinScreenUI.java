@@ -15,7 +15,7 @@ public class WinScreenUI extends Table {
     public WinScreenUI(final LastRemaindersOfThePandemic mainGame) {
         super(mainGame.getSkin());
         this.setFillParent(true);
-        this.setDebug(true);
+        //this.setDebug(true);
 
         //add game over title Lable
         this.add(new Label("You Win!", mainGame.getSkin()));

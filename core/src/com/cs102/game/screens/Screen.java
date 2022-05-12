@@ -55,7 +55,7 @@ public class Screen extends AbstractScreen implements MapListener {
             preferenceManager.loadGameState(player);
         }
         else if(Gdx.input.isKeyJustPressed(Input.Keys.K) && PlayerCollisionSystem.teleport) {
-            ECSEngine.b2dCmpMapper.get(player).body.setTransform(6.5f,46,0);
+            ECSEngine.b2dCmpMapper.get(player).body.setTransform(6.5f,44,0);
             ECSEngine.playerCmpMapper.get(player).itemCount = 0;
             PlayerCollisionSystem.teleport = false;
         }
@@ -76,6 +76,7 @@ public class Screen extends AbstractScreen implements MapListener {
 
         ((GameUI) screenUI).addItem(ECSEngine.playerCmpMapper.get(player).itemCount);
         ((GameUI) screenUI).updateHealth(ECSEngine.playerCmpMapper.get(player).health);
+        ((GameUI) screenUI).addXP(ECSEngine.playerCmpMapper.get(player).xp);
 
     }
 

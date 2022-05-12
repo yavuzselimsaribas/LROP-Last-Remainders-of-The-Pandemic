@@ -43,6 +43,7 @@ public class PlayerCollisionSystem extends IteratingSystem implements WorldConta
             case PORTAL1 :
                 if (ECSEngine.playerCmpMapper.get(player).itemCount >= 10) {
                     teleport = true;
+                    ECSEngine.playerCmpMapper.get(player).xp += 5;
                 }
                 break;
             case PORTAL2 :

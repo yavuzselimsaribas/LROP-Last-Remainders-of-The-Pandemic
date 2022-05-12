@@ -14,7 +14,7 @@ public class GameOverUI extends Table {
     public GameOverUI(final LastRemaindersOfThePandemic mainGame) {
         super(mainGame.getSkin());
         this.setFillParent(true);
-        this.setDebug(true);
+        //this.setDebug(true);
         // add labels
         this.add(new Label("Game Over", mainGame.getSkin()));
         this.row();
