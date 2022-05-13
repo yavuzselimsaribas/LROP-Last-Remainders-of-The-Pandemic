@@ -1,0 +1,1378 @@
+commit e7cb307f13b4fcf54f2340cc4596ccf9f38a535e (HEAD -> yavuz, origin/yavuz)
+Author: Yavuuzslm <yavuuzslm5@gmail.com>                                     
+Date:   Wed May 11 07:11:10 2022 +0300                                       
+                                                                             
+    some changes                                                             
+
+commit d4cace06e2cef8cfd4043c3b3366e82d48242f8f
+Merge: 76f042d 84826b0
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 07:05:56 2022 +0300
+
+    Merge pull request #76 from yavuuzslm/main
+
+    Finalized
+
+commit 84826b0dcb639a42b390d4bf4185a079fab79e74
+Merge: 630b2ab 050d6b7
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 07:05:24 2022 +0300
+
+    Merge pull request #75 from yavuuzslm/özgün
+
+    .
+
+commit 050d6b7ba083fcd3aab8831a67fa81162e196ebe (origin/özgün)
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 07:04:45 2022 +0300
+
+    .
+
+commit 3d7d104fd036f24ac95a30e96b0ccb6ba279abb4
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 06:56:16 2022 +0300
+
+    last
+
+commit 630b2abe337e95c5edd727ff21836fb8c3955247
+Merge: bf3c87a 1f898e9
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 06:49:38 2022 +0300
+
+    Merge pull request #74 from yavuuzslm/özgün
+
+    game over and win screens
+
+commit 1f898e91aed63476b656200b27cbbcfd2887a2a9
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 06:49:08 2022 +0300
+
+    minor corrections
+
+commit bf3c87a4871df78dd90b9462d94f77a3128c98c7
+Merge: f16b6ff 0481945
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 06:20:02 2022 +0300
+
+    Merge pull request #73 from yavuuzslm/özgün
+
+    game over and win screens
+
+commit 04819456ad21dc9d362c3f1674674f7f1683afdf
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 06:19:25 2022 +0300
+
+    .
+
+commit 7858d07f94af99a27f7f7b4954c9451a6305b750
+Merge: d10f702 f16b6ff
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 05:27:09 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit 76f042ded73b9f2439d36e2f52abe8529fa6011c
+Merge: 0ce81b2 f16b6ff
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 05:24:04 2022 +0300
+
+    Merge pull request #71 from yavuuzslm/main
+
+    Portal
+
+commit f16b6ff2c43c83d94f447099e8685006a5906661
+Merge: 65637d8 814a316
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 05:23:14 2022 +0300
+
+    Merge pull request #70 from yavuuzslm/deniz
+
+    Deniz
+
+commit 814a316336b72da41950f649eab24a07c8352339 (origin/deniz)
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 05:22:53 2022 +0300
+
+    Portal Changes
+
+commit d10f7020fcdf18f3ee912f414143d9eaf6817c0a
+Merge: b9b2dd7 65637d8
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 05:00:49 2022 +0300
+
+    Merge pull request #69 from yavuuzslm/main
+
+    .
+
+commit 466688c54e25495d206f1be1c042724528de5e39
+Merge: f8cd52d 65637d8
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 04:56:14 2022 +0300
+
+    Merge pull request #68 from yavuuzslm/main
+
+    Merge pull request #67 from yavuuzslm/deniz
+
+commit 65637d84a0684afc3363372e2acee1a40a755491
+Merge: 1c83775 f8cd52d
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 04:55:48 2022 +0300
+
+    Merge pull request #67 from yavuuzslm/deniz
+
+    Deniz
+
+commit f8cd52d1fd9fde53f91e9a0084f8345c8af8b1ea
+Merge: e286a87 1c83775
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 04:55:34 2022 +0300
+
+    Merge branch 'main' into deniz
+
+commit e286a877da73e20b43d7e649d37459446d858950
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 04:54:10 2022 +0300
+
+    Save System Basics
+
+commit b9b2dd74d24dad5887b63d25003f392c51214950
+Merge: 108d429 0ce81b2
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 04:03:32 2022 +0300
+
+    Merge pull request #66 from yavuuzslm/yavuz
+
+    .
+
+commit 1c83775f13e6b817ce138367a128617679106b4b
+Merge: 8b57b83 0ce81b2
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 04:03:11 2022 +0300
+
+    Merge pull request #65 from yavuuzslm/yavuz
+
+    Health Count managed
+
+commit 0ce81b271ac9696ab8d3c63b89b9543266de1a64
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Wed May 11 04:01:04 2022 +0300
+
+    Health Count managed
+
+commit 8b57b831e7656f5e3f1c32f7c35d1c82d8a908ef
+Merge: 01fec09 e4a40d9
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 03:58:49 2022 +0300
+
+    Merge pull request #64 from yavuuzslm/yavuz
+
+    Yavuz
+
+commit e4a40d99e1d7977483873568c321dc8ea2551cfd
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Wed May 11 03:56:35 2022 +0300
+
+    ItemCount managed
+
+commit c4450bfb4937051385f2cb23e7963c7eb16e8243
+Merge: fc4e95a 01fec09
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 03:12:22 2022 +0300
+
+    Merge pull request #63 from yavuuzslm/main
+
+    added Özgün's changes into my branch
+
+commit 01fec099fe0964afa59c23f285131f1f3d8fde46
+Merge: 217d269 108d429
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 03:11:40 2022 +0300
+
+    Merge pull request #62 from yavuuzslm/özgün
+
+    .
+
+commit 108d42938b0e4e9c57a26bccc21a1b12e981f082
+Merge: 23255e2 217d269
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 03:11:27 2022 +0300
+
+    Merge branch 'main' into özgün
+
+commit fc4e95ae3df3842d69adf5eb0def281efd0dd2ca
+Merge: 278c657 217d269
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 03:09:05 2022 +0300
+
+    Merge pull request #61 from yavuuzslm/main
+
+    Merging into individual branch
+
+commit 217d2695ec1cd1cab821b852edea1e0b177d2eeb
+Merge: c9491d5 278c657
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 03:08:22 2022 +0300
+
+    Merge pull request #60 from yavuuzslm/yavuz
+
+    GameOver ui is just created
+
+commit 278c6570b7475949018b4a78151b38ba668bb6c2
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Wed May 11 03:05:58 2022 +0300
+
+    GameOver ui is just created
+
+commit 23255e2020330bf63686a4e700819228da42ce85
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 03:00:10 2022 +0300
+
+    map arrangements
+
+commit c9491d58b45d12d6c9eae3903108831fb8b7172c
+Merge: d61c7c9 216aa5a
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Wed May 11 02:57:05 2022 +0300
+
+    Merge pull request #59 from yavuuzslm/yavuz
+
+    Yavuz
+
+commit 216aa5a4e26217c845fd8837c777f176d7b21b2a
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Wed May 11 02:54:37 2022 +0300
+
+    some Textures are added, AboutScreen and AboutScreenUI is added
+
+commit 294f058d7bd83e260537c01aff5a30cd26a231d0
+Merge: 8543ad5 248eb31
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 01:25:09 2022 +0300
+
+    Merge pull request #58 from yavuuzslm/özgün
+
+    özgün
+
+commit 248eb315943c979a04f725055a51fd855ae473b1
+Merge: f4c65db 8543ad5
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 01:25:01 2022 +0300
+
+    Merge branch 'deniz' into özgün
+
+commit f4c65db460c94e494166240c89e9e162d1874515
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 01:24:03 2022 +0300
+
+    Infectious area
+
+commit 8543ad5a38b4c4f695abd71d1635ac37a4edd647
+Merge: 2e78922 16e3b5b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 01:21:41 2022 +0300
+
+    Merge pull request #57 from yavuuzslm/özgün
+
+    Merge pull request #56 from yavuuzslm/main
+
+commit e27f2886ac9860eb60e012432b86e7d7c1678ff4
+Merge: 18e3600 16e3b5b
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Wed May 11 00:16:52 2022 +0300
+
+    Merge remote-tracking branch 'origin/özgün' into özgün
+
+commit 16e3b5b85cefde8198b1b4150e72b88916063821
+Merge: 18e3600 d61c7c9
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Wed May 11 00:16:22 2022 +0300
+
+    Merge pull request #56 from yavuuzslm/main
+
+    .
+
+commit 2e78922da5198fe8c02c83b6933c97b4da524402
+Merge: 4307f49 d61c7c9
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 00:06:50 2022 +0300
+
+    Merge pull request #55 from yavuuzslm/main
+
+    main to deniz
+
+commit 4307f4937b8e15bcec2eff0a52db99faf7aa0c9a
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Wed May 11 00:05:51 2022 +0300
+
+    Minor Changes
+
+commit 6383d55d9c98970fe982216726ae95e3007f90ae
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue May 10 23:29:04 2022 +0300
+
+    minor changes
+
+commit d61c7c9d2f3998d3d2010653c8a763f73927ec36
+Merge: f31cd29 bdf5ef7
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Tue May 10 23:03:01 2022 +0300
+
+    Merge pull request #54 from yavuuzslm/yavuz
+
+    GameSound is added, merged to main
+
+commit bdf5ef76b8e1b85d77d3762990e60c73c47b2cd2
+Merge: 6d7a4e0 f31cd29
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Tue May 10 23:02:44 2022 +0300
+
+    Merge branch 'main' into yavuz
+
+commit f31cd29bf13958ba9f02cd9b49b8a459bb02ef7e
+Merge: e1b5df8 3740f74
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 22:56:15 2022 +0300
+
+    Merge pull request #53 from yavuuzslm/deniz
+
+    Deniz
+
+commit 3740f749fece81e68225a1968cbcf223b2dfa6da
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 22:55:53 2022 +0300
+
+    I added GameObject Interactions
+
+commit 6d7a4e0858d6f44a08e34c7ea7e08719b5e7ad1b
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue May 10 22:41:36 2022 +0300
+
+    GameSound is added, ScreenUI and HUD is fixed
+
+commit e1b5df8953d95f1ac25ef6ec14f17ab9e9f9c882
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Tue May 10 22:04:27 2022 +0300
+
+    Create README.md
+
+commit 63c37a904768568037306a5997e1a595d9b45a5d
+Merge: 4551365 a5a6a05
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Tue May 10 21:24:53 2022 +0300
+
+    Merge pull request #52 from yavuuzslm/main
+
+    Merge pull request #49 from yavuuzslm/özgün
+
+commit 45513658abaf354dd17f3c1776bd8178281d3755
+Merge: 806681b 18e3600
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Tue May 10 21:21:46 2022 +0300
+
+    Merge pull request #51 from yavuuzslm/özgün
+
+    AaA
+
+commit 03b0f1ae260357979f8a0cb1375b9bf82b98d5fd
+Merge: d5d1664 a5a6a05
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:20:49 2022 +0300
+
+    Merge pull request #50 from yavuuzslm/main
+
+    .
+
+commit a5a6a058b4d62b6b1e82659b0aca55f4bc38ae76 (main)
+Merge: 40b80c8 18e3600
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:20:01 2022 +0300
+
+    Merge pull request #49 from yavuuzslm/özgün
+
+    .
+
+commit 18e3600928fe3e8aad00776d556d5ef781c1785f
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:19:29 2022 +0300
+
+    .
+
+commit d5d1664890643c4be665bd0854cc4536b6201b60
+Merge: 62efe80 40b80c8
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:09:05 2022 +0300
+
+    Merge pull request #47 from yavuuzslm/main
+
+    main to deniz
+
+commit 40b80c84039bb4fa7dbd0e89612cda40da001d6c
+Merge: 4d5021f feed9b1
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:08:08 2022 +0300
+
+    Merge pull request #46 from yavuuzslm/özgün
+
+    özgün
+
+commit feed9b1bb86618c84f11b12b7141f3927b565881
+Merge: 8daed64 4d5021f
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 21:07:58 2022 +0300
+
+    Merge branch 'main' into özgün
+
+commit 8daed64f055677742bc6c5f0d0040072a0998c97
+Merge: 842f30e b954e10
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:57:22 2022 +0300
+
+    Merge branch 'HEAD' into özgün
+
+commit b954e10c7d581198a463f2dad25bbdc7c98c6efd
+Merge: 07c586d 842f30e
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:55:37 2022 +0300
+
+    Merge branch 'özgün' into HEAD
+
+commit 806681b5690fdc7ddf2b3e36014021241ede18ba
+Merge: 8c62f02 73a824d
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Tue May 10 20:41:58 2022 +0300
+
+    Merge pull request #45 from yavuuzslm/özgün
+
+    özgün to yavuz
+
+commit 842f30e0cd1921ebe89b83855cb6db5e9d34aaea
+Merge: 37ca3c5 e58949a
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:21:23 2022 +0300
+
+    Merge remote-tracking branch 'origin/merging' into özgün
+
+commit e58949a784352d418644beca691138520e114912
+Merge: 2e401a5 62efe80
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:19:10 2022 +0300
+
+    Merge pull request #43 from yavuuzslm/deniz
+
+    Deniz
+
+commit 37ca3c588952b1fce4355a0930c8bcbec3fdeca0
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:10:45 2022 +0300
+
+    x
+
+commit 1f686d73ee3eab367b3994dc91e563a631764153
+Merge: f4880aa 62efe80
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 20:05:44 2022 +0300
+
+    Merge remote-tracking branch 'origin/deniz' into özgün
+
+commit 4d5021f5602b3c0f07363001cfa7d0459481d65f
+Merge: 07c586d 1e9b803
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue May 10 19:59:12 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+    # Conflicts:
+    #       core/src/com/cs102/game/LastRemaindersOfThePandemic.java
+    #       core/src/com/cs102/game/ecs/ECSEngine.java
+    #       core/src/com/cs102/game/ui/GameRenderer.java
+
+commit 62efe80b96c2682518f1d4906a46ce66e6551189
+Merge: 47e806f 1e9b803
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:58:41 2022 +0300
+
+    Merge pull request #42 from yavuuzslm/main
+
+    main to deniz
+
+commit 2e401a5a4accbe69f643e8a4ee94d0685aea1107
+Merge: ab71613 47e806f
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:58:08 2022 +0300
+
+    Merge pull request #41 from yavuuzslm/deniz
+
+    Deniz
+
+commit 07c586d4a273a7be9162833b8c5b5c5b24104ae8
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue May 10 19:56:58 2022 +0300
+
+    LightingSystem is added
+
+commit 1e9b803dacbbb848aaf09853a5851ef8676f8b4f
+Merge: 56700ea 73a824d
+Author: mehmeterenozgun <91500800+mehmeterenozgun@users.noreply.github.com>
+Date:   Tue May 10 19:56:40 2022 +0300
+
+    Merge pull request #40 from yavuuzslm/özgün
+
+    özgün
+
+commit f4880aade1de06cdcc6ef2bc8446775ef43739c2
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:53:50 2022 +0300
+
+    game objects handled
+
+commit 73a824d21661340257f086932448b95b4daf60a1
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:53:15 2022 +0300
+
+    correction
+
+commit 9f183a49fb80b66211854432eed385345a4888a7
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:51:06 2022 +0300
+
+    Minor correction
+
+commit 9452f57eeb1e90efa5d6c47bf6c02de81a8b2bbb
+Merge: 9758acb 47e806f
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:48:01 2022 +0300
+
+    Merge remote-tracking branch 'origin/deniz' into özgün
+
+commit 47e806f28b4f3fbd1dda440682096f9ea3150ea7
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:38:12 2022 +0300
+
+    Some Corrections
+
+commit 9758acb26cce0fd54cc1a962c95b65ce728d5909
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue May 10 19:35:55 2022 +0300
+
+    map system is handled
+
+commit 56700ea5d72c30184464d4ad2e95500c3caa6aeb
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue May 10 18:57:00 2022 +0300
+
+    GameUI specialized buttons are added on screen
+
+commit 13a89f6dd92ce33b39fb858ab91e80924b04dfbe
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Mon May 9 00:46:38 2022 +0300
+
+    Arrangements
+
+commit 2ee62b744e4fb7d6c866b13c1caec07302381ce7
+Merge: 45710c2 dcaba29
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun May 1 16:40:18 2022 +0300
+
+    Merge pull request #38 from yavuuzslm/main
+
+    main to deniz
+
+commit 6206305b68d07c7d005ba677ad5b2d58c963ed7b
+Merge: 6a1d62a dcaba29
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sun May 1 12:53:09 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit dcaba2999c6fee85449dab1ebb57998762a862e7
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sun May 1 05:05:11 2022 +0300
+
+    AnimationComponent and PlayerAnimationSystem are added.
+
+commit 441a5f6e2ca1d67c2706fd6b6bc9d434fb3bd969
+Merge: 77e3b35 45710c2
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun May 1 01:53:58 2022 +0300
+
+    Merge pull request #37 from yavuuzslm/deniz
+
+    render change
+
+commit 45710c25a93cea9f309e4248417014ddb32b8f9d
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun May 1 01:52:53 2022 +0300
+
+    render change
+
+    I moved gameRenderer.render() to GameScreen's render method be able to dispose GameRenderer
+
+commit ab71613d918579d365f434ec541934c9546b7818
+Merge: 71aeddc a82a98b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun May 1 01:51:47 2022 +0300
+
+    Merge pull request #36 from yavuuzslm/deniz
+
+    Deniz
+
+commit 6a1d62ad58d3ab2ce6fe3fd70e169c6563eadc44
+Merge: 7e38fd7 77e3b35
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 18:41:55 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit 77e3b356479feb11907ed80b78693f251283bde9
+Merge: 2f9c255 a82a98b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 18:05:22 2022 +0300
+
+    Merge pull request #35 from yavuuzslm/deniz
+
+    Completed GameRenderer
+
+commit a82a98bbfa31519c22e2fe61fc594464a575eb23
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 18:04:52 2022 +0300
+
+    Completed GameRenderer
+
+    added mock-up atlas file for character
+    there are some fps problems to be handled
+    Game screen mostly change, nearly empty
+    animations needed
+
+commit 2f9c2551c06ada34da972e40c33acd657c520424
+Merge: 769c4e1 7ef4ffe
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 00:18:15 2022 +0300
+
+    Merge pull request #34 from yavuuzslm/deniz
+
+    deltaTime correction
+
+commit 7ef4ffef44085e648998aa00b4a8313e5666f2e3
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 00:17:53 2022 +0300
+
+    deltaTime correction
+
+commit 769c4e1e21dc9adfe2bfa35e899616ed5f994e4e
+Merge: efc92f0 a1f8e0e
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 00:13:25 2022 +0300
+
+    Merge pull request #33 from yavuuzslm/deniz
+
+    Deniz
+
+commit a1f8e0e43cb67c6316a2bb6dd8bb24332cba7123
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 30 00:12:42 2022 +0300
+
+    I added MapManager
+
+commit 6486609d58f14e9ead550b0783f9269a3e96824d
+Merge: cf4d264 efc92f0
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 28 14:30:16 2022 +0300
+
+    Merge pull request #32 from yavuuzslm/main
+
+    main to deniz
+
+commit 7e38fd75e631542f830e47bcccb50805bd0820c9
+Merge: 14b3682 efc92f0
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Tue Apr 26 14:43:27 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit efc92f00530f7cfdc769c81d6322db302553052f
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue Apr 26 03:06:44 2022 +0300
+
+    audio assets are added
+
+commit 711c0dd2eb7fb74def44872dbb74ed2f78c6b8f3
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Tue Apr 26 03:06:21 2022 +0300
+
+    Player centered camera system is added
+
+commit 14b36826f12be918b7f776e89010c50b7e23b7c5
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 21:08:05 2022 +0300
+
+    musics
+
+commit 835334a333efb519eef770c8afda3b43428f5594
+Merge: 5414b3c 34b0fc9
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 20:57:49 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit 34b0fc9923e94de8b908994cca20a53897200d53
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Mon Apr 25 15:08:29 2022 +0300
+
+    AudioManager system and AudioType enum is created, intro music and select sound is added.
+
+commit 27089342f47a9e4f5931776bb3ccda068e83dfc0
+Merge: bc7914f cf4d264
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 14:12:48 2022 +0300
+
+    Merge pull request #31 from yavuuzslm/deniz
+
+    Corrected PlayerMovement
+
+commit bc7914f5b8fd35c47295ec4353c1ed50b6cc54ed
+Merge: ad912c1 6d3a2ed
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 14:12:00 2022 +0300
+
+    Merge pull request #30 from yavuuzslm/deniz
+
+    Merge pull request #29 from yavuuzslm/main
+
+commit cf4d264277eb509b3b96c1c10cdc752e6433d42b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 14:10:46 2022 +0300
+
+    Corrected PlayerMovement
+
+    I changed AbstractScreen Input processor and Abstract Screen UI processor
+
+commit 6d3a2ed2ff279544cdad7b3cb3afee896a010576
+Merge: 1a307a1 ad912c1
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Mon Apr 25 08:37:51 2022 +0300
+
+    Merge pull request #29 from yavuuzslm/main
+
+    main to deniz
+
+commit ad912c1c92890050a87c39e693d33aa286f3d710
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Mon Apr 25 01:52:46 2022 +0300
+
+    PlayerComponent system and InputManager embedded, still have to work on this
+
+commit 477f80b6cbe9bfc2f52565d7d7259285181dd203
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sun Apr 24 23:38:14 2022 +0300
+
+    Input Managing System is added, classes are updated respectively
+
+commit 92e0fbcc06ae672c58ff68c82e3ed518923077f4
+Merge: c5aaf5f 1a307a1
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 22:38:46 2022 +0300
+
+    Merge pull request #28 from yavuuzslm/deniz
+
+    I added ECSEngine
+
+commit 1a307a12d27bd804d0cf140ba28631641bced6c1
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 22:38:08 2022 +0300
+
+    I added ECSEngine
+
+commit 5414b3ccb3405627c12558917191397a71af3aa1
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 22:18:57 2022 +0300
+
+    özgün: Auto stash before merge of "özgün" and "origin/main"
+
+commit 6f3f220051f95dc6e6c22e8321ff7386e933e4f9
+Merge: f1c7b9c c5aaf5f
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 22:18:18 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit c5aaf5f827887ba45189806c6a6abfc57e33a56e
+Merge: 71dc085 eebe21c
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sun Apr 24 20:14:13 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 71dc0858e9e9d42c9f02047f59a883a07684d9a6
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sun Apr 24 20:13:58 2022 +0300
+
+    GUI skins are added
+
+commit eebe21ca6ce34cf3505068535b6e421d8d957d49
+Merge: 7aadd34 2a7ca91
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 20:01:55 2022 +0300
+
+    Merge pull request #27 from yavuuzslm/deniz
+
+    Deniz
+
+commit 2a7ca91373df7e16e2201e5d4905fa20fa34d61d
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 20:01:33 2022 +0300
+
+    I added savePosition()
+
+commit f1c7b9c5dcb1698eda732b611fa10b662e3cef27
+Merge: f46f1cc 7aadd34
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 19:47:26 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit 9e6ca8f315e11b99450086d9ec4790ab17b2e6bd
+Merge: e68d7c0 7aadd34
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sun Apr 24 19:05:17 2022 +0300
+
+    Merge pull request #26 from yavuuzslm/main
+
+    main to deniz
+
+commit 7aadd34fe36f4d4307d64dd111304f5a6d7a6395
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sun Apr 24 18:17:47 2022 +0300
+
+    skinInitializer added to mainGame class, screenUI's are created, updated, fonts type changed, working on implementing gui skin
+
+commit f46f1cc70d68243ea0a928cfc14866a0c95d453e
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:49:55 2022 +0300
+
+    ..
+
+commit 63f897d4d99e230e1855ea3ce50a6f137ceefb30
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:48:23 2022 +0300
+
+    ..
+
+commit 1904ce6722bc5802c506f3bf094af3ff678ecc54
+Merge: d1ac28b e68d7c0
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:42:51 2022 +0300
+
+    Merge pull request #24 from yavuuzslm/deniz
+
+    minor changes
+
+commit e68d7c01bdf124c230c822a5b275bf2f75eaf8f3
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:42:26 2022 +0300
+
+    minor changes
+
+commit 94c66fb172c25fe02ea9fff25fe06f9e240c2dc1
+Merge: f97b6b9 d1ac28b
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:39:27 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit f97b6b9d9aa5df14dec1a370dfe94a8ea8c506e2
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 17:18:10 2022 +0300
+
+    Collision Handling
+
+commit d1ac28b775c1649d8df700d417ba5d5bb50f5f9b
+Merge: eecf9b0 282f201
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 16:05:46 2022 +0300
+
+    Merge pull request #23 from yavuuzslm/deniz
+
+    Deniz
+
+commit 282f201c4da9a7b36c390f50bc16ca1028ee0206
+Merge: c6a254f 1e93d31
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 16:05:26 2022 +0300
+
+    Merge remote-tracking branch 'origin/deniz' into deniz
+
+commit c6a254faee880f36e76d415ea540d7807f45718c
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 16:05:04 2022 +0300
+
+    I added spawnPlayer method
+
+commit eecf9b0b77a6e90a854fe2df1f99198d879d1da1
+Merge: 7cfd187 1e93d31
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 14:58:47 2022 +0300
+
+    Merge pull request #22 from yavuuzslm/deniz
+
+    I added Map package
+
+commit 1e93d31fd4d032e865ce9d01d88b52cf7b50527e
+Merge: 52cf3b6 7cfd187
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 14:58:41 2022 +0300
+
+    Merge branch 'main' into deniz
+
+commit 52cf3b6eb37f1a646d6087753d8e2cb21d09b6d6
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Sat Apr 23 14:57:44 2022 +0300
+
+    I added Map package
+
+    I added Map package and I added the feature of reading Collision layers from a Tiled Map Objects
+
+commit 7cfd187b4fdfa26d26fca8a890f2cc4bb8eef1a7
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Sat Apr 23 14:19:34 2022 +0300
+
+    some basic changes
+
+commit 7d9228da5223d1f81c28471696c2152e5715ab67
+Merge: 7294a56 e76c32a
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 22:46:33 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into özgün
+
+commit e76c32a2883be6b268d0364479779abf611921a2
+Merge: 5e4038c 10d38c7
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 21:44:59 2022 +0300
+
+    Merge pull request #20 from yavuuzslm/deniz
+
+    I added the map Ozgun designed and made some changes in game physics
+
+commit 10d38c7594fd6dfaa4955fb33acdc1cc914c261b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 21:42:59 2022 +0300
+
+    I added the map Ozgun designed and made some changes in game physics
+
+commit 5e4038cba752b6e703280fd395a0815d46a88efc
+Merge: af7f425 18af145
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 16:49:39 2022 +0300
+
+    Merge pull request #19 from yavuuzslm/deniz
+
+    Ozgun added sample map and we try to implement rendering
+
+commit 18af1450262ff54794ab81df7a9588123798465e
+Merge: 95ab1c2 af7f425
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 16:49:32 2022 +0300
+
+    Merge branch 'main' into deniz
+
+commit 95ab1c21979d9da7249f8a244ce0721f20e0db12
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 16:48:10 2022 +0300
+
+    Ozgun added sample map and we try to implement rendering
+
+commit af7f42502486064d79717cba79f101b4c7811a39
+Merge: 39da157 e905d8e
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Fri Apr 22 15:46:45 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+commit e905d8e55995005cdd3ce877828f783072560894
+Merge: e0b33c2 8ca1219
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 15:46:42 2022 +0300
+
+    Merge pull request #18 from yavuuzslm/deniz
+
+    Deniz
+
+commit 39da157614df6540fd8e80886fc6df55d2aa4573
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Fri Apr 22 15:45:31 2022 +0300
+
+    some basic changes
+
+commit 8ca1219fba688bb4946281ebd47134c07c67b58d
+Merge: 64eed70 46962fd
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 15:44:53 2022 +0300
+
+    Merge remote-tracking branch 'origin/deniz' into deniz
+
+commit 64eed707a571b160f9e538ff7eba0548726ae71d
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 15:44:22 2022 +0300
+
+    Made some changes in GameScreen
+
+commit cbc10e73363a44dd4ad1bf1a0623c3845a8b9c5e
+Merge: 05d33be e0b33c2
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Fri Apr 22 15:43:05 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 7294a5681f1c88eaf2a6e98abd478433ac84834b
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 14:41:53 2022 +0300
+
+    2D
+
+commit e0b33c25c98d8ef4d490370378c52feff1525976
+Merge: a971dcd 46962fd
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 14:40:56 2022 +0300
+
+    Merge pull request #17 from yavuuzslm/deniz
+
+    I added Control to GameScreen and made some come changes in ContactLi…
+
+commit 46962fd16e4b2d56eacab9aae14e516ea46a2eab
+Merge: fe01483 a971dcd
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 14:40:50 2022 +0300
+
+    Merge branch 'main' into deniz
+
+commit fe0148307d6a62805f66a6f60df45d0ecc4a83e3
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 14:39:41 2022 +0300
+
+    I added Control to GameScreen and made some come changes in ContactListener
+
+commit cfc56119afc2e3532e983c54aa8322ff013e8fb2
+Merge: 8a3e53a 44db4ac
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 00:01:43 2022 +0300
+
+    Merge branch 'main' into özgün
+
+    # Conflicts:
+    #       core/src/com/cs102/game/LastRemaindersOfThePandemic.java
+    #       core/src/com/cs102/game/screens/AbstractScreen.java
+    #       core/src/com/cs102/game/screens/GameScreen.java
+
+commit 8a3e53a3f02c2c79b13de9e19ac3bf1e87ac5fb5
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Fri Apr 22 00:00:29 2022 +0300
+
+    datdatadt
+
+commit a971dcdf9d5f60d114f9090bb11047d17218ed5f
+Merge: 3ba938b 8c62f02
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 23:55:13 2022 +0300
+
+    Merge pull request #16 from yavuuzslm/yavuz
+
+    AssetsManager is created, working on that
+
+commit 8c62f028f634ac1042151010c80303f5fa59bb9f
+Merge: 4cf838a 3ba938b
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 23:51:32 2022 +0300
+
+    Merge branch 'main' into yavuz
+
+commit 3ba938b839f91992a82de0fb8a3821256dd62149
+Merge: a491c4f cb10f5a
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:49:33 2022 +0300
+
+    Merge pull request #15 from yavuuzslm/deniz
+
+    Deniz
+
+commit cb10f5abf934e784b9fa2d1d7084d46189ebc90e
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:48:48 2022 +0300
+
+    Some indentations
+
+commit 4cf838a6f8ba483655f23898eea68967f6f1ea0e
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 23:47:47 2022 +0300
+
+    AppPreferences class is created, SettingsScreen is updated
+
+commit be2b50740816627202d142ccdc61f73dda034b2d
+Merge: deab7af a491c4f
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:40:32 2022 +0300
+
+    Merge pull request #14 from yavuuzslm/main
+
+    Merge pull request #13 from yavuuzslm/deniz
+
+commit a491c4f257d9f1b67c338902299f2599a4876ab4
+Merge: ab68800 deab7af
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:40:10 2022 +0300
+
+    Merge pull request #13 from yavuuzslm/deniz
+
+    I added more Box2D interactions and Contact Listener for Box2D
+
+commit deab7af624703a1ea453686fa4e063d802beab68
+Merge: fbbe9d2 ab68800
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:40:03 2022 +0300
+
+    Merge branch 'main' into deniz
+
+commit fbbe9d273510e5a942936a17e265900761f9afc2
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 23:36:43 2022 +0300
+
+    I added more Box2D interactions and Contact Listener for Box2D
+
+commit ab688004d70e89faf452ee2968ac8eb448289c43
+Merge: 44db4ac f2efb60
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 22:59:29 2022 +0300
+
+    Merge pull request #12 from yavuuzslm/yavuz
+
+    AppPreferences class is created, SettingsScreen is updated
+
+commit f2efb60a8e56774b56283a7e044bb064ce58d789
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 22:57:33 2022 +0300
+
+    AppPreferences class is created, SettingsScreen is updated
+
+commit 4e5e07a766a1f91b99801241f7f0991e45062aa0
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 22:12:01 2022 +0300
+
+    cart ve curt
+
+commit 696c9499545682af8f7f2af403a52161638f7c03
+Author: Mehmet Eren Özgün <eren.ozgun@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 22:08:05 2022 +0300
+
+    I added abstract scrren
+
+commit 44db4ace59a0beea7c6d27c677759c668c6a1622
+Merge: 3ae4925 a87af86
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 21:58:13 2022 +0300
+
+    Merge pull request #11 from yavuuzslm/yavuz
+
+    Merge pull request #10 from yavuuzslm/main
+
+commit 05d33bec85e7c87d715ac6d59095acd99eab6a1b
+Merge: 9201a20 44db4ac
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 21:57:20 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+    # Conflicts:
+    #       core/src/com/cs102/game/LastRemaindersOfThePandemic.java
+
+commit a87af8672d541ec99d0013b907bb18847a4db148
+Merge: b682a12 3ae4925
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 21:56:26 2022 +0300
+
+    Merge pull request #10 from yavuuzslm/main
+
+    Merge to individiual branches
+
+commit 3ae492534e69ad8f120be15a4d32a22101a94f55
+Merge: fd368ad b682a12
+Author: Yavuz Selim Sarıbaş <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 21:56:18 2022 +0300
+
+    Merge branch 'yavuz' into main
+
+commit 9201a20fa1575c0868d981c3ea1249b255fe8500
+Merge: b682a12 fd368ad
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 21:41:46 2022 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+    # Conflicts:
+    #       core/src/com/cs102/game/LastRemaindersOfThePandemic.java
+
+commit fd368ad80bbfbb816b1c7507cb1e75e20fb66f48
+Merge: 97739fb 3648ef0
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 21:39:17 2022 +0300
+
+    Merge pull request #9 from yavuuzslm/deniz
+
+    I added Box2D basic dynamics
+
+commit b682a12d352b0f381efc0512baa1773eac27a162
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 21:38:47 2022 +0300
+
+    LoadingUI is created, AssetManager is added to main class
+
+commit 3648ef0a57e221fccb037be515967965b7e1b037
+Merge: a6ef95c b39acc5
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 21:37:51 2022 +0300
+
+    Merge remote-tracking branch 'origin/deniz' into deniz
+
+commit a6ef95cfd20377bde6f1eaccc3a38d852135c25f
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 21:35:43 2022 +0300
+
+    I added Box2D mechanism and some physics rules
+
+commit 97739fb8432a70f8d13324ec6d4a006f28507b9d
+Merge: 27a7240 71aeddc
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 20:16:04 2022 +0300
+
+    Merge pull request #8 from yavuuzslm/merging
+
+    Merging
+
+commit 75c910af904793efded7883712ce855f573cdf84
+Merge: b6ebd85 97739fb
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 20:15:48 2022 +0300
+
+    Merge branch 'main' into yavuz
+
+commit 71aeddc2be6d1ff358e0a363de62c51e9bb1845b
+Merge: ec67126 b39acc5
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 20:15:03 2022 +0300
+
+    Merge pull request #7 from yavuuzslm/deniz
+
+    Updating deniz branch
+
+commit b39acc559e808d714345d9771c794e4ff47bc3bd
+Merge: 415bf86 ec67126
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 20:14:53 2022 +0300
+
+    Merge branch 'merging' into deniz
+
+commit 415bf86464ca2018999380efde1ca4f351f93022
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 20:11:49 2022 +0300
+
+    AbstractScreen developed
+
+commit a80fe095c249f10dcaec68132005e40dc79e111c
+Merge: 86dffd0 1c38ac1
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 19:50:57 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into deniz
+
+commit b6ebd855b491348362db83b20f57363955b4999b
+Merge: 3f90095 27a7240
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 19:49:32 2022 +0300
+
+    Merge branch 'main' into yavuz
+
+commit 27a724064117af92c82815f540892e3aa50d32db
+Merge: 1c38ac1 ec67126
+Author: yavuuzslm <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 19:49:27 2022 +0300
+
+    Merge pull request #5 from yavuuzslm/merging
+
+    Merging
+
+commit ec67126e1f1b7f1550088bc210a61a1d3c0b3e8c
+Merge: 1c38ac1 86dffd0
+Author: yavuuzslm <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 19:46:51 2022 +0300
+
+    Merge pull request #4 from yavuuzslm/deniz
+
+    Deniz
+
+commit 86dffd08e01926914806661b2a04397d426a575b
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 19:45:10 2022 +0300
+
+    Update GameScreen.java
+
+commit 3f90095c2456b09e743ea57bf576a581702c251c
+Merge: edb54dd 1c38ac1
+Author: yavuuzslm <91419762+yavuuzslm@users.noreply.github.com>
+Date:   Thu Apr 21 19:38:53 2022 +0300
+
+    Merge pull request #3 from yavuuzslm/main
+
+    yavuz
+
+commit 1c38ac16b6b0572a9728af82c95a42abdeec5803
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 19:35:42 2022 +0300
+
+    ScreenType enum updated, Log and Debug Levels are added
+
+commit cad1481b58240fcb951d121dd74c79769825b194
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 19:34:39 2022 +0300
+
+    I added AbstractScreen
+
+commit a89a22ed2a6682fd4f71fd0273b415369b38f55f
+Merge: a6a5fab dda4f3e
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 19:20:18 2022 +0300
+
+    Merge pull request #2 from yavuuzslm/main
+
+    screenType Enum added,setScreen is updated
+
+commit dda4f3e3040c53e4f5db5a1e61e2701cec72d81b
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 19:16:39 2022 +0300
+
+    screenType Enum added,setScreen is updated
+
+commit a6a5fab36c7ed03920ec12aaf727f474a17565d6
+Merge: edb54dd a2ccdb2
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 19:00:10 2022 +0300
+
+    Merge pull request #1 from yavuuzslm/main
+
+    Getting Screens
+
+commit a2ccdb238a132aa73db5146ce6d483d035e7bb95
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 18:56:36 2022 +0300
+
+    Screens are added
+
+commit 5d0075e10c29e405ff038dbed8f95c8409a594c8
+Author: Deniz Aydemir <d.aydemir@ug.bilkent.edu.tr>
+Date:   Thu Apr 21 18:47:05 2022 +0300
+
+    Created Control.java
+
+commit edb54dd369358ed39a6d5d9ab5e28027399fb3e6
+Author: Yavuuzslm <yavuuzslm5@gmail.com>
+Date:   Thu Apr 21 15:03:03 2022 +0300
+
+    Added our new project
+(END)
