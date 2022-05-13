@@ -13,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.input.GameKeys;
 
-public class LoadingUI extends Table {
+public class LoadingUI extends GameRenderer {
     private final TextButton textButton;
 
     private final TextButton pressToPlay;

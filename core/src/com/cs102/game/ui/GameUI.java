@@ -15,7 +15,7 @@ import com.cs102.game.screens.ScreenType;
 
 import javax.swing.text.html.parser.Entity;
 
-public class GameUI extends Table {
+public class GameUI extends GameRenderer {
     // buttons include in hud
 
     private Table optionsTable;

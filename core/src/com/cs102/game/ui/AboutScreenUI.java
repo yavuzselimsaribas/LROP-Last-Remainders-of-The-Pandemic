@@ -12,7 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.screens.ScreenType;
 
-public class AboutScreenUI extends Table {
+public class AboutScreenUI extends GameRenderer {
 
     public AboutScreenUI(final LastRemaindersOfThePandemic mainGame) {
         super(mainGame.getSkin());

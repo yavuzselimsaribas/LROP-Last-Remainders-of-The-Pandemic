@@ -17,7 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.screens.ScreenType;
 
-public class HomePageUI extends Table {
+public class HomePageUI extends GameRenderer {
 
     private final TextButton playButton;
     private final TextButton settingsButton;

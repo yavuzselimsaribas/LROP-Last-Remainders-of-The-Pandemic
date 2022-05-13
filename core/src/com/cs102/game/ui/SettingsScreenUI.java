@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.screens.ScreenType;
 
-public class SettingsScreenUI extends Table {
+public class SettingsScreenUI extends GameRenderer {
 
     private Label titleLabel;
     private Label volumeMusicLabel;

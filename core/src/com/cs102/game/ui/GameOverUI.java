@@ -9,7 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.cs102.game.LastRemaindersOfThePandemic;
 import com.cs102.game.screens.ScreenType;
 
-public class GameOverUI extends Table {
+public class GameOverUI extends GameRenderer {
 
     public GameOverUI(final LastRemaindersOfThePandemic mainGame) {
         super(mainGame.getSkin());

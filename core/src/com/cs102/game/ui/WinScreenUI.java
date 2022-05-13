@@ -11,7 +11,7 @@ import com.cs102.game.screens.WinScreen;
 
 
 
-public class WinScreenUI extends Table {
+public class WinScreenUI extends GameRenderer {
     public WinScreenUI(final LastRemaindersOfThePandemic mainGame) {
         super(mainGame.getSkin());
         this.setFillParent(true);
